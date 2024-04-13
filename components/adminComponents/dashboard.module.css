@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    background-color: #231f2091;
+    color:white;
+}
+
+.menu{
+    flex: 1;
+    /* background-color:#231F20; */
+    background-color:#231f2091;
+    padding: 20px;
+}
+
+.content{
+    padding: 20px;
+    flex: 4;
+}
+
+.dashboard_container__XAbRN {
+    background-color: #fff;
+}
+.dashboard_content__XKgdt {
+    background-color: white;
+}
