@@ -52,7 +52,7 @@ function SocialIconScroll() {
           >
             <img
               className="facebookSideicon relative"
-              src="/InstaSideIcon.svg"
+              src="/tiktok-icon.svg"
               alt="none"
             />
           </a>
