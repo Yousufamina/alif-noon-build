@@ -10,16 +10,13 @@ function About() {
         <div className="mainContainer p-[10px]">
           <Row gutter={2}>
             <Col md={24} lg={16} xs={24} className="ColText">
-              <h1 className="leading-[58px] raleway font-semibold text-[45px] text-[#ECA33A]">
-                {' '}
+              <h1 className="leading-[58px] raleway font-semibold text-[45px] text-[#ECA33A] mt-3">
                 Alif Noon{' '}
               </h1>
               <h2 className="leading-[50px] raleway-light font-normal mb-5 text-[35px] text-white">
-                {' '}
                 A Real Estate Agency in Dubai{' '}
               </h2>
               <p className="max-[1024px]:text-[12px] text-left w-[80%] mr-[30%] text-[#ECA33A] raleway-light font-light text-[16px] mb-[20px]">
-                {' '}
                 Welcome to Alif Noon Properties, your premier destination for
                 all your real estate needs in the vibrant city of Dubai. With
                 years of experience in the industry, we have built a reputation
@@ -27,7 +24,6 @@ function About() {
                 service.{' '}
               </p>
               <p className="max-[1024px]:text-[12px] mb-[20px] w-[100%] ml-[0%]  text-[#ECA33A] raleway-light font-light text-[16px]">
-                {' '}
                 At Alif Noon, we understand that buying or renting property is
                 not just a financial decision, but a significant life
                 investment. That's why our team of dedicated experts is
@@ -50,9 +46,8 @@ function About() {
                   <img className="m-auto " src="/goldAnimatedLogo.gif" />
                   <p
                     className="text-[#ECA33A] leading-[30px] raleway-light font-normal text-center text-[15px] mt-[10]"
-                    style={{ marginTop: '10px' }}
+                    // style={{ marginTop: '10px' }}
                   >
-                    {' '}
                     WHERE YOU FIND PEACE, YES HOME{' '}
                   </p>
                 </div>
