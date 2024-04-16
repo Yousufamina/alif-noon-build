@@ -97,7 +97,7 @@ function RentProperties() {
               <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
             )}
           </div>
-          <Row style={{ marginBottom: '100px' }} gutter={2}>
+          <Row style={{ marginBottom: '5px' }} gutter={2}>
             <Col lg={24} xl={18}>
               <main className={`bg-[#231F20] `}>
                 <div className="">
@@ -144,7 +144,7 @@ function RentProperties() {
                 </div>
               </main>
             </Col>
-            <Col className="pt-[4px]" lg={0} xl={6}>
+            <Col className="" lg={0} xl={6}>
               <RightCol />
             </Col>
           </Row>

@@ -1,14 +1,24 @@
-"use client";
-import React from "react";
-import Footer from "@/components/sections/Footer";
-import FreeConsultation from "@/components/sections/FreeConsultation";
-import Header from "@/components/header/Index";
-import { Row, Col } from "antd";
-import Link from "next/link";
-import SocialIconScroll from '@/components/SocialIconScroll';
-import ScrollTopButton from "@/components/ScrollTopButton";
+'use client'
+import React, { useState } from 'react'
+import Footer from '@/components/sections/Footer'
+import FreeConsultation from '@/components/sections/FreeConsultation'
+import Header from '@/components/header/Index'
+import { Row, Col } from 'antd'
+import Link from 'next/link'
+import SocialIconScroll from '@/components/SocialIconScroll'
+import ScrollTopButton from '@/components/ScrollTopButton'
+import PromptConsultation from '@/components/PromptConsultation'
 
 function page() {
+  const [showModal, setShowModal] = useState(false)
+
+  const openModal = () => {
+    setShowModal(true)
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
+  }
   return (
     <div className="SellSectionMax">
       <Header />
@@ -16,8 +26,8 @@ function page() {
       <SocialIconScroll />
       <div className="SellSection relative">
         <img
-          className='innerpagesBg'
-          style={{ height: "auto", width: "100%" }}
+          className="innerpagesBg"
+          style={{ height: 'auto', width: '100%' }}
           src="/SellBg.png"
           alt="none"
         />
@@ -29,7 +39,7 @@ function page() {
             <h3> sel your property with professional help </h3>
           </div>
           <img
-            style={{ marginBottom: "40px", height: "80px", width: "100%" }}
+            style={{ marginBottom: '40px', height: '80px', width: '100%' }}
             src="/VectorPng.png"
             alt="none"
           />
@@ -42,7 +52,7 @@ function page() {
             Count on the Expertise of Our Well-Informed Specialists
           </p>
           <div
-            style={{ border: "1px solid #ECA33A" }}
+            style={{ border: '1px solid #ECA33A' }}
             className="text-center m-[20px] py-[50px] px-[30px]"
           >
             <div className="flex">
@@ -55,36 +65,38 @@ function page() {
               </p>
             </div>
             <div className="mt-[30px] justify-center mb-[-76px] flex">
-              <div className="bg-[#231F20] w-[36px]"></div>
+              {/* <div className="bg-[#231F20] w-[36px]"></div>
               <button
                 type="button"
                 className="customGoldButton font-semibold max-[1080px]:text-[12px] text-[20px] px-10 py-2.5 border-b-4 border-[#EEC78C]"
-                style={{ position: "inherit !important" }}
+                style={{ position: 'inherit !important' }}
               >
                 <Link href="#" className="text-white">
                   EQUIRE NOW
                 </Link>
-              </button>
+              </button> */}
               <div className="bg-[#231F20] w-[36px]"></div>
               <button
                 type="button"
                 className="customGoldButton font-semibold text-[20px] max-[1080px]:text-[12px] px-10 py-2.5  border-b-4 border-[#EEC78C]"
-                style={{ position: "inherit !important" }}
+                style={{ position: 'inherit !important' }}
+                onClick={openModal}
               >
                 <Link href="#" className="text-white">
                   TALK WITH OFFICIALS
                 </Link>
               </button>
+              {showModal && <PromptConsultation closeModal={closeModal} />}
               <div className="bg-[#231F20] w-[36px]"></div>
             </div>
           </div>
 
           <img
             style={{
-              marginTop: "60px",
-              marginBottom: "40px",
-              height: "80px",
-              width: "100%",
+              marginTop: '90px',
+              marginBottom: '40px',
+              height: '80px',
+              width: '100%',
             }}
             src="/VectorPng.png"
             alt="none"
@@ -96,10 +108,10 @@ function page() {
           <p className="text-center max-[1080px]:text-[30px] text-[40px] text-[#ECA33A] font-bold raleway">
             READINESS PHASE
           </p>
-          <Row  gutter={3} className="readnessPhase flex mt-4">
-            <Col style={{ padding: "30px 40px" }} sm={24} md={12} lg={8}>
+          <Row gutter={3} className="readnessPhase flex mt-4">
+            <Col style={{ padding: '30px 40px' }} sm={24} md={12} lg={8}>
               <div
-                style={{ borderRadius: "10px", border: "1px solid #eca23a4a" }}
+                style={{ borderRadius: '10px', border: '1px solid #eca23a4a' }}
                 className="readinessPhase py-[50px] px-[30px]"
               >
                 <p className="leading-[30px] my-4 text-center text-[30px] text-white font-bold raleway">
@@ -110,9 +122,9 @@ function page() {
                 </p>
               </div>
             </Col>
-            <Col style={{ padding: "30px 40px" }} sm={24} md={12} lg={8}>
+            <Col style={{ padding: '30px 40px' }} sm={24} md={12} lg={8}>
               <div
-                style={{ borderRadius: "10px", border: "1px solid #eca23a4a" }}
+                style={{ borderRadius: '10px', border: '1px solid #eca23a4a' }}
                 className="readinessPhase py-[50px] px-[30px]"
               >
                 <p className="leading-[30px] my-4 text-center text-[30px] text-white font-bold raleway">
@@ -123,9 +135,9 @@ function page() {
                 </p>
               </div>
             </Col>
-            <Col style={{ padding: "30px 40px" }} sm={24} md={12} lg={8}>
+            <Col style={{ padding: '30px 40px' }} sm={24} md={12} lg={8}>
               <div
-                style={{ borderRadius: "10px", border: "1px solid #eca23a4a" }}
+                style={{ borderRadius: '10px', border: '1px solid #eca23a4a' }}
                 className="readinessPhase py-[50px] px-[30px]"
               >
                 <p className="leading-[30px] my-4 text-center text-[30px] text-white font-bold raleway">
@@ -140,8 +152,8 @@ function page() {
 
           <img
             style={{
-              height: "80px",
-              width: "100%",
+              height: '80px',
+              width: '100%',
             }}
             className="my-[30px] max-[1080px]:my-[0px]"
             src="/VectorPng.png"
@@ -155,39 +167,39 @@ function page() {
                   PHOTOGRAPHY
                 </h6>
                 <p
-                  style={{ letterSpacing: "1px" }}
+                  style={{ letterSpacing: '1px' }}
                   className="ml-auto w-[90%] uppercase raleway text-right mt-2 leading-[24px] text-white text-[18px] font-light"
                 >
                   Just like you wouldn't go to a job interview without proper
                   outfit, photography is critical to setting record sale and
                   rental prices, we do it better than anyone.
                 </p>
-                
               </div>
             </Col>
             <Col sm={24} md={12} className="pt-[50px] relative">
               <div
-                style={{ top: "46px", left: "622px" }}
+                style={{ top: '46px', left: '622px' }}
                 className="yellowBox1 absolute bg-[#ECA33A] w-[43px] h-[40px]"
               ></div>
               <div className="Images overflow-hidden  h-[450px] w-full relative">
                 <img className="w-full h-full" src="/Sell2.png" alt="none" />
               </div>
-              <img style={{left:'-47px',bottom:'-48px'}} className="CrossImage z-10 absolute w-[100px] h-[100px]" src="/CrossImageDesign1.svg" alt="none" />
+              <img
+                style={{ left: '-47px', bottom: '-48px' }}
+                className="CrossImage z-10 absolute w-[100px] h-[100px]"
+                src="/CrossImageDesign1.svg"
+                alt="none"
+              />
             </Col>
           </Row>
           <Row className="PhotoImage column-reverse-responsive" gutter={2}>
             <Col sm={24} md={12} className="relative">
               <div
-                style={{ bottom: "-5px", right: "622px" }}
+                style={{ bottom: '-5px', right: '622px' }}
                 className="absolute yellowBox2 bg-[#ECA33A] w-[43px] h-[40px]"
               ></div>
               <div className="Images overflow-hidden relative h-[450px] w-full">
-                <img
-                  className="w-full h-full"
-                  src="/Sell1.png"
-                  alt="none"
-                />
+                <img className="w-full h-full" src="/Sell1.png" alt="none" />
               </div>
             </Col>
             <Col sm={24} md={12}>
@@ -196,7 +208,7 @@ function page() {
                   VIDEOGRAPHY
                 </h6>
                 <p
-                  style={{ letterSpacing: "1px" }}
+                  style={{ letterSpacing: '1px' }}
                   className="mt-2 ml-auto uppercase pr-[10%] raleway text-left leading-[24px] text-white text-[18px] font-light"
                 >
                   We have a divine videographer. Everything that we capture on
@@ -205,69 +217,75 @@ function page() {
               </div>
             </Col>
           </Row>
-
-          
         </div>
         <div className="EngageServive py-[30px]">
-            <h6 className="uppercase text-center leading-[50px] raleway text-[#ECA33A] text-[40px] font-bold">
-              If you engage our services
-            </h6>
-            <p
-              style={{ letterSpacing: "2px" }}
-              className="raleway text-center mt-2 leading-[29px] text-white text-[20px] font-bold"
-            >
-              Discover the difference our expertise can make
-            </p>
-            <div className="EngageServiveMain m-auto max-[1319px]:w-[100%] w-[1320px]">
+          <h6 className="uppercase text-center leading-[50px] raleway text-[#ECA33A] text-[40px] font-bold">
+            If you engage our services
+          </h6>
+          <p
+            style={{ letterSpacing: '2px' }}
+            className="raleway text-center mt-2 leading-[29px] text-white text-[20px] font-bold"
+          >
+            Discover the difference our expertise can make
+          </p>
+          <div className="EngageServiveMain m-auto max-[1319px]:w-[100%] w-[1320px]">
             <Row>
-              <Col sm={24} md={8} style={{ padding: "30px 70px" }}>
-              <div
-                // style={{ borderRadius: "10px", border: "1px solid #eca23a4a" }}
-                className="px-[30px]"
-              >
-                <img className="m-auto w-[70px] h-[70px]" src="/SellClock.svg" alt="none" />
-                <p className="leading-[30px] uppercase my-4 text-center text-[30px] text-[#ECA33A] font-bold raleway">
-                Swift Results
-                </p>
-                <p className="text-center uppercase text-[20px] text-white font-light raleway">
-                Homes sold in less than a month on average
-                </p>
-              </div>
+              <Col sm={24} md={8} style={{ padding: '30px 70px' }}>
+                <div
+                  // style={{ borderRadius: "10px", border: "1px solid #eca23a4a" }}
+                  className="px-[30px]"
+                >
+                  <img
+                    className="m-auto w-[70px] h-[70px]"
+                    src="/SellClock.svg"
+                    alt="none"
+                  />
+                  <p className="leading-[30px] uppercase my-4 text-center text-[30px] text-[#ECA33A] font-bold raleway">
+                    Swift Results
+                  </p>
+                  <p className="text-center uppercase text-[20px] text-white font-light raleway">
+                    Homes sold in less than a month on average
+                  </p>
+                </div>
               </Col>
-              <Col sm={24} md={8} style={{ padding: "30px 70px" }}>
-
-              <div
-                // style={{ borderRadius: "10px", border: "1px solid #eca23a4a" }}
-                className=" px-[30px]"
-              >
-                <img className="m-auto w-[70px] h-[70px]" src="/SellVerify.svg" alt="none" />
-                <p className="leading-[30px] uppercase my-4 text-center text-[30px] text-[#ECA33A] font-bold raleway">
-                Transparency
-                </p>
-                <p className="text-center uppercase text-[20px] text-white font-light raleway">
-                A smooth and transparent transaction journey
-                </p>
-              </div>
-
+              <Col sm={24} md={8} style={{ padding: '30px 70px' }}>
+                <div
+                  // style={{ borderRadius: "10px", border: "1px solid #eca23a4a" }}
+                  className=" px-[30px]"
+                >
+                  <img
+                    className="m-auto w-[70px] h-[70px]"
+                    src="/SellVerify.svg"
+                    alt="none"
+                  />
+                  <p className="leading-[30px] uppercase my-4 text-center text-[30px] text-[#ECA33A] font-bold raleway">
+                    Transparency
+                  </p>
+                  <p className="text-center uppercase text-[20px] text-white font-light raleway">
+                    A smooth and transparent transaction journey
+                  </p>
+                </div>
               </Col>
-              <Col sm={24} md={8} style={{ padding: "30px 70px" }}>
-
-              <div
-                // style={{ borderRadius: "10px", border: "1px solid #eca23a4a" }}
-                className=" px-[30px]"
-              >
-                <img className="m-auto w-[70px] h-[70px]" src="/SellDoller.svg" alt="none" />
-                <p className="leading-[30px] uppercase my-4 text-center text-[30px] text-[#ECA33A] font-bold raleway">
-                Advantage
-                </p>
-                <p className="text-center uppercase text-[20px] text-white font-light raleway">
-                Secure the best market price available
-                </p>
-              </div>
-
+              <Col sm={24} md={8} style={{ padding: '30px 70px' }}>
+                <div
+                  // style={{ borderRadius: "10px", border: "1px solid #eca23a4a" }}
+                  className=" px-[30px]"
+                >
+                  <img
+                    className="m-auto w-[70px] h-[70px]"
+                    src="/SellDoller.svg"
+                    alt="none"
+                  />
+                  <p className="leading-[30px] uppercase my-4 text-center text-[30px] text-[#ECA33A] font-bold raleway">
+                    Advantage
+                  </p>
+                  <p className="text-center uppercase text-[20px] text-white font-light raleway">
+                    Secure the best market price available
+                  </p>
+                </div>
               </Col>
             </Row>
-            </div>
+          </div>
         </div>
       </div>
 
@@ -275,7 +293,7 @@ function page() {
       {/* <div className="py-[30px]"></div> */}
       <Footer />
     </div>
-  );
+  )
 }
 
-export default page;
+export default page
