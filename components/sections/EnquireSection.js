@@ -115,12 +115,18 @@ function EnquireSection() {
                             <p className="px-[2px] py-[5px] text-white text-[1rem] raleway">
                               Or contact us right now via
                             </p>
-                            <div className="ml-4 flex cursor-pointer">
-                              <img alt="none" src="/whatsappIcon.svg" />
-                              <p className="px-[2px] py-[5px] text-[#ECA33A] text-[1rem] raleway">
-                                WhatsApp
-                              </p>
-                            </div>
+                            <a
+                              className="flex"
+                              href="https://wa.me/+923040602781"
+                              target="_blank"
+                            >
+                              <div className="ml-4 flex cursor-pointer">
+                                <img alt="none" src="/whatsappIcon.svg" />
+                                <p className="mr-1 px-[2px] py-[5px] text-[#ECA33A] text-[1rem] raleway">
+                                  WhatsApp
+                                </p>
+                              </div>
+                            </a>
                           </div>
                         </div>
                       </div>
