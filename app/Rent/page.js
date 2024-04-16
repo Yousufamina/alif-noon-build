@@ -1,19 +1,19 @@
-"use client";
+'use client'
 
-import ScrollTopButton from "@/components/ScrollTopButton";
-import Header from "@/components/header/Index";
-import Footer from "@/components/sections/Footer";
-import RightCol from "@/components/propertyContent/RightCol";
-import react from "react";
-import { Col, Row, Tabs } from "antd";
-import ProductCard from "@/components/productCard/ProductCard";
-import About from "@/components/sections/Abouts";
-import Link from "next/link";
-import Image from "next/image";
-import FreeConsultation from "@/components/sections/FreeConsultation";
-import CardPagination from "@/components/productCard/CardPagination";
-import SocialIconScroll from '@/components/SocialIconScroll';
-import { useEffect,useState } from "react";
+import ScrollTopButton from '@/components/ScrollTopButton'
+import Header from '@/components/header/Index'
+import Footer from '@/components/sections/Footer'
+import RightCol from '@/components/propertyContent/RightCol'
+import react from 'react'
+import { Col, Row, Tabs } from 'antd'
+import ProductCard from '@/components/productCard/ProductCard'
+import About from '@/components/sections/Abouts'
+import Link from 'next/link'
+import Image from 'next/image'
+import FreeConsultation from '@/components/sections/FreeConsultation'
+import CardPagination from '@/components/productCard/CardPagination'
+import SocialIconScroll from '@/components/SocialIconScroll'
+import { useEffect, useState } from 'react'
 // import { useRouter } from 'next/router';
 
 // const router = useRouter();
@@ -21,72 +21,75 @@ import { useEffect,useState } from "react";
 
 const items = [
   {
-    key: "1",
-    label: "Apartments",
+    key: '1',
+    label: 'Apartments',
   },
   {
-    key: "2",
-    label: "Townhouses",
+    key: '2',
+    label: 'Townhouses',
   },
   {
-    key: "3",
-    label: " Vilas",
+    key: '3',
+    label: ' Vilas',
   },
   {
-    key: "4",
-    label: "Penthouses",
+    key: '4',
+    label: 'Penthouses',
   },
   {
-    key: "5",
-    label: "Duplexes",
+    key: '5',
+    label: 'Duplexes',
   },
   {
-    key: "6",
-    label: "Plots",
+    key: '6',
+    label: 'Plots',
   },
   {
-    key: "7",
-    label: "Full Floor Properties",
+    key: '7',
+    label: 'Full Floor Properties',
   },
   {
-    key: "8",
-    label: "Commercial Properties",
+    key: '8',
+    label: 'Commercial Properties',
   },
-];
+]
 
 function RentProperties() {
-    const onChange = (key) => {
-        console.log(key, "My Key");
-      };
-      const [dataa, setDataa] = useState([]);
+  const onChange = (key) => {
+    console.log(key, 'My Key')
+  }
+  const [dataa, setDataa] = useState([])
 
-      useEffect(() => {
-        const fetchData = async () => {
-          try {
-              const response = await fetch('https://www.alifnoon.ae/GetData');
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://www.alifnoon.ae/GetData')
         // const response = await fetch('http://localhost:3000/GetData');
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
-            setDataa(data.data);
-          } catch (error) {
-            console.error('There was a problem with the fetch operation:', error);
-          }
-        };
-    
-        fetchData();
-      }, []); 
+        if (!response.ok) {
+          throw new Error('Network response was not ok')
+        }
+        const data = await response.json()
+        setDataa(data.data)
+      } catch (error) {
+        console.error('There was a problem with the fetch operation:', error)
+      }
+    }
+
+    fetchData()
+  }, [])
   return (
     <div className="RentmaxDiv">
       <ScrollTopButton />
       <SocialIconScroll />
       <Header />
       <main className="productListingPage">
-        <div style={{paddingBottom:'0px'}} className="productListingContainer productSection mainContainer">
+        <div
+          style={{ paddingBottom: '0px' }}
+          className="productListingContainer productSection mainContainer"
+        >
           <div className="productSectionHeader text-center">
             <h1 className="leading-[70px] uppercase raleway font-bold text-[45px] text-[#ECA33A]">
-                Property for rent in Dubai
+              Properties for rent in Dubai
             </h1>
           </div>
           <div className="productsTabs">
@@ -94,7 +97,7 @@ function RentProperties() {
               <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
             )}
           </div>
-          <Row style={{ marginBottom: "100px" }} gutter={2}>
+          <Row style={{ marginBottom: '100px' }} gutter={2}>
             <Col lg={24} xl={18}>
               <main className={`bg-[#231F20] `}>
                 <div className="">
@@ -102,7 +105,7 @@ function RentProperties() {
                     <div
                       className={`justify-around flex flex-wrap secondSectionRow`}
                     >
-                    {dataa?.map((dat, index) => (
+                      {dataa?.map((dat, index) => (
                         <div key={index} className="p-1 mb-1 max-w-sm">
                           <ProductCard data={dat} />
                         </div>
@@ -135,9 +138,8 @@ function RentProperties() {
                         <ProductCard />
                       </div> */}
                     </div>
-                    
-                     <CardPagination/>
-                     
+
+                    <CardPagination />
                   </div>
                 </div>
               </main>
