@@ -155,7 +155,7 @@ function PropertyExploreView() {
                             <Link href="https://wa.me/+923040602781">
                               <p className="px-[2px] py-[5px] text-[#ECA33A] text-[15px] raleway">
                                 {' '}
-                                WhatsAppasd
+                                WhatsApp
                               </p>
                             </Link>
                           </div>
