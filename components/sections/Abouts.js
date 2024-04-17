@@ -11,7 +11,7 @@ function About() {
           <Row gutter={2}>
             <Col md={24} lg={16} xs={24} className="ColText">
               <h1 className="leading-[58px] raleway font-semibold text-[45px] text-[#ECA33A] mt-3">
-                Alif Noon{' '}
+                Alif Noon properties
               </h1>
               <h2 className="leading-[50px] raleway-light font-normal mb-5 text-[35px] text-white">
                 A Real Estate Agency in Dubai{' '}

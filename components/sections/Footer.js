@@ -178,8 +178,30 @@ function Footer() {
                     rel="noopener noreferrer"
                   >
                     <img
-                      className="text-[white] h-[20px] w-[20px] mx-2"
+                      className="text-[white] h-[22px] w-[22px] mx-2"
                       src="/whiteFacebook.svg"
+                      alt="image"
+                    />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/alifnoonae"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      className="text-[white] h-[24px] w-[24px] mx-2"
+                      src="/instagramwhite.svg"
+                      alt="image"
+                    />
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@realestateuae?_t=8kzi3KmATAo&_r=1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      className="text-[white] h-[24px] w-[24px] mx-2"
+                      src="/whitetiktok.svg"
                       alt="image"
                     />
                   </a>
@@ -188,7 +210,7 @@ function Footer() {
                     src="/whiteTwiter.svg"
                     alt="image"
                   /> */}
-                  <a
+                  {/* <a
                     className="flex"
                     href="https://wa.me/+971557969234"
                     target="_blank"
@@ -198,7 +220,7 @@ function Footer() {
                       src="/whiteWhatsapp.svg"
                       alt="image"
                     />
-                  </a>
+                  </a> */}
                 </div>
                 <a href="tel:+1234567890">
                   <button
