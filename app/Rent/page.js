@@ -64,7 +64,7 @@ function RentProperties() {
     const fetchData = async () => {
       try {
         const response = await fetch('https://www.alifnoon.ae/GetData')
-        // const response = await fetch('http://localhost:3000/GetData');
+        // const response = await fetch('http://localhost:3000/GetData')
         if (!response.ok) {
           throw new Error('Network response was not ok')
         }
@@ -91,26 +91,29 @@ function RentProperties() {
             <h1 className="leading-[70px] uppercase raleway font-bold text-[45px] text-[#ECA33A]">
               Properties for rent in Dubai
             </h1>
+            <h1 className="mt-36 leading-[70px] uppercase raleway font-bold text-[45px] text-[#ECA33A]">
+              Coming Soon
+            </h1>
           </div>
-          <div className="productsTabs">
+          {/* <div className="productsTabs">
             {true && (
               <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
             )}
-          </div>
+          </div> */}
           <Row style={{ marginBottom: '5px' }} gutter={2}>
             <Col lg={24} xl={18}>
               <main className={`bg-[#231F20] `}>
                 <div className="">
                   <div className="">
-                    <div
+                    {/* <div
                       className={`justify-around flex flex-wrap secondSectionRow`}
                     >
                       {dataa?.map((dat, index) => (
                         <div key={index} className="p-1 mb-1 max-w-sm">
                           <ProductCard data={dat} />
                         </div>
-                      ))}
-                      {/* <div className="">
+                      ))} */}
+                    {/* <div className="">
                         <ProductCard />
                       </div>
                       <div className="p-1 mb-1 max-w-sm">
@@ -137,16 +140,16 @@ function RentProperties() {
                       <div className="p-1 max-w-sm">
                         <ProductCard />
                       </div> */}
-                    </div>
+                    {/* </div> */}
 
-                    <CardPagination />
+                    {/* <CardPagination /> */}
                   </div>
                 </div>
               </main>
             </Col>
-            <Col className="" lg={0} xl={6}>
+            {/* <Col className="" lg={0} xl={6}>
               <RightCol />
-            </Col>
+            </Col> */}
           </Row>
         </div>
         <FreeConsultation />
