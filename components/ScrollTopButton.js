@@ -32,7 +32,7 @@ function ScrollTopButton() {
     <>
       {/* <div className='whatsIconStickyMain'> */}
       <button className="whatsIconSticky">
-        <Link href="https://wa.me/+923040602781">
+        <Link href="https://wa.me/+971557969234">
           <img
             className="h-[50px] w-[50px]"
             src="/whiteWhatsapp.svg"

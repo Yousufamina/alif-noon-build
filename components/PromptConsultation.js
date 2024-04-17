@@ -73,7 +73,7 @@ function PromptConsultation({ closeModal }) {
                   </p>
                   <a
                     className="flex"
-                    href="https://wa.me/+923040602781"
+                    href="https://wa.me/+971557969234"
                     target="_blank"
                   >
                     <div className="ml-4 flex cursor-pointer">
