@@ -84,7 +84,7 @@
 .ScrollTopButtonMain {
   position: fixed;
   z-index: 9999;
-  top: 50%;
+  top: 35%;
   right: 2%;
   left: auto;
   transition: all 1s;
@@ -93,7 +93,7 @@
 .whatsIconSticky {
   position: fixed;
   z-index: 9999;
-  top: 42% !important;
+  top: 28% !important;
   right: 2.3%;
   left: auto;
   transition: all 1s;
@@ -2303,7 +2303,7 @@ header .mainMenu a:hover {
 }
 .social-icons-container {
   position: sticky;
-  top: 70%; /* Adjust this value to stop at the desired position */
+  top: 27%; /* Adjust this value to stop at the desired position */
   transform: translateY(-90%);
   z-index: 1000;
   /* Your other styles for the social icons container */
