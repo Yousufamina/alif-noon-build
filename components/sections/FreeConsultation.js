@@ -97,7 +97,7 @@ const FreeConsultation = () => {
             <p className="px-[2px] font-bold py-[5px] text-white text-[20px] raleway">
               Or get availability via
             </p>
-            <a className="flex" href="https://wa.me/+923040602781">
+            <a className="flex" href="https://wa.me/+971557969234">
               <img
                 alt="none"
                 className="mx-[10px] w-[30px] h-full"

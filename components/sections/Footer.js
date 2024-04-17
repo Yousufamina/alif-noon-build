@@ -190,7 +190,7 @@ function Footer() {
                   /> */}
                   <a
                     className="flex"
-                    href="https://wa.me/+923040602781"
+                    href="https://wa.me/+971557969234"
                     target="_blank"
                   >
                     <img
