@@ -34,13 +34,20 @@ function AddProperty() {
       }));
 
       values.fileUpload=modifiedFileUpload;
+      console.log(values)
 
-      if(values.name && values.category && values.cities && values.bedrooms && values.fileUpload && values.propertyType){
+      if(values.name && values.category && values.price && values.cities && values.bedrooms && values.fileUpload && values.propertyType && values.featureAndAminities){
         toast.info('Adding Your Data..');
         setFormData(values);
         var dataObj=values;
+        // console.log(values)
+        // console.log("values")
         // localStorage.setItem('dataObj', dataObj);
-        const response = await axios.post('https://www.alifnoon.ae/Api', dataObj);
+        const response = await axios.post('https://www.alifnoon.ae/Api', dataObj ,{
+          headers: {'Content-Type': 'application/json'}
+        });
+        console.log("response")
+        console.log(response)
       //  const response = await axios.post('http://localhost:3000/Api', dataObj);
 
 
@@ -101,7 +108,7 @@ function AddProperty() {
               <label for="type" className="text-[16px] text-white">
                 Name
               </label>
-              <Form.Item name="name">
+              <Form.Item name='name'>
               <input
                 style={{borderRadius:'6px',
                 border:'1px solid #ECA33A'
@@ -175,7 +182,7 @@ function AddProperty() {
               <label for="listing" className="text-[16px] mb-6 text-white">
                 Price
               </label>
-              <Form.Item name='category'>
+              <Form.Item name='price'>
               <input name="price"
                 type="number"
                 style={{borderRadius:'6px',
@@ -208,7 +215,7 @@ function AddProperty() {
               <label for="type" className="text-[16px] text-white">
                 Features & Amenities
               </label>
-              <Form.Item name='feature&Aminities'>
+              <Form.Item name='featureAndAminities'>
               <Select
               placeholder='Select Feature & Aminities'
                 mode="tags"

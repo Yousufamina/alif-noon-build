@@ -1,6 +1,7 @@
 "use client"
 
-import React from 'react';
+// import React from 'react';
+import { useState,useEffect } from "react";
 import { Space, Table, Tag } from 'antd';
 // import { useSelector } from 'react-redux'
 
@@ -12,14 +13,24 @@ const columns = [
     // render: (text) => <a>{text}</a>,
   },
   {
+    title: 'Catagory',
+    key: 'category',
+    dataIndex:'category',
+  },
+  {
+    title: 'Property Type',
+    dataIndex: 'propertyType',
+    key: 'propertyType',
+  },
+  {
     title: 'Bedrooms',
     dataIndex: 'bedrooms',
     key: 'room',
   },
   {
-    title: 'Catagory',
-    key: 'category',
-    dataIndex:'category',
+    title: 'City',
+    dataIndex: 'cities',
+    key: 'city',
   },
   {
     title: 'Features & Amenities',
@@ -58,6 +69,7 @@ const columns = [
     ),
   },
 ];
+
 const data = [
   {
     key: '1',
@@ -87,11 +99,30 @@ const data = [
     location:'Sharja'
   },
 ];
+
 // const App = () => <Table columns={columns} dataSource={data} />;
 // export default App;
 
  function Properties() {
-  
+  const [propData, setPropData] = useState([])
+  const fetchData = async () => {
+    // await fetch('https://www.alifnoon.ae/GetData')
+    await fetch('http://localhost:3000/GetData')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      setPropData(data.data);
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+};
+  fetchData()
+
   return (
     <div className="AddProperty raleway">
       <div className="content py-[9px] px-[14px] bg-[#231F20] flex flex-wrap">
@@ -99,7 +130,7 @@ const data = [
         <div style={{letterSpacing:'2px'}} class="text-[#ECA33A] font-bold text-2xl mb-[28px] text-left ">
             Property Listing
           </div>
-    <Table style={{background:'transparent'}} columns={columns} dataSource={data} /> 
+    <Table style={{background:'transparent'}} columns={columns} dataSource={propData} /> 
     </div>
     </div>
     </div>
