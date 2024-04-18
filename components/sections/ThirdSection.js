@@ -64,8 +64,8 @@ function ThirdSection() {
                 type="button"
                 className="customGoldButton font-semibold text-[20px] px-10 py-2.5 mr-2 mb-2 border-b-4 border-[#EEC78C]"
               >
-                <Link href="#" className="text-white">
-                AREA GUIDE
+                <Link href="/off-plan" className="text-white">
+                Explore More
                 </Link>
               </button>
             </Col>
