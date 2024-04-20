@@ -7,10 +7,10 @@ const CardDetail = ({bedrooms,bathrooms,price, img}) => {
         <div className='cardDetail'>
         <div className='detailHeader'>
             <p>
-                A modern property provides a range of amenities ensuring a comfortable living.
+            Emerald Vision Tower is a five-story residential building under development in JVT District 1, Jumeirah Village Triangle, Dubai.
             </p>
             <p>
-                The Penthouse is 5237.72 ft² or 487 m², number of bedrooms:{bedrooms}
+            This opulent residential masterpiece by Vision Avenue Homes redefines prestige with its sleek design and prime location. More than an apartment complex, it’s a statement of refinement. Experience extravagance in every detail – from the grand lobby to the plush interiors, high ceilings, premium fixtures, and breathtaking views. Welcome to a world of elegance at Emerald Vision Tower.
             </p>
         </div>
         <div className='cardDetailInner'>

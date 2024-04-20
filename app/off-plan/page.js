@@ -3,7 +3,6 @@ import Footer from '@/components/sections/Footer'
 import FreeConsultation from '@/components/sections/FreeConsultation'
 import Header from '@/components/header/Index'
 import { bedroomsEnums, countryEnums, propertyTypesEnums, uaeCitiesEnums, usaCitiesEnums } from '@/app/utills/enums';
-
 import React from 'react'
 import SelectInput from '@/components/SelectInput'
 import DetailCard from '@/components/DetailCard';

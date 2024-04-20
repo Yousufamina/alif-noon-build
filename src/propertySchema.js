@@ -44,7 +44,7 @@ const propertyListSchema = new mongoose.Schema({
     name: String,
     propertyType: [String],
     category: String,
-    bedrooms: Number,
+    bedrooms: String,
     featureAndAminities: [String],
     cities: String,
     location: String,

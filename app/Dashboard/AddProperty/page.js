@@ -201,7 +201,7 @@ function AddProperty() {
               </label>
               <Form.Item name='bedrooms'>
               <input
-                type="number"
+                type="string"
                 style={{borderRadius:'6px',
                 border:'1px solid #ECA33A'
               }}
@@ -296,8 +296,7 @@ function AddProperty() {
               <FileUpload onChange = {handleImageData}/>
               </Form.Item>
             </Col> 
-
-            </Row>
+          </Row>
           
           <div className="mt-[30px] flex text-left">
               <button
