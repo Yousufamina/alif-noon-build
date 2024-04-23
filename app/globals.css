@@ -3306,8 +3306,8 @@ td.ant-table-cell-row-hover,
   color: #eca33a !important;
 }
 .LoginPage {
-  background-image: linear-gradient(#231f2059, #231f2059),
-    url('/bgnewfaded.png');
+  /* background-image: linear-gradient(#231f2059, #231f2059),
+    url('/bgnewfaded.png'); */
 }
 .AddProperty .TabSet .ant-select-selection-item {
   /* top: -6px; */
