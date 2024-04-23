@@ -195,9 +195,76 @@ export const FeaturesAndAminities = [
     label: 'Built-in wardrop',
   },
   {
-    value: 'coveredParking',
-    label: 'Covered Parking',
+    value: 'Infinity Pool',
+    label: 'Infinity Pool',
   },
+  {
+    value: 'Daycare Center',
+    label: 'Daycare Center',
+  },
+  {
+    value: 'BBQ Area',
+    label: 'BBQ Area',
+  },
+  {
+    value: 'Sunset Deck',
+    label: 'Sunset Deck',
+  },
+  {
+    value: 'Kids Play Area',
+    label: 'Kids Play Area',
+  },
+  {
+    value: 'Smart Mart',
+    label: 'Smart Mart',
+  },
+  {
+    value: 'Floating Cinema',
+    label: 'Floating Cinema',
+  },
+  {
+    value: 'Cabana Seating',
+    label: 'Cabana Seating',
+  },
+  {
+    value: 'Gym',
+    label: 'Gym',
+  },
+  {
+    value: 'Swimming Pool',
+    label: 'Swimming Pool',
+  },
+  {
+    value: 'Kids Swimming Pool',
+    label: 'Kids Swimming Pool',
+  },
+  {
+    value: 'Lazy Lounge',
+    label: 'Lazy Lounge',
+  },
+  {  value: 'Open Air Yoga',
+     lable: 'Open Air Yoga'
+  },
+  {
+    value: 'Health Club',
+     lable: 'Health Club'
+  },
+  {
+    value: 'Relaxation Zone',
+     lable: 'Relaxation Zone'
+  },
+  {
+    value: 'Lawn or Garden',
+     lable: 'Lawn or Garden'
+  },
+  {
+    value: 'Parking Spaces',
+     lable: 'Parking Spaces'
+  },
+  {
+    value: 'Security Staff',
+     lable: 'Security Staff'
+  }
 ]
 export const currency = [
   {

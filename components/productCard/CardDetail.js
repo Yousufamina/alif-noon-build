@@ -1,16 +1,13 @@
 import React from 'react'
 
-const CardDetail = ({bedrooms,bathrooms,price, img}) => {
+const CardDetail = ({bedrooms,bathrooms,price, img, description, area}) => {
   return (
     <div className='CardSlider'>
         <img src={img} style={{ height: '420px' }}/>
         <div className='cardDetail'>
         <div className='detailHeader'>
             <p>
-                A modern property provides a range of amenities ensuring a comfortable living.
-            </p>
-            <p>
-                The Penthouse is 5237.72 ft² or 487 m², number of bedrooms:{bedrooms}
+              {description}
             </p>
         </div>
         <div className='cardDetailInner'>
@@ -27,7 +24,7 @@ const CardDetail = ({bedrooms,bathrooms,price, img}) => {
             <div className='flex justify-around'>
                 <div className='iconBox'>
                     <img style={{width: '55px'}} alt='none' src='/sqrft3.svg' />  
-                    <h1>1143sq.ft</h1>
+                    <h1>{area}</h1>
                 </div>
                 <div className='iconBox'>
                     <img style={{width: '55px'}} alt='none' src='/dollarIcon.svg' />

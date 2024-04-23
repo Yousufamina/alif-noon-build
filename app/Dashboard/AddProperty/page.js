@@ -14,8 +14,6 @@ import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
-
-
 // import { useDispatch } from "react-redux";
 const { Option } = Select;
 
@@ -36,23 +34,22 @@ function AddProperty() {
       values.fileUpload=modifiedFileUpload;
       console.log(values)
 
-      if(values.name && values.category && values.price && values.cities && values.bedrooms && values.fileUpload && values.propertyType && values.featureAndAminities){
+      if(values.name && values.category  && values.cities && values.bedrooms && values.fileUpload && values.propertyType && values.featureAndAminities){
         toast.info('Adding Your Data..');
         setFormData(values);
         var dataObj=values;
-        // console.log(values)
-        // console.log("values")
-        // localStorage.setItem('dataObj', dataObj);
+        localStorage.setItem('dataObj', dataObj);
         const response = await axios.post('https://www.alifnoon.ae/Api', dataObj ,{
           headers: {'Content-Type': 'application/json'}
         });
         console.log("response")
         console.log(response)
       //  const response = await axios.post('http://localhost:3000/Api', dataObj);
+      //  const response = await axios.post('https://www.alifnoon.ae/Api', dataObj);
 
 
-        
- 
+
+     
         setTimeout(() => {
           toast.success('Property Added Successfully!');
         }, 4000);
@@ -105,11 +102,11 @@ function AddProperty() {
         >
           <div className="grid grid-cols-3 gap-y-0 gap-x-6 max-w-90 m-auto">
             <div className="col-span-2 lg:col-span-1">
-              <label for="type" className="text-[16px] text-white">
+              <label for="placeName" className="text-[16px] text-white">
                 Name
               </label>
               <Form.Item name='name'>
-              <input
+              <input name="placeName"
                 style={{borderRadius:'6px',
                 border:'1px solid #ECA33A'
               }}
@@ -120,7 +117,7 @@ function AddProperty() {
 
             </div>
             <div className="col-span-2 lg:col-span-1">
-              <label for="type" className="text-[16px] text-white">
+              <label for="propertyType" className="text-[16px] text-white">
                 Property Types
               </label>
               <Form.Item name='propertyType'>
@@ -179,7 +176,7 @@ function AddProperty() {
             </div>
 
             <div class="col-span-2 lg:col-span-1">
-              <label for="listing" className="text-[16px] mb-6 text-white">
+              <label for="price" className="text-[16px] mb-6 text-white">
                 Price
               </label>
               <Form.Item name='price'>
@@ -196,12 +193,12 @@ function AddProperty() {
             </div>
 
             <div className="col-span-2 lg:col-span-1">
-              <label for="type" className="text-[16px] mb-6 text-white">
+              <label for="bedrooms" className="text-[16px] mb-6 text-white">
                 Bedrooms
               </label>
               <Form.Item name='bedrooms'>
-              <input
-                type="number"
+              <input name ="bedrooms"
+                type="string"
                 style={{borderRadius:'6px',
                 border:'1px solid #ECA33A'
               }}
@@ -210,7 +207,23 @@ function AddProperty() {
               />
               </Form.Item>
             </div>
-            
+
+            <div className="col-span-2 lg:col-span-1">
+              <label for="area" className="text-[16px] mb-6 text-white">
+                Area
+              </label>
+              <Form.Item name='area'>
+              <input name ="area"
+                type="string"
+                style={{borderRadius:'6px',
+                border:'1px solid #ECA33A'
+              }}
+                className="mt-2 transition  outline-none focus:border-[#cecece] ease-out bg-transparent text-white border-solid border-gray-400 py-2 px-3 text-[15px] w-full"
+                placeholder="Area"
+              />
+              </Form.Item>
+            </div>
+  
             <div className="col-span-2 lg:col-span-1">
               <label for="type" className="text-[16px] text-white">
                 Features & Amenities
@@ -266,11 +279,11 @@ function AddProperty() {
               </Form.Item>
             </div>
             <div className="col-span-2 lg:col-span-1">
-              <label for="type" className="text-[16px] mb-6 text-white">
+              <label for="location" className="text-[16px] mb-6 text-white">
                 Location
               </label>
               <Form.Item name='location'>
-              <input
+              <input name="location"
                 type="text"
                 style={{borderRadius:'6px',
                 border:'1px solid #ECA33A'
@@ -280,12 +293,32 @@ function AddProperty() {
               />
               </Form.Item>
             </div>
+
+            <div className="col-span-2 lg:col-span-1">
+              <label for="description" className="text-[16px] mb-6 text-white">
+                Description
+              </label>
+              <Form.Item name='description'>
+              <textarea 
+                name="description" 
+                type="string"
+                  style={{borderRadius:'6px',
+                  border:'1px solid #ECA33A'
+                }}
+                className="mt-2 transition  outline-none focus:border-[#cecece] ease-out bg-transparent text-white border-solid border-gray-400 py-2 px-3 text-[15px] w-full"
+                placeholder="Description" 
+                cols="20" rows="3">
+              </textarea> 
+              </Form.Item>
+            </div>
+
             
           </div>
+        
           <Row gutter={15} className="flex mt-[0px] lg:col-span-1">
           <Col lg={12} className="flex-col">
               <label for="type" className="text-[16px] mb-6 text-white">
-                Description
+                Images
               </label>
             </Col> 
           <Col lg={12} className="flex-col">
@@ -296,8 +329,7 @@ function AddProperty() {
               <FileUpload onChange = {handleImageData}/>
               </Form.Item>
             </Col> 
-
-            </Row>
+          </Row>
           
           <div className="mt-[30px] flex text-left">
               <button

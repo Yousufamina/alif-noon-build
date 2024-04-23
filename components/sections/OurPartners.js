@@ -18,7 +18,7 @@ function OurPartners() {
                 Real estate leaders,our partners
             </h1>
             <Swiper
-        slidesPerView={5}
+        slidesPerView={4}
         centeredSlides={true}
         spaceBetween={0}
         initialSlide={0}
@@ -30,23 +30,23 @@ function OurPartners() {
         //   delay: 2000,
         //   disableOnInteraction: true,
         // }}
-        navigation={true}
+        // navigation={true}
         speed={3000}
         autoplay= {{
           delay: 1,
           disableOnInteraction: false,
       }}
         style={{
-            "--swiper-pagination-color": "#ECA33A",
-            "--swiper-pagination-border": "2px solid white",
-            "--swiper-pagination-bullet-inactive-color": "transparent",
-            "--swiper-pagination-bullet-size": "13px",
+            // "--swiper-pagination-color": "#ECA33A",
+            // "--swiper-pagination-border": "2px solid white",
+            // "--swiper-pagination-bullet-inactive-color": "transparent",
+            // "--swiper-pagination-bullet-size": "13px",
             // "--swiper-pagination-bullet-top": "80px !important",
-            height:"180px",
+            // height:"180px",
 
 
           }}
-        modules={[Pagination,Autoplay, Navigation]}
+        modules={[Autoplay, Navigation]}
         className="mySwiper"
       >
         <SwiperSlide>

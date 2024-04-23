@@ -64,7 +64,7 @@ function RentProperties() {
     const fetchData = async () => {
       try {
         const response = await fetch('https://www.alifnoon.ae/GetData')
-        // const response = await fetch('http://localhost:3000/GetData')
+        // const response = await fetch('http://GetData')
         if (!response.ok) {
           throw new Error('Network response was not ok')
         }
