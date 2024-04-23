@@ -18,6 +18,8 @@ const ProductCard = ({ data }) => {
           bathrooms={data? data.bedrooms: "Loading"}
           price={data? data.price: "loading"}
           img={data? data.fileUpload[0].preview : ""}
+          description={data? data.description: "loading"}
+          area={data? data.area: "loading"}
         />
         <CardBottom />
         <div className='linkBox'>
@@ -26,7 +28,7 @@ const ProductCard = ({ data }) => {
         <a className='flex mt-[10px] text-[20px] raleway font-bold text-black'>
           Get Now <img className='ml-[9px]' alt='image' src='/rightArrow.svg' />
         </a>
-      </Link>
+        </Link>
         
         </div>
 

@@ -1,11 +1,12 @@
 "use client"
 
-import Link from 'next/link'
 import React from 'react'
+import bcrypt from 'bcryptjs'
 import { useState } from 'react'
-
+import axios from 'axios';
 
 function LoginPage() {
+
   const [email,SetEmail] = useState(' ')
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
@@ -13,40 +14,71 @@ function LoginPage() {
   const [passwordError, setPasswordError] = useState(false)
   const [buttonDisabled, setButtonDisabled] = useState(false)
 
-  const handleUserName = (e) => {
-    const usernmame = e.target.value
-    setUsername(usernmame)
-    if (usernmame === 'alifnoon123') {
-      setUserError(false)
-    } else {
+  // const handleUserName = async (e) => {
+
+  //   const usernmame = e.target.value
+  //   // const response = await fetch('http://localhost:3000/GetAdminUser?username='+username)  
+  //   // const data = await response.json()
+  //   // console.log("adminUSEr")
+  //   // console.log(data)
+  //   // setUsername(usernmame)
+  //   console.log(username)
+    
+  //   if (usernmame === 'alifnoon123') {
+  //     setUserError(false)
+  //   } else {
+  //     setUserError(true)
+  //   }
+  //   loginValidation();
+  // }
+
+  // const handlePassword = (e) => {
+  //   const password = e.target.value
+  //   setPassword(password)
+  //   if (password === 'sXdHmS8ZOn#Y') {
+  //     setPasswordError(false)
+  //   } else {
+  //     setPasswordError(true)
+  //   }
+  //   loginValidation();
+  // }
+
+  const loginValidation = async (e) => {
+
+    e.preventDefault();
+    setPasswordError(false)
+    setUserError(false)
+    // const salt = bcrypt.genSaltSync(10)
+    // const hashedPassword = bcrypt.hashSync(password, salt)
+    // console.log(hashedPassword)
+    let obj= {"username" : username, "password" : password}
+    const userResData = await axios.post('https://www.alifnoon.ae/GetAdminUser', obj ,{
+      headers: {'Content-Type': 'application/json'}
+    });
+    let userData = userResData.data.data;
+    if(userData){
+    const isValid = bcrypt.compareSync(password, userData.password);
+    
+      if(isValid){
+        window.location.href = '/Dashboard/properties'
+      }
+      else{
+        setPasswordError(true)
+      }
+    }else{
       setUserError(true)
     }
-    loginValidation();
-  }
-
-  const handlePassword = (e) => {
-    const password = e.target.value
-    setPassword(password)
-    if (password === 'Alif-123') {
-      setPasswordError(false)
-    } else {
-      setPasswordError(true)
-    }
-    loginValidation();
-  }
-
-  const loginValidation = () => {
-    if (userError && passwordError) {
-      setButtonDisabled(false)
-    } else {
-      setButtonDisabled(true)
-    }
+    // const data = await response.json()
+    // if (userError && passwordError) {
+    //   setButtonDisabled(false)
+    // } else {
+    //   setButtonDisabled(true)
+    // }
   }
 
   return (
 <div
-  className="LoginPage bg-cover bg-center bg-fixed"
->
+  className="LoginPage bg-cover bg-center bg-fixed">
   <div className="h-screen flex justify-center items-center">
     <div className="bg-transparent mx-4 p-8 rounded shadow-md w-full md:w-1/2 lg:w-[30%]">
       {/* <h1 className="text-6xl raleway font-bold mb-8 text-center">Login</h1> */}
@@ -63,10 +95,8 @@ function LoginPage() {
             style={{backdropFilter:'blur(10px)',background:'transparent'}}
             className="border raleway text-[20px] rounded-lg w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
             id="email"
-            fon
-            type="email"
             placeholder="Enter your username"
-            onChange={(e) => handleUserName(e)}
+            onChange={ e => setUsername(e.target.value)}
           />
           {userError && <p style={{color: 'red'}}>Please enter valid username</p>} 
         </div>
@@ -83,7 +113,7 @@ function LoginPage() {
             id="password"
             type="password"
             placeholder="Enter your password"
-            onChange={(e) => handlePassword(e)}
+            onChange={ e => setPassword(e.target.value)}
           />
           {passwordError && <p style={{color: 'red'}}>Please enter valid password</p>}
           <a className="text-center text-white hover:text-[#ECA33A]" href="#">
@@ -91,15 +121,16 @@ function LoginPage() {
           </a>
         </div>
         <div className="flex justify-center w-full justify-center">
-          <Link
-            href={buttonDisabled ? "/Dashboard/properties" : ""}
+          <button
+            // href={buttonDisabled ? "/Dashboard/properties" : ""}
             style={{border:'1px solid white',transition:'all ease 0.5s'}}
             className="m-auto mb-6 w-[100%] bg-[#231F20] hover:bg-[#ECA33A] text-white font-bold py-2 px-4 rounded-lg focus:outline-none text-center raleway focus:shadow-outline disabled"
-            type="button"
+            onClick= { (e) => loginValidation(e) }
+            // type="button"
             aria-disabled
           >
             Login
-          </Link>
+          </button>
         </div>
       </form>
     </div>

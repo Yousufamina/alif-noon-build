@@ -2,8 +2,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 import FormDataModel from "@/src/propertySchema";
 import { dbConnect } from "@/src/dbConnect";
 
-
-
 export async function POST(request) {
   const formData = await request.json();
   const filter={
@@ -19,6 +17,5 @@ export async function POST(request) {
       return "null";
   } catch (error) {
       return "null";
-  }
-  
+  }  
 }

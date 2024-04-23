@@ -12,7 +12,7 @@ function AdminNavbar() {
       <div className="adminLogout rightPanel">
         <div className="profileDiv flex justify-between">
           <div className="name">
-            <h4 className="font-[13]">Salman</h4>
+            {/* <h4 className="font-[13]">Admin</h4> */}
             <h6 className="font-[11]">Admin</h6>
           </div>
         <div className="adminlogin">

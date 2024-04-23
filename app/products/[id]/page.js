@@ -4,7 +4,6 @@ import ScrollTopButton from '@/components/ScrollTopButton'
 import Header from '@/components/header/Index'
 import Footer from '@/components/sections/Footer'
 import RightCol from '@/components/propertyContent/RightCol'
-import react from 'react'
 import { Col, Row, Tabs } from 'antd'
 import ProductCard from '../../../components/productCard/ProductCard'
 import About from '@/components/sections/Abouts'
@@ -62,7 +61,6 @@ const productListingPage = ({ url }) => {
       try {
         const response = await fetch('https://www.alifnoon.ae/GetData')
         // const response = await fetch('http://localhost:3000/GetData');
-
         if (!response.ok) {
           throw new Error('Network response was not ok')
         }
@@ -72,7 +70,6 @@ const productListingPage = ({ url }) => {
         console.error('There was a problem with the fetch operation:', error)
       }
     }
-
     fetchData()
   }, [])
   const onChange = (key) => {

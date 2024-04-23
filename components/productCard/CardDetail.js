@@ -1,16 +1,13 @@
 import React from 'react'
 
-const CardDetail = ({bedrooms,bathrooms,price, img}) => {
+const CardDetail = ({bedrooms,bathrooms,price, img, description, area}) => {
   return (
     <div className='CardSlider'>
         <img src={img} style={{ height: '420px' }}/>
         <div className='cardDetail'>
         <div className='detailHeader'>
             <p>
-            Emerald Vision Tower is a five-story residential building under development in JVT District 1, Jumeirah Village Triangle, Dubai.
-            </p>
-            <p>
-            This opulent residential masterpiece by Vision Avenue Homes redefines prestige with its sleek design and prime location. More than an apartment complex, it’s a statement of refinement. Experience extravagance in every detail – from the grand lobby to the plush interiors, high ceilings, premium fixtures, and breathtaking views. Welcome to a world of elegance at Emerald Vision Tower.
+              {description}
             </p>
         </div>
         <div className='cardDetailInner'>
@@ -27,7 +24,7 @@ const CardDetail = ({bedrooms,bathrooms,price, img}) => {
             <div className='flex justify-around'>
                 <div className='iconBox'>
                     <img style={{width: '55px'}} alt='none' src='/sqrft3.svg' />  
-                    <h1>1143sq.ft</h1>
+                    <h1>{area}</h1>
                 </div>
                 <div className='iconBox'>
                     <img style={{width: '55px'}} alt='none' src='/dollarIcon.svg' />

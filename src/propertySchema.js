@@ -49,6 +49,8 @@ const propertyListSchema = new mongoose.Schema({
     cities: String,
     location: String,
     price: Number,
+    description:String,
+    area:String,
     fileUpload: [{
       name: String,
       preview: String,
