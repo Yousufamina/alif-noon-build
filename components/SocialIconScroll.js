@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 function SocialIconScroll() {
   return (
     // <div className="top-[70%] fixed z-[1000]">
-    <div className="social-icons-container">
+    <div className="social-icons-container hidden lg:block">
       <div className="flex flex-col SidelogoIcon1 absolute p-2">
         <div className="flex items-center justify-between">
           <a
