@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react'
+import { useState } from 'react'
 import Footer from '@/components/sections/Footer'
 import FreeConsultation from '@/components/sections/FreeConsultation'
 import Header from '@/components/header/Index'
@@ -31,11 +32,14 @@ const items = [
   ];
 
 
-
 function page() {
-
-    const onChange = (key) => {
+   
+  const onChange = (key) => {
         console.log(key, "My Key");
+        if(key == '1'){
+          
+        }
+      
     }
   return (
     <div className='BlogSectionMax'>
@@ -58,21 +62,41 @@ function page() {
           </div>
         <Row className='mt-10 max-[1080px]:mt-2' gutter={10} >
           <Col sm={24} lg={12} xl={15}>
-          <div className={`justify-center flex flex-wrap detailCardRow secondSectionRow`}>
+           <div className={`justify-center flex flex-wrap detailCardRow secondSectionRow`}   >
                 <div className="p-3 max-w-sm">
-                    <BlogCard heading='Sky-High Palaces' descriptions={'Dubai skyline is a testament to its architectural ambition. From the towering Burj Khalifa, the worlds tallest building, to gleaming residential towers that touch the clouds, luxury properties in Dubai are often nestled in the sky. These residences offer panoramic views of the city, the Arabian Gulf, and beyond, creating an unparalleled living experience.'} ImageSrc={'/OtherCard1.png'} /> 
+                    <BlogCard date = "Jan 13,2024"  link ="/Blog1Detail" heading='Investing  in Luxury Properties in Dubai' descriptions={'Dubai, a city renowned for its bold ambitions and modern wonders, stands as a global beacon of luxury living. The real estate landscape in Dubai is a testament to this, featuring a stunning array of luxury properties that redefine opulence.'} ImageSrc={'/OtherCard1.png'} /> 
                 </div>
                 <div className="p-3 max-w-sm">
-                <BlogCard heading='Waterfront Retreats' descriptions={'Dubais coastline is studded with exclusive waterfront properties that redefine coastal living. Imagine waking up to the gentle lapping of waves and panoramic views of the sea. From sleek penthouses to sprawling villas, these waterfront retreats offer not just a home but a lifestyle marked by tranquility and indulgence.'} ImageSrc={'/OtherCard1.png'} /> 
+                    <BlogCard date = "March 24,2024"  link ="/Blog2Detail" heading='Is this safe to invest in dubai to get high ROI' descriptions={'In the dynamic landscape of global investments, Dubai has emerged as a shining star, enticing investors with promises of high returns and a cosmopolitan lifestyle. However, the question that echoes in the minds of prospective investors'} ImageSrc={'/OtherCard1.png'} /> 
                 </div>
                 <div className="p-3 max-w-sm">
-                <BlogCard heading='Technological Marvels' descriptions={'Luxury in Dubai goes beyond aesthetics; it integrates cutting-edge technology seamlessly into daily life. Smart homes equipped with state-of-the-art automation systems, personalized climate control, and advanced security features are becoming the norm. These properties offer a glimpse into the future of luxurious living.'} ImageSrc={'/OtherCard1.png'} />   
+                    <BlogCard date = "April 13,2024"  link ="/Blog3Detail" heading='Unveiling the Epitome of Opulence' descriptions={'Dubai, with its iconic skyline and cosmopolitan allure, has become synonymous with luxury living. The citys real estate landscape is a canvas adorned with architectural marvels that redefine opulence.'} ImageSrc={'/OtherCard1.png'} /> 
                 </div>
                 <div className="p-3 max-w-sm">
-                <BlogCard heading='Desert Oasis' descriptions={'For those who seek a retreat from the urban bustle, Dubais luxury properties extend into the serene desert landscapes. Villas and estates surrounded by dunes offer a unique blend of privacy, tranquility, and the unmistakable charm of the desert. Private pools, lush gardens, and exclusive amenities redefine luxury in this peaceful setting.'} ImageSrc={'/OtherCard1.png'} />  
+                    <BlogCard date = "March 15,2024"  link ="/Social1Detail" heading='Wellfit dominates top UAE fitness industry awards' descriptions={'Wellfit solidified its position as a leader in the UAE’s fitness industry by securing a staggering six awards at the prestigious 2024 REPs. Industry Awards Gala, held in partnership with the Dubai Sports Council.'} ImageSrc={'/socialNews1.jpg'} /> 
                 </div>
+                <div className="p-3 max-w-sm">
+                    <BlogCard date = "March 6,2024"  link ="/Social2Detail" heading='Waterfront Project of the Year' descriptions={'Armani Beach Residences, a landmark collaboration between Arada, Japanese architect Tadao Ando and Armani/Casa, has won the coveted Waterfront Project of the Year award at the 2024 Pillars of Real Estate Awards.'} ImageSrc={'/socialNews2.jpg'} /> 
+                </div>
+                <div className="p-3 max-w-sm">
+                    <BlogCard date = "March 27,2024"  link ="/Social3Detail" heading='Arada completes first 920 homes' descriptions={'Arada has completed the first eight residential buildings in Naseej District, a new creative hub based at the AED35 billion Aljada megaproject in Sharjah. Each of the 920 homes in the eight Tiraz buildings is close to an array high-quality cultural destinations'} ImageSrc={'/socialNews3.jpg'} /> 
+                </div>
+
+                {/*  <div className="p-3 max-w-sm">
+                     <BlogCard heading='Sky-High Palaces' descriptions={'Dubai skyline is a testament to its architectural ambition. From the towering Burj Khalifa, the worlds tallest building, to gleaming residential towers that touch the clouds, luxury properties in Dubai are often nestled in the sky. These residences offer panoramic views of the city, the Arabian Gulf, and beyond, creating an unparalleled living experience.'} ImageSrc={'/OtherCard1.png'} /> 
+                 </div> */}
+
+                {/* <div className="p-3 max-w-sm">
+                    <BlogCard heading='Waterfront Retreats' descriptions={'Dubais coastline is studded with exclusive waterfront properties that redefine coastal living. Imagine waking up to the gentle lapping of waves and panoramic views of the sea. From sleek penthouses to sprawling villas, these waterfront retreats offer not just a home but a lifestyle marked by tranquility and indulgence.'} ImageSrc={'/OtherCard1.png'} /> 
+                </div>
+                <div className="p-3 max-w-sm">
+                    <BlogCard heading='Technological Marvels' descriptions={'Luxury in Dubai goes beyond aesthetics; it integrates cutting-edge technology seamlessly into daily life. Smart homes equipped with state-of-the-art automation systems, personalized climate control, and advanced security features are becoming the norm. These properties offer a glimpse into the future of luxurious living.'} ImageSrc={'/OtherCard1.png'} />   
+                </div>
+                <div className="p-3 max-w-sm">
+                    <BlogCard heading='Desert Oasis' descriptions={'For those who seek a retreat from the urban bustle, Dubais luxury properties extend into the serene desert landscapes. Villas and estates surrounded by dunes offer a unique blend of privacy, tranquility, and the unmistakable charm of the desert. Private pools, lush gardens, and exclusive amenities redefine luxury in this peaceful setting.'} ImageSrc={'/OtherCard1.png'} />  
+                </div> */}
                
-                <CardPagination/>
+                {/* <CardPagination/> */}
             </div>
           </Col>
           <Col style={{paddingTop:'1rem', paddingRight:'20px'}} className='rightColMain' sm={24} lg={12} xl={9}>

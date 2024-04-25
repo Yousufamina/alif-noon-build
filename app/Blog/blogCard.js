@@ -1,6 +1,6 @@
 import React from 'react'
 
-function blogCard({ImageSrc,heading,descriptions}) {
+function blogCard({ImageSrc,heading,descriptions,link,date}) {
   return (
     <div style={{border:'1px solid #ECA33A', padding:'0px 10px 10px 10px'}} className='productCard'>
     <div className='cardHeader'>
@@ -15,10 +15,10 @@ function blogCard({ImageSrc,heading,descriptions}) {
         <p style={{lineClamp:'4'}} className='my-2 raleway text-black font-light text-[15px]'> { descriptions } </p>
         <div className='flex justify-between mb-2'>
         <div className='iconDiv flex'>
-            <p className='text-[#ECA33A] font-bold raleway'>Continue Reading</p>
+            <a href={link}><p className='text-[#ECA33A] font-bold raleway'>Continue Reading</p></a> 
         </div>
         <div className='iconDiv flex ml-3'>
-            <h6 className='text-[#000000] font-bold raleway'>May 13,2023</h6>
+            <h6 className='text-[#000000] font-bold raleway'>{date}</h6>
         </div>
         </div>
         
