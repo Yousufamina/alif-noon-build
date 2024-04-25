@@ -31,7 +31,7 @@ function ScrollTopButton() {
   return (
     <>
       {/* <div className='whatsIconStickyMain'> */}
-      <button className="whatsIconSticky">
+      <button className="whatsIconSticky hidden lg:block">
         <Link href="https://wa.me/+971557969234">
           <img
             className="h-[50px] w-[50px]"
