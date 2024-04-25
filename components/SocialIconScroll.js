@@ -7,7 +7,7 @@ function SocialIconScroll() {
       <div className="flex flex-col SidelogoIcon1 absolute p-2">
         <div className="flex items-center justify-between">
           <a
-            href="https://www.facebook.com/alifnoonae"
+            href="https://www.facebook.com/alifnoonproperties"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -27,7 +27,7 @@ function SocialIconScroll() {
       <div className="flex flex-col SidelogoIcon2 absolute p-2">
         <div className="flex items-center justify-between">
           <a
-            href="https://www.instagram.com/alifnoonae"
+            href="https://www.instagram.com/alifnoonproperties/?hl=en"
             target="_blank"
             rel="noopener noreferrer"
           >

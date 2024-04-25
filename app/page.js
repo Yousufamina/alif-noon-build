@@ -24,7 +24,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useState,useEffect } from "react";
 
 
-
 var apiCalled=false;
 export default function Home({ Component, pageProps }) {
 const [dataa, setDataa] = useState([]);
@@ -35,7 +34,7 @@ const fetchData = async () => {
       // setDataa(await JSON.parse(localStorage.getItem('propData')));
     }
     else{
-      await fetch('https://www.alifnoon.ae/GetData')
+      await fetch('https://alifnoon.ae/GetData')
       // await fetch('http://localhost:3000/GetData')
       .then(response => {
         if (!response.ok) {

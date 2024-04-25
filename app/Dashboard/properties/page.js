@@ -106,7 +106,7 @@ const data = [
  function Properties() {
   const [propData, setPropData] = useState([])
   const fetchData = async () => {
-    await fetch('https://www.alifnoon.ae/GetData')
+    await fetch('https://alifnoon.ae/GetData')
     // await fetch('http://localhost:3000/GetData')
     .then(response => {
       if (!response.ok) {

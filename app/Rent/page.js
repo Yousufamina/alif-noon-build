@@ -84,16 +84,14 @@ function RentProperties() {
       <Header />
       <main className="productListingPage">
         <div
-          style={{ paddingBottom: '0px' }}
-          className="productListingContainer productSection mainContainer"
-        >
-          <div className="productSectionHeader text-center">
-            <h1 className="leading-[70px] uppercase raleway font-bold text-[45px] text-[#ECA33A]">
+          className="productListingContainer productSection mainContainer">
+          <div className="productSectionHeader text-center" style={{ marginBottom: '50px' }}>
+            <h1 className="leading-[70px] uppercase raleway font-bold text-[30px] text-[#ECA33A]">
               Properties for rent in Dubai
             </h1>
-            <h1 className="mt-36 leading-[70px] uppercase raleway font-bold text-[45px] text-[#ECA33A]">
+            <h5 className="mt-36 leading-[70px] uppercase raleway font-bold text-[45px] text-[#ECA33A]">
               Coming Soon
-            </h1>
+            </h5>
           </div>
           {/* <div className="productsTabs">
             {true && (

@@ -11,18 +11,19 @@ import { Pagination,Autoplay ,Navigation} from 'swiper/modules';
 
 function OurPartners() {
   return (
-    <main className="OurPartnersSec bg-[#231F20]">
+    <main className="OurPartnersSec bg-[#231F20]" >
       {/* <Image className="w-full h-[50px] mb-4" height={50} width={100} src="/vector.svg" /> */}
         <div className="mainContainer">
             <h1 className="max-[1024px]:text-[25px] max-[1024px]:mb-[26px] uppercase text-center font-semibold mb-[50px] leading-[41px] raleway  text-[35px] text-[#ECA33A]">
                 Real estate leaders,our partners
             </h1>
             <Swiper
-        slidesPerView={4}
+        slidesPerView={5}
         centeredSlides={true}
         spaceBetween={0}
-        initialSlide={0}
+        initialSlide={5}
         grabCursor={true}
+        loop={true}
         // pagination={{
         //   clickable: true,
         // }}
@@ -42,9 +43,7 @@ function OurPartners() {
             // "--swiper-pagination-bullet-inactive-color": "transparent",
             // "--swiper-pagination-bullet-size": "13px",
             // "--swiper-pagination-bullet-top": "80px !important",
-            // height:"180px",
-
-
+            height:"80px"
           }}
         modules={[Autoplay, Navigation]}
         className="mySwiper"

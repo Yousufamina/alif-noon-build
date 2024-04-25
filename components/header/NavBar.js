@@ -12,11 +12,10 @@ import {
   Input,
 } from "antd";
 
-import { menuItems, MenuItemKeys } from "./menuItemEnums";
 import Link from "next/link";
 const { Header, Content, Footer } = Layout;
 import {useRouter} from 'next/navigation';
-
+import { menuItems, MenuItemKeys } from "./menuItemEnums";
 const { useToken } = theme;
 
 const NavBar = () => {
@@ -227,8 +226,7 @@ const NavBar = () => {
                     // If there are subItems, construct a submenu with nested items
                     return (
                       <Link href={item.href}>
-                      <Menu.SubMenu Link={item.href} onClick={() => router.push(item.href)} key={item.key} title={item.label}>
-                        
+                      <Menu.SubMenu Link={item.href} onClick={() => router.push(item.href)} key={item.key} title={item.label}>                        
                         {item.subItems.map((subItem) => (
                           <Menu.Item key={subItem.key}>
                             {subItem.label}
@@ -241,7 +239,8 @@ const NavBar = () => {
                   } else {
                     // If no subItems, just return the item
 
-                    return <Menu.Item key={item.key}>
+                    return 
+                      <Menu.Item key={item.key}>
                         <Link href={item.href}>
                           {item.label}
                         </Link>
