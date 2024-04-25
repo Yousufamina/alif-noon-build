@@ -93,7 +93,7 @@
 .whatsIconSticky {
   position: fixed;
   z-index: 9999;
-  top: 35% !important;
+  top: 32% !important;
   right: 2.3%;
   left: auto;
   transition: all 1s;
@@ -1505,15 +1505,14 @@ header .mainMenu a:hover {
 
 .productSection {
   padding-bottom: 150px;
-  background-image: 
-  url('/Coming-Soon-image.png');
-background-attachment: fixed;
-background-position: center;
-padding-top: 50px;
-background-size: 100% 100%;
-padding-left: 30px;
-padding-right: 30px;
-/* padding-bottom: 50px; */
+  background-image: url('/Coming-Soon-image.png');
+  background-attachment: fixed;
+  background-position: center;
+  padding-top: 50px;
+  background-size: 100% 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  /* padding-bottom: 50px; */
 }
 
 .productSection h5 {

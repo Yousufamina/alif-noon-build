@@ -31,7 +31,7 @@ function ScrollTopButton() {
   return (
     <>
       {/* <div className='whatsIconStickyMain'> */}
-      <button className="whatsIconSticky hidden lg:block">
+      <button className="whatsIconSticky ">
         <Link href="https://wa.me/+971557969234">
           <img
             className="h-[50px] w-[50px]"
@@ -43,7 +43,9 @@ function ScrollTopButton() {
       {/* </div>     */}
 
       <div
-        className={`ScrollTopButtonMain  ${isVisible ? 'hidden' : 'visible'}`}
+        className={`ScrollTopButtonMain hidden lg:block  ${
+          isVisible ? 'hidden' : 'visible'
+        }`}
       >
         <button onClick={scrollToTop} className="ScrollTopButton">
           <span className="ArrowIcon">
