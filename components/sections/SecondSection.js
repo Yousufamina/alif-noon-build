@@ -132,8 +132,8 @@ function SecondSection() {
                     />
                   </div>
                   <button class="customGoldButton w-full font-semibold text-[20px] px-10 py-2 w-[200px] mr-2 border-b-4 border-[#EEC78C]">
-                    <Link className="text-white hover:text-black" href="/Rent">
-                      RENT
+                    <Link className="text-white hover:text-black" href="/off-plan">
+                      OFF-PLAN
                     </Link>
                   </button>
                   <div

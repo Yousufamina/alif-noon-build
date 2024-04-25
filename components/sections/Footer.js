@@ -40,37 +40,52 @@ function Footer() {
                     {' '}
                     USEFULL LINKS{' '}
                   </h1>
-                  <p className="text-left max-[1024px]:text-center text-white">
-                    Apartments
-                  </p>
-                  <p className="text-left max-[1024px]:text-center text-white">
-                    {' '}
-                    Penthouse{' '}
-                  </p>
-                  <p className="text-left max-[1024px]:text-center text-white">
-                    {' '}
-                    Villas{' '}
-                  </p>
-                  <p className="text-left max-[1024px]:text-center text-white">
-                    {' '}
-                    Townhouse{' '}
-                  </p>
-                  <p className="text-left max-[1024px]:text-center text-white">
-                    {' '}
-                    Off-Plan{' '}
-                  </p>
-                  <p className="text-left max-[1024px]:text-center text-white">
+                  <Link
+                    href="/products/buy">
+                      <p className="text-left max-[1024px]:text-center text-white">
+                      Apartments
+                      </p>
+                  </Link>
+
+                  <Link
+                    href="/products/buy">
+                      <p className="text-left max-[1024px]:text-center text-white">
+                        {' '}
+                        Penthouse{' '}
+                      </p>
+                  </Link>
+                  <Link
+                    href="/products/buy">
+                      <p className="text-left max-[1024px]:text-center text-white">
+                        {' '}
+                        Villas{' '}
+                      </p>
+                  </Link>
+                      
+                  <Link
+                      href="/products/buy">
+                    <p className="text-left max-[1024px]:text-center text-white">
+                      {' '}
+                      Townhouse{' '}
+                    </p>
+                  </Link>
+                  
+                  <Link
+                      href="/off-plan">
+                      <p className="text-left max-[1024px]:text-center text-white">
+                        {' '}
+                        Off-Plan{' '}
+                      </p>
+                  </Link>
+                  
+                  <Link
+                      href="/Catalog">
+                    <p className="text-left max-[1024px]:text-center text-white">
                     {' '}
                     Catalogs{' '}
-                  </p>
-                  <p className="text-left max-[1024px]:text-center text-white">
-                    {' '}
-                    Area Guide{' '}
-                  </p>
-                  <p className="text-left max-[1024px]:text-center text-white">
-                    {' '}
-                    Alif noon design{' '}
-                  </p>
+                    </p>
+                  </Link>
+
                 </div>
                 <div className="rightcolumn max-[1024px]:text-center">
                   <h1
@@ -79,26 +94,25 @@ function Footer() {
                   >
                     {' '}
                     OUR SERVICES{' '}
-                  </h1>
-                  <Link
-                    href="/Sell"
-                    className="Sell-header raleway text-[14px] font-semibold leading-[16.44px] text-white  focus:text-[#ECA33A] hover:text-[#ECA33A]"
-                  >
-                    <p className="text-white">Sell</p>
-                  </Link>
-                  <Link href="/Rent">
-                    <p className="max-[1024px]:text-center text-left text-white">
-                      Rent{' '}
-                    </p>
-                  </Link>
+                  </h1>                 
                   <Link
                     href="/products/buy"
-                    className="Buy-header raleway font-semibold text-[14px] leading-[16.44px] text-white  focus:text-[#ECA33A] hover:text-[#ECA33A]"
-                  >
-                    <p className="max-[1024px]:text-center text-left text-white">
+                    className="Buy-header raleway font-semibold text-[14px] leading-[16.44px]  hover:text-[#ECA33A]">
+                    <p className="max-[1024px]:text-center text-left text-white focus:text-[#ECA33A] hover:text-[#ECA33A]">
                       {' '}
                       Buy{' '}
+                    </p> 
+                  </Link>
+            
+                  <Link href="/Rent">
+                    <p className="max-[1024px]:text-center text-left text-white focus:text-[#ECA33A] hover:text-[#ECA33A]">
+                      Rent{' '}
                     </p>
+                  </Link>                  
+                  <Link
+                    href="/Sell"
+                    className="Sell-header raleway text-[14px] font-semibold leading-[16.44px] text-white  focus:text-[#ECA33A] hover:text-[#ECA33A]">
+                    <p className="focus:text-[#ECA33A] hover:text-[#ECA33A]">Sell</p>
                   </Link>
                   {/* <p className="max-[1024px]:text-center text-left text-white">
                     {' '}
@@ -173,7 +187,7 @@ function Footer() {
                     alt='image'
                   /> */}
                   <a
-                    href="https://www.facebook.com/alifnoonae"
+                    href="https://www.facebook.com/alifnoonproperties"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -184,7 +198,7 @@ function Footer() {
                     />
                   </a>
                   <a
-                    href="https://www.instagram.com/alifnoonae"
+                    href="https://www.instagram.com/alifnoonproperties/?hl=en"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

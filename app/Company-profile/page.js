@@ -44,13 +44,17 @@ function page() {
                 </Col>
                 <Col className='firstTextResponsiveCol' sm={24} md={12}>
                     <div className='textSection pl-[70px] pr-[0px] pb-[40px] pt-[40px]'>
-                        <h4 className='leading-[50px] raleway text-[#ECA33A] text-[45px] font-bold'> Alif Noon </h4>
+                        <h4 className='leading-[50px] raleway text-[#ECA33A] text-[45px] font-bold'> Alif Noon Properties</h4>
                         <h5 className='leading-[50px] raleway text-white text-[40px] font-light'>A Real Estate Agency in Dubai </h5>
                         <p style={{letterSpacing:'2px'}} className='mt-[20px] raleway leading-[26px] text-[#cecece] text-[16px] font-light'>
-                        is a professional real estate agency involved in sale and rent of properties in Dubai, UAE. We process our clients’ requests promptly in a CRM system.
+                            Welcome to Alif Noon Properties, your premier destination for
+                            all your real estate needs in the vibrant city of Dubai. With
+                            years of experience in the industry, we have built a reputation
+                            for excellence, professionalism, and unparalleled customer
+                            service.{' '}
                         </p>
                         <p style={{letterSpacing:'2px'}} className='mt-[20px] raleway leading-[26px] text-[#cecece] text-[16px] font-light'>
-                        so all your questions will be answered timorously. Our competent team members are always available and are happy to consult with you on property selection at any time.
+                           At Alif Noon, we understand that buying or renting property is not just a financial decision, but a significant life investment. That's why our team of dedicated experts is committed to guiding you every step of the way, ensuring a smooth and hassle-free experience.
                         </p>
                         <br/>
                         

@@ -28,12 +28,12 @@ function OfficialsClients() {
         <div className="margin-[0 auto] w-100">
           <Swiper
             effect={'coverflow'}
-            initialSlide={3}
+            initialSlide={0}
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={'auto'}
+            slidesPerView={"auto"}
             coverflowEffect={{
-              rotate: 50,
+              rotate: 50, 
               stretch: 0,
               depth: 100,
               modifier: 1,
