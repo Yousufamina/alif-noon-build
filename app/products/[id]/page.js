@@ -60,7 +60,7 @@ const productListingPage = ({ url }) => {
     const fetchData = async () => {
       try {
         // const response = await fetch('https://alifnoon.ae/GetData')
-        const response = await fetch('http://localhost:3000/GetData');
+        const response = await fetch('http://localhost:3000/GetData')
         if (!response.ok) {
           throw new Error('Network response was not ok')
         }
