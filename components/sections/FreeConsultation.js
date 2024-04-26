@@ -30,11 +30,10 @@ const FreeConsultation = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("formData")
-    console.log(formData)
     if(formData.name == '' || formData.email == '' || formData.phoneNumber == ''){
       setUserError(true)
     }else{
+      setUserError(false)
       // Send formData as a message using emailjs
       emailjs
       .sendForm(
@@ -46,6 +45,11 @@ const FreeConsultation = () => {
       .then(
         (result) => {
           console.log('Email sent successfully:', result.text)   
+          
+          // after email sucfess here shows the prompt for thanks
+
+
+
           // Optionally, reset form fields after successful submission
           setFormData({
             name: '',
@@ -53,7 +57,6 @@ const FreeConsultation = () => {
             phoneNumber: '',
           })
 
-             // here shows the prompt for thanks
 
         },
         (error) => {
