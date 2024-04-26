@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useRef } from 'react'
 import emailjs from 'emailjs-com'
-import PromptConsultation from '@/components/PromptConsultation'
+import PromptThanksConsultation from '@/components/PromptThanksConsultation'
 
 const FreeConsultation = () => {
   const [userError, setUserError] = useState(false)
@@ -46,10 +46,8 @@ const FreeConsultation = () => {
         (result) => {
           console.log('Email sent successfully:', result.text)   
           
-          // after email sucfess here shows the prompt for thanks
-
-
-
+          // after email sucfess shows the prompt for thanks
+          setShowModal(true)
           // Optionally, reset form fields after successful submission
           setFormData({
             name: '',
@@ -63,8 +61,7 @@ const FreeConsultation = () => {
           console.error('Email sending failed:', error.text)
         }
       )
-    }
-   
+    }   
   }
 
   return (
@@ -108,11 +105,10 @@ const FreeConsultation = () => {
                 type="submit"
                 value="Send"
                 className="FreeConseltationColumn rounded-r-[4px] text-[#ECA33A] bg-[#231F20] hover:text-white hover:bg-[#ECA33A] leading-[35px] text-[20px] raleway transition ease-in-out delay-150 hover:border-[#ECA33A]"
-               
               >
                 Consult Now
               </button>
-              {/* {showModal && <PromptConsultation closeModal={closeModal} />} */}
+              {showModal && <PromptThanksConsultation closeModal={closeModal} />}
             </form>
             {userError && (
                 <p style={{ color: 'red' }}>Please fill out the form</p>

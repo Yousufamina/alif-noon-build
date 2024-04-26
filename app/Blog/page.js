@@ -79,7 +79,7 @@ function page() {
                     <BlogCard date = "March 6,2024"  link ="/Social2Detail" heading='Waterfront Project of the Year' descriptions={'Armani Beach Residences, a landmark collaboration between Arada, Japanese architect Tadao Ando and Armani/Casa, has won the coveted Waterfront Project of the Year award at the 2024 Pillars of Real Estate Awards.'} ImageSrc={'/socialNews2.jpg'} /> 
                 </div>
                 <div className="p-3 max-w-sm">
-                    <BlogCard date = "March 27,2024"  link ="/Social3Detail" heading='Arada completes first 920 homes' descriptions={'Arada has completed the first eight residential buildings in Naseej District, a new creative hub based at the AED35 billion Aljada megaproject in Sharjah. Each of the 920 homes in the eight Tiraz buildings is close to an array high-quality cultural destinations'} ImageSrc={'/socialNews3.jpg'} /> 
+                    <BlogCard date = "March 27,2024"  link ="/Social3Detail" heading='Arada completes first 920 homes' descriptions={'All eight Tiraz apartment blocks finished; handovers under way Over 7,500 homes now completed. Residents to benefit from direct access to world-class cultural assets, including performing arts space designed by Tadao Ando'} ImageSrc={'/socialNews3.jpg'} /> 
                 </div>
 
                 {/*  <div className="p-3 max-w-sm">
