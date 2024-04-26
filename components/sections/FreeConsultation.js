@@ -1,14 +1,24 @@
 'use client'
-
 import React, { useState, useRef } from 'react'
 import emailjs from 'emailjs-com'
+import PromptConsultation from '@/components/PromptConsultation'
 
 const FreeConsultation = () => {
+  const [userError, setUserError] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phoneNumber: '',
   })
+  const [showModal, setShowModal] = useState(false)
+
+  const openModal = () => {
+    setShowModal(true)
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
+  }
 
   const form = useRef()
   const handleInputChange = (e) => {
@@ -19,10 +29,14 @@ const FreeConsultation = () => {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    console.log("formData")
     console.log(formData)
-    // Send formData as a message using emailjs
-    emailjs
+    if(formData.name == '' || formData.email == '' || formData.phoneNumber == ''){
+      setUserError(true)
+    }else{
+      // Send formData as a message using emailjs
+      emailjs
       .sendForm(
         'service_y7n5bh3',
         'template_2dy764k',
@@ -31,22 +45,27 @@ const FreeConsultation = () => {
       )
       .then(
         (result) => {
-          console.log('Email sent successfully:', result.text)
+          console.log('Email sent successfully:', result.text)   
           // Optionally, reset form fields after successful submission
           setFormData({
             name: '',
             email: '',
             phoneNumber: '',
           })
+
+             // here shows the prompt for thanks
+
         },
         (error) => {
           console.error('Email sending failed:', error.text)
         }
       )
+    }
+   
   }
 
   return (
-    <div className="FreeConseltation ">
+    <div className="FreeConseltation">
       <div className="mainContainer text-center">
         <div className="SubFreeConseltation">
           <div style={{ borderRadius: '10px' }}>
@@ -86,10 +105,15 @@ const FreeConsultation = () => {
                 type="submit"
                 value="Send"
                 className="FreeConseltationColumn rounded-r-[4px] text-[#ECA33A] bg-[#231F20] hover:text-white hover:bg-[#ECA33A] leading-[35px] text-[20px] raleway transition ease-in-out delay-150 hover:border-[#ECA33A]"
+               
               >
                 Consult Now
               </button>
+              {/* {showModal && <PromptConsultation closeModal={closeModal} />} */}
             </form>
+            {userError && (
+                <p style={{ color: 'red' }}>Please fill out the form</p>
+              )}
           </div>
         </div>
         <div className="flex justify-center mt-[8px]">

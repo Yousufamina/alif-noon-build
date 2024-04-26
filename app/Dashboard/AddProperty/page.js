@@ -39,7 +39,7 @@ function AddProperty() {
         setFormData(values);
         var dataObj=values;
         localStorage.setItem('dataObj', dataObj);
-        const response = await axios.post('https://www.alifnoon.ae/Api', dataObj ,{
+        const response = await axios.post('https://alifnoon.ae/Api', dataObj ,{
           headers: {'Content-Type': 'application/json'}
         });
         console.log("response")
