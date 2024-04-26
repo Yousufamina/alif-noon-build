@@ -2,7 +2,7 @@ import React from 'react'
 
 export const CardHeader = ({ productTitle, location, propertyType }) => {
   return (
-    <div className="cardHeader min-h-[158px] sm:min-h-[200px] md:min-h-[220px] lg:min-h-[240px] xl:min-h-[260px]">
+    <div className="cardHeader min-h-[158px] sm:min-h-[100px] md:min-h-[180px] lg:min-h-[200px] xl:min-h-[230px]">
       <div className="w-full">
         <div className="AddFavourite flex justify-end">
           <h4 className="text-sm sm:text-base">Add to Favourite</h4>
@@ -13,9 +13,9 @@ export const CardHeader = ({ productTitle, location, propertyType }) => {
           />
         </div>
       </div>
-      <h2 className="mt-[-28px] sm:mt-[-40px] leading-[40px] sm:leading-[50px] raleway font-normal text-[36px] sm:text-[48px] text-[#000000] w-[70%] sm:w-[80%]">
+      <p className="mt-[-28px] sm:mt-[-40px] leading-[23px] sm:leading-[32px] raleway font-normal text-[17px] sm:text-[22px] text-[#000000] w-[50%] sm:w-[60%]">
         {productTitle}{' '}
-      </h2>
+      </p>
       <div className="iconDiv flex mt-2">
         <img src="/locationIcon.svg" className="mr-2" />
         <h6 className="text-[#000000]">{location}</h6>

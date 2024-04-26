@@ -1562,7 +1562,7 @@ header .mainMenu a:hover {
 .productCard .detailHeader p {
   font-family: raleway !important;
   color: #524e4e;
-  font-size: 14px;
+  font-size: 10px;
   margin-bottom: 10px;
   font-weight: 600;
 }
@@ -3342,6 +3342,50 @@ td.ant-table-cell-row-hover,
 }
 
 /* Mobile width 767px  */
+@media (max-width: 640px) {
+  .cardHeader {
+    min-height: 200px;
+  }
+  .AddFavourite h4 {
+    font-size: 14px;
+  }
+  .AddFavourite img {
+    height: 50px;
+  }
+  .cardHeader h2 {
+    margin-top: -40px;
+    line-height: 50px;
+    font-size: 22px;
+    width: 70%;
+  }
+}
+@media (min-width: 641px) and (max-width: 768px) {
+  .cardHeader {
+    min-height: 200px;
+  }
+  .AddFavourite h4 {
+    font-size: 16px;
+  }
+  .AddFavourite img {
+    height: 50px;
+  }
+  .cardHeader h2 {
+    margin-top: -40px;
+    line-height: 50px;
+    font-size: 22px;
+    width: 70%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cardHeader {
+    min-height: 220px;
+  }
+}
+@media (min-width: 1025px) {
+  .cardHeader {
+    min-height: 230px;
+  }
+}
 
 @media (min-width: 320px) and (max-width: 767px) {
   .whatsIconSticky {

@@ -3,7 +3,11 @@ import React from 'react'
 const CardDetail = ({ bedrooms, bathrooms, price, img, description, area }) => {
   return (
     <div className="CardSlider">
-      <img src={img} className=" object-cover" />
+      <img
+        src={'/pic.jpeg'}
+        className="w-full h-72 object-cover "
+        alt="Property"
+      />
       <div className="cardDetail">
         <div className="detailHeader">
           <p>{description}</p>
@@ -12,16 +16,16 @@ const CardDetail = ({ bedrooms, bathrooms, price, img, description, area }) => {
           <div className="flex justify-around">
             <div className="iconBox">
               <img
-                className="w-8 h-8 md:w-14 md:h-14 "
-                alt="none"
+                className="w-8 h-8 md:w-8 md:h-8"
+                alt="Bedroom Icon"
                 src="/bedroomIcon.svg"
               />
               <h1>Bedroom {bedrooms}</h1>
             </div>
             <div className="iconBox">
               <img
-                className="w-8 h-8 md:w-14 md:h-14 "
-                alt="none"
+                className="w-8 h-8 md:w-8 md:h-8"
+                alt="Bathroom Icon"
                 src="/bathIcon.svg"
               />
               <h1>Bath {bathrooms}</h1>
@@ -30,16 +34,16 @@ const CardDetail = ({ bedrooms, bathrooms, price, img, description, area }) => {
           <div className="flex justify-around">
             <div className="iconBox">
               <img
-                className="w-8 h-8 md:w-14 md:h-14 "
-                alt="none"
+                className="w-8 h-8 md:w-8 md:h-8"
+                alt="Area Icon"
                 src="/sqrft3.svg"
               />
               <h1>{area}</h1>
             </div>
             <div className="iconBox">
               <img
-                className="w-8 h-8 md:w-14 md:h-14 "
-                alt="none"
+                className="w-8 h-8 md:w-8 md:h-8"
+                alt="Price Icon"
                 src="/dollarIcon.svg"
               />
               <h1>{price}</h1>

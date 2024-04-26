@@ -59,8 +59,8 @@ const productListingPage = ({ url }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://alifnoon.ae/GetData')
-        // const response = await fetch('http://localhost:3000/GetData');
+        // const response = await fetch('https://alifnoon.ae/GetData')
+        const response = await fetch('http://localhost:3000/GetData')
         if (!response.ok) {
           throw new Error('Network response was not ok')
         }
@@ -107,7 +107,7 @@ const productListingPage = ({ url }) => {
             )}
           </div>
           <Row style={{ marginBottom: '100px' }} gutter={2}>
-            <Col lg={24} xl={18}>
+            <Col xs={24} lg={24} xl={18}>
               <main className={`bg-[#231F20] `}>
                 <div className="">
                   <div className="">
