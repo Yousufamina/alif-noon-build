@@ -68,17 +68,18 @@ function PromptConsultation({ closeModal }) {
                   </div>
                 </div>
               </Form>
-              <div className="flex justify-center mt-6 md:mt-[15px]">
+              <div className=" md:flex md:justify-center mt-6 md:mt-[15px]">
                 <p className="text-white text-sm md:text-base raleway">
                   Or contact us right now via
                 </p>
+
                 <a
-                  className="flex ml-2"
+                  className=" ml-1 flex justify-center   md:ml-2"
                   href="https://wa.me/+971557969234"
                   target="_blank"
                 >
                   <img alt="none" src="/whatsappIcon.svg" />
-                  <p className="ml-1 text-[#ECA33A] text-sm md:text-base raleway">
+                  <p className="ml-2 md:ml-1 mt-1 md:mt-0 text-[#ECA33A] text-sm md:text-base raleway">
                     WhatsApp
                   </p>
                 </a>
