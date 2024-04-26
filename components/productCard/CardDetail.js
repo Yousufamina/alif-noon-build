@@ -9,7 +9,7 @@ const CardDetail = ({ bedrooms, bathrooms, price, img, description, area }) => {
         alt="Property"
       />
       <div className="cardDetail">
-        <div className="detailHeader">
+        <div className="detailHeader ">
           <p>{description}</p>
         </div>
         <div className="cardDetailInner">
