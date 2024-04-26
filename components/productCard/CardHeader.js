@@ -13,7 +13,7 @@ export const CardHeader = ({ productTitle, location, propertyType }) => {
           />
         </div>
       </div>
-      <p className="mt-[-28px] sm:mt-[-40px] leading-[23px] sm:leading-[32px] raleway font-normal text-[17px] sm:text-[22px] text-[#000000] w-[50%] sm:w-[60%]">
+      <p className="mt-[-28px] sm:mt-[-40px] leading-[23px] sm:leading-[32px] raleway font-normal text-[17px] sm:text-[22px] text-[#000000] w-[50%] sm:w-[70%]">
         {productTitle}{' '}
       </p>
       <div className="iconDiv flex mt-2">
