@@ -111,9 +111,7 @@ const productListingPage = ({ url }) => {
               <main className={`bg-[#231F20] `}>
                 <div className="">
                   <div className="">
-                    <div
-                      className={`justify-around flex flex-wrap secondSectionRow`}
-                    >
+                    <div className={`justify-around flex  secondSectionRow`}>
                       {dataa?.map((dat) => {
                         return (
                           <div className="p-4 max-w-sm">

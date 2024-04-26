@@ -3,7 +3,7 @@ import React from 'react'
 const CardDetail = ({ bedrooms, bathrooms, price, img, description, area }) => {
   return (
     <div className="CardSlider">
-      <img src={img} className="w-full object-cover" />
+      <img src={img} className=" object-cover" />
       <div className="cardDetail">
         <div className="detailHeader">
           <p>{description}</p>
