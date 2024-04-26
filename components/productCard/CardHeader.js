@@ -2,7 +2,7 @@ import React from 'react'
 
 export const CardHeader = ({ productTitle, location, propertyType }) => {
   return (
-    <div className="cardHeader min-h-[158px] sm:min-h-[100px] md:min-h-[180px] lg:min-h-[200px] xl:min-h-[230px]">
+    <div className="cardHeader min-h-[158px]   lg:min-h-[190px] ">
       <div className="w-full">
         <div className="AddFavourite flex justify-end">
           <h4 className="text-sm sm:text-base">Add to Favourite</h4>

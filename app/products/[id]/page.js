@@ -106,30 +106,32 @@ const productListingPage = ({ url }) => {
               <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
             )}
           </div>
-          <Row style={{ marginBottom: '100px' }} gutter={2}>
-            <Col xs={24} lg={24} xl={18}>
-              <main className={`bg-[#231F20] `}>
-                <div className="">
-                  <div className="">
-                    <div className={`justify-around flex  secondSectionRow`}>
-                      {dataa?.map((dat) => {
-                        return (
-                          <div className="p-4 max-w-sm">
-                            <ProductCard data={dat} />
-                          </div>
-                        )
-                      })}
+          {/* <Row style={{ marginBottom: '100px' }} gutter={2}> */}
+          {/* <Col xs={24} lg={24} xl={18}> */}
+          <div style={{ marginBottom: '100px' }} className="container m-auto">
+            <div className="grid grid-cols-1 md:grid-cols-10  m-0">
+              <div className="col-span-1 md:col-span-7">
+                <main className="bg-gray-900">
+                  <div className="py-4" style={{ backgroundColor: '#231F20' }}>
+                    <div className="flex justify-around flex-wrap">
+                      {dataa?.map((dat, index) => (
+                        <div className="p-4 max-w-sm" key={index}>
+                          <ProductCard data={dat} />
+                        </div>
+                      ))}
                     </div>
-
                     <CardPagination />
                   </div>
-                </div>
-              </main>
-            </Col>
-            <Col className="pt-[4px]" lg={0} xl={6}>
-              <RightCol />
-            </Col>
-          </Row>
+                </main>
+              </div>
+              <div className="col-span-1 md:col-span-3">
+                <RightCol />
+              </div>
+            </div>
+          </div>
+
+          {/* </Col> */}
+          {/* </Row> */}
         </div>
         <FreeConsultation />
         {/* <img style={{ marginTop:'35px',marginBottom:'35px',height:'80px', width:'100%'}} src='/VectorPng.png' alt='none' />  */}
