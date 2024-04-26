@@ -56,14 +56,14 @@ const items = [
 
 function RentProperties() {
   const onChange = (key) => {
-    console.log(key, 'My Key')
+    // console.log(key, 'My Key')
   }
   const [dataa, setDataa] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://www.alifnoon.ae/GetData')
+        const response = await fetch('https://alifnoon.ae/GetData')
         // const response = await fetch('http://GetData')
         if (!response.ok) {
           throw new Error('Network response was not ok')

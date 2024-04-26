@@ -37,7 +37,7 @@ function EnquireSection() {
               onClick={openModal}
             >
               <Link href="#" className="text-white">
-                EQUIRE NOW
+                ENQUIRE NOW
               </Link>
             </button>
             {showModal && <PromptConsultation closeModal={closeModal} />}

@@ -35,14 +35,14 @@ function OurDevelopments() {
         console.log(key, "My Key");
     };
     const [swipper,setSwipper] = useState(3);
-  //   useEffect(() => {
-  //     let mediaScreen = window.matchMedia("(max-width: 1080px)");
-  //     if (mediaScreen.matches) {
-  //       setSwipper(1)
-  //     } else {
-  //       setSwipper(3)
-  //     }
-  // },[swipper]);
+    useEffect(() => {
+      let mediaScreen = window.matchMedia("(max-width: 1080px)");
+      if (mediaScreen.matches) {
+        setSwipper(1)
+      } else {
+        setSwipper(3)
+      }
+  },[swipper]);
 
   return (
     <main className="OurDevelopmentSection bg-[#231F20]">
@@ -53,19 +53,13 @@ function OurDevelopments() {
                 <h1 className="leading-[70px] uppercase raleway font-[900] text-[50px] text-[#ECA33A]">Recent Developments</h1>
         </div>
         
-
-        {/* <Tabs defaultActiveKey='1'>
-          <TabPane tab="Tab 1" key="1">Content of Tab 1</TabPane>
-          <TabPane tab="Tab 2" key="2">Content of Tab 2</TabPane>
-          <TabPane tab="Tab 3" key="3">Content of Tab 3</TabPane>
-        </Tabs> */}
     <div className="productsTabs">
             <Tabs defaultActiveKey='1' items={items} onChange={onChange} />
         <Swiper
-        // autoplay={{  
-        //   delay: 2000,
-        //   disableOnInteraction: true,
-        // }}
+        autoplay={{  
+          delay: 2000,
+          disableOnInteraction: true,
+        }}
         slidesPerView={swipper}
         initialSlide={1}
         centeredSlides={true}
@@ -73,7 +67,7 @@ function OurDevelopments() {
         // pagination={{
         //     clickable: true,
         // }} 
-        // loop={true}
+        loop={true}
         style={{
             "--swiper-pagination-color": "#ECA33A",
             "--swiper-pagination-bullet-inactive-color": "#fcfcfc00",
@@ -163,8 +157,10 @@ function OurDevelopments() {
         Fitness leader wins six awards for second year running at 2024 REPs Industry Awards Gala, held in partnership with Dubai Sports....
         </p>
         <div className='ArrowIcon'>
+        <a href="/Social1Detail">
           <img className='margin-auto whiteArrow flex' src='./whiteArrow.svg' alt='none'/>
           <img className='margin-auto goldenArrow hidden' src='./goldenArrow.svg' alt='none' />
+        </a>
         </div>
         </div>
         </SwiperSlide>
@@ -182,8 +178,10 @@ function OurDevelopments() {
         Armani Beach Residences, a landmark collaboration between Arada, Japanese architect Tadao Ando and Armani/Casa, has won ....
         </p>
         <div className='ArrowIcon'>
+        <a href="/Social2Detail">
           <img className='margin-auto whiteArrow flex' src='./whiteArrow.svg' alt='none'/>
           <img className='margin-auto goldenArrow hidden' src='./goldenArrow.svg' alt='none' />
+        </a>
         </div>
         </div>
         </SwiperSlide>
@@ -201,8 +199,10 @@ function OurDevelopments() {
         All eight Tiraz apartment blocks finished; handovers under way Over 7,500 homes now completed at Aljada....
         </p>
         <div className='ArrowIcon'>
+        <a href="/Social3Detail">
           <img className='margin-auto whiteArrow flex' src='./whiteArrow.svg' alt='none'/>
           <img className='margin-auto goldenArrow hidden' src='./goldenArrow.svg' alt='none' />
+        </a>
         </div>
         </div>
         </SwiperSlide>
