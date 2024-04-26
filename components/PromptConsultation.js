@@ -5,7 +5,7 @@ import Link from 'next/link'
 function PromptConsultation({ closeModal }) {
   return (
     <div
-      className="fixed left-0 top-0 z-[1055] h-full w-full flex items-center justify-center bg-black bg-opacity-50"
+      className="fixed p-6 md:p-0 left-0 top-0 z-[1055] h-full w-full flex items-center justify-center bg-black bg-opacity-50"
       onClick={closeModal}
     >
       <div
