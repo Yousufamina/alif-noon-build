@@ -113,7 +113,7 @@ const productListingPage = ({ url }) => {
               <div className="col-span-1 md:col-span-8">
                 <main className="bg-gray-900">
                   <div className="py-4" style={{ backgroundColor: '#231F20' }}>
-                    <div className="flex flex-wrap md:flex-nowrap  ">
+                    <div className="flex flex-wrap xl:flex-nowrap  ">
                       {dataa?.map((dat, index) => (
                         <div className="p-1 max-w-full" key={index}>
                           <ProductCard data={dat} />
