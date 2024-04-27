@@ -2,12 +2,12 @@ import React from 'react'
 
 export const CardHeader = ({ productTitle, location, propertyType }) => {
   return (
-    <div className="cardHeader min-h-[158px]   lg:min-h-[190px] ">
+    <div className="cardHeader min-h-[133px]   lg:min-h-[165px] ">
       <div className="w-full">
         <div className="AddFavourite flex justify-end">
           <h4 className="text-sm sm:text-base">Add to Favourite</h4>
           <img
-            className="w-auto h-[40px] sm:h-[50px] mr-[-12px]"
+            className="w-auto h-[20px] sm:h-[40px] mr-[-12px]"
             alt="auto"
             src="/heart-icon.svg"
           />
@@ -18,11 +18,11 @@ export const CardHeader = ({ productTitle, location, propertyType }) => {
       </p>
       <div className="iconDiv flex mt-2">
         <img src="/locationIcon.svg" className="mr-2" />
-        <h6 className="text-[#000000]">{location}</h6>
+        <p className="text-[#000000] text-[10px] md:text-[14px] ">{location}</p>
       </div>
-      <div className="iconDiv flex mt-2">
+      <div className="iconDiv flex mt-2 text-[10px] md:text-[14px]">
         <img src="/houseIcon.svg" className="mr-2" />
-        <h6 className="text-[#000000]">{propertyType}</h6>
+        <p className="text-[#000000]">{propertyType}</p>
       </div>
     </div>
   )

@@ -108,14 +108,14 @@ const productListingPage = ({ url }) => {
           </div>
           {/* <Row style={{ marginBottom: '100px' }} gutter={2}> */}
           {/* <Col xs={24} lg={24} xl={18}> */}
-          <div style={{ marginBottom: '100px' }} className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-12  m-0">
-              <div className="col-span-1 md:col-span-9">
+          <div style={{ marginBottom: '100px' }} className="container m-auto">
+            <div className="grid grid-cols-1 md:grid-cols-11  m-auto">
+              <div className="col-span-1 md:col-span-8">
                 <main className="bg-gray-900">
                   <div className="py-4" style={{ backgroundColor: '#231F20' }}>
-                    <div className="flex  ">
+                    <div className="flex flex-wrap xl:flex-nowrap  ">
                       {dataa?.map((dat, index) => (
-                        <div className="p-4 max-w-sm" key={index}>
+                        <div className="p-1 max-w-full" key={index}>
                           <ProductCard data={dat} />
                         </div>
                       ))}
@@ -124,7 +124,7 @@ const productListingPage = ({ url }) => {
                   </div>
                 </main>
               </div>
-              <div className="col-span-1 md:col-span-3 m-0">
+              <div className="col-span-1 md:col-span-3">
                 <RightCol />
               </div>
             </div>

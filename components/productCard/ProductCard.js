@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const ProductCard = ({ data }) => {
   return (
-    <div className="productCard">
+    <div className="productCard w-full lg:w-[300px] ">
       <CardHeader
         productTitle={data ? data.name : 'loading'}
         location={data ? data.location : 'loading'}
