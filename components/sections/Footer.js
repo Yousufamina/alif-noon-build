@@ -41,51 +41,74 @@ function Footer() {
                     USEFULL LINKS{' '}
                   </h1>
                   <Link
-                    href="/products/buy">
-                      <p className="text-left max-[1024px]:text-center text-white">
+                    href="/products/buy"
+                    style={{ textDecoration: 'none', color: 'white' }}
+                    onMouseEnter={(e) => (e.target.style.color = '#eca33a')}
+                    onMouseLeave={(e) => (e.target.style.color = 'white')}
+                  >
+                    <p className="text-left max-[1024px]:text-center text-white">
                       Apartments
-                      </p>
+                    </p>
                   </Link>
 
                   <Link
-                    href="/products/buy">
-                      <p className="text-left max-[1024px]:text-center text-white">
-                        {' '}
-                        Penthouse{' '}
-                      </p>
+                    href="/products/buy"
+                    style={{ textDecoration: 'none', color: 'white' }}
+                    onMouseEnter={(e) => (e.target.style.color = '#eca33a')}
+                    onMouseLeave={(e) => (e.target.style.color = 'white')}
+                  >
+                    <p className="text-left max-[1024px]:text-center text-white">
+                      {' '}
+                      Penthouse{' '}
+                    </p>
                   </Link>
                   <Link
-                    href="/products/buy">
-                      <p className="text-left max-[1024px]:text-center text-white">
-                        {' '}
-                        Villas{' '}
-                      </p>
+                    href="/products/buy"
+                    style={{ textDecoration: 'none', color: 'white' }}
+                    onMouseEnter={(e) => (e.target.style.color = '#eca33a')}
+                    onMouseLeave={(e) => (e.target.style.color = 'white')}
+                  >
+                    <p className="text-left max-[1024px]:text-center text-white">
+                      {' '}
+                      Villas{' '}
+                    </p>
                   </Link>
-                      
+
                   <Link
-                      href="/products/buy">
+                    href="/products/buy"
+                    style={{ textDecoration: 'none', color: 'white' }}
+                    onMouseEnter={(e) => (e.target.style.color = '#eca33a')}
+                    onMouseLeave={(e) => (e.target.style.color = 'white')}
+                  >
                     <p className="text-left max-[1024px]:text-center text-white">
                       {' '}
                       Townhouse{' '}
                     </p>
                   </Link>
-                  
+
                   <Link
-                      href="/off-plan">
-                      <p className="text-left max-[1024px]:text-center text-white">
-                        {' '}
-                        Off-Plan{' '}
-                      </p>
-                  </Link>
-                  
-                  <Link
-                      href="/Catalog">
+                    href="/off-plan"
+                    style={{ textDecoration: 'none', color: 'white' }}
+                    onMouseEnter={(e) => (e.target.style.color = '#eca33a')}
+                    onMouseLeave={(e) => (e.target.style.color = 'white')}
+                  >
                     <p className="text-left max-[1024px]:text-center text-white">
-                    {' '}
-                    Catalogs{' '}
+                      {' '}
+                      Off-Plan{' '}
                     </p>
                   </Link>
 
+                  <Link
+                    href="/Catalog"
+                    style={{ textDecoration: 'none', color: 'white' }}
+                    onMouseEnter={(e) => (e.target.style.color = '#eca33a')}
+                    onMouseLeave={(e) => (e.target.style.color = 'white')}
+                  >
+                    <p className="text-left max-[1024px]:text-center text-white">
+                      {' '}
+                      Catalogs{' '}
+                    </p>
+                  </Link>
                 </div>
                 <div className="rightcolumn max-[1024px]:text-center">
                   <h1
@@ -94,25 +117,40 @@ function Footer() {
                   >
                     {' '}
                     OUR SERVICES{' '}
-                  </h1>                 
+                  </h1>
                   <Link
+                    style={{ textDecoration: 'none', color: 'white' }}
+                    onMouseEnter={(e) => (e.target.style.color = '#eca33a')}
+                    onMouseLeave={(e) => (e.target.style.color = 'white')}
                     href="/products/buy"
-                    className="Buy-header raleway font-semibold text-[14px] leading-[16.44px]  hover:text-[#ECA33A]">
+                    className="Buy-header raleway font-semibold text-[14px] leading-[16.44px]  hover:text-[#ECA33A]"
+                  >
                     <p className="max-[1024px]:text-center text-left text-white focus:text-[#ECA33A] hover:text-[#ECA33A]">
                       {' '}
                       Buy{' '}
-                    </p> 
+                    </p>
                   </Link>
-            
-                  <Link href="/Rent">
+
+                  <Link
+                    href="/Rent"
+                    style={{ textDecoration: 'none', color: 'white' }}
+                    onMouseEnter={(e) => (e.target.style.color = '#eca33a')}
+                    onMouseLeave={(e) => (e.target.style.color = 'white')}
+                  >
                     <p className="max-[1024px]:text-center text-left text-white focus:text-[#ECA33A] hover:text-[#ECA33A]">
                       Rent{' '}
                     </p>
-                  </Link>                  
+                  </Link>
                   <Link
+                    style={{ textDecoration: 'none', color: 'white' }}
+                    onMouseEnter={(e) => (e.target.style.color = '#eca33a')}
+                    onMouseLeave={(e) => (e.target.style.color = 'white')}
                     href="/Sell"
-                    className="Sell-header raleway text-[14px] font-semibold leading-[16.44px] text-white  focus:text-[#ECA33A] hover:text-[#ECA33A]">
-                    <p className="focus:text-[#ECA33A] hover:text-[#ECA33A]">Sell</p>
+                    className="Sell-header raleway text-[14px] font-semibold leading-[16.44px] text-white  focus:text-[#ECA33A] hover:text-[#ECA33A]"
+                  >
+                    <p className="focus:text-[#ECA33A] hover:text-[#ECA33A]">
+                      Sell
+                    </p>
                   </Link>
                   {/* <p className="max-[1024px]:text-center text-left text-white">
                     {' '}
