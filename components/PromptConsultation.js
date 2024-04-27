@@ -4,6 +4,7 @@ import { Form } from 'antd'
 import Link from 'next/link'
 
 function PromptConsultation({ closeModal }) {
+  
   return (
     <div
       className="fixed p-6 md:p-0 left-0 top-0 z-[1055] h-full w-full flex items-center justify-center bg-black bg-opacity-50"
@@ -59,7 +60,7 @@ function PromptConsultation({ closeModal }) {
                   </div>
                   <div className="ml-3 md:ml-0">
                     <button
-                      type="button"
+                      onClick={closeModal}
                       className="w-full mt-4 md:mt-0 md:w-auto px-5 py-1.5 border border-[#ECA33A] md:ml-3"
                     >
                       <Link href="#" className="text-[#ECA33A]">
@@ -68,10 +69,7 @@ function PromptConsultation({ closeModal }) {
                     </button>
                   </div>
                 </div>
-                {/* {showModal && <PromptThanksConsultation closeModal={closeModal} />} */}
-                {userError && (
-                <p style={{ color: 'red' }}>Please fill out the form</p>
-              )}
+                
               </Form>
               <div className=" md:flex md:justify-center mt-6 md:mt-[15px]">
                 <p className="text-white text-sm md:text-base raleway">

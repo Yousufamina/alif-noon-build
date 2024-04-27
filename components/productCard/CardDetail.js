@@ -4,7 +4,7 @@ const CardDetail = ({ bedrooms, bathrooms, price, img, description, area }) => {
   return (
     <div className="CardSlider">
       <img
-        src={'/pic.jpeg'}
+        src={img}
         className="w-full h-72 object-cover "
         alt="Property"
       />
