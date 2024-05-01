@@ -5,11 +5,11 @@ import Link from 'next/link'
 function PromptThanksConsultation({ closeModal }) {
   return (
     <div
-      className="fixed left-0 top-0 z-[1055] h-full w-full flex items-center justify-center bg-black bg-opacity-50"
+      className="fixed p-6 md:p-0 left-0 top-0 z-[1055] h-full w-full flex items-center justify-center bg-black bg-opacity-50"
       onClick={closeModal}
     >
       <div
-        className=" p-9 relative w-auto opacity-100 transition-all duration-300 ease-in-out min-[576px] mx-auto mt-7  bg-[#272626] rounded-md border-none shadow-4 outline-none dark:bg-surface-dark"
+        className=" p-9 relative w-full md:w-auto  opacity-100 transition-all duration-300 ease-in-out min-[576px] mx-auto mt-7  bg-[#272626] rounded-md border-none shadow-4 outline-none dark:bg-surface-dark"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-end cursor-pointer" onClick={closeModal}>
@@ -18,31 +18,28 @@ function PromptThanksConsultation({ closeModal }) {
         <main className="PromtConsultationForm">
           <div className="mainContainer">
             <div className="formBox">
-              <p className="leading-[52px] mb-2 raleway  drop-shadow-md  text-[35px]" style={{color:'white'}} >
-                Thanks For Your Consultation
+              <p className="leading-[52px] mb-2 raleway uppercase drop-shadow-md  text-[20px] md:text-[35]" style={{color:'white'}}>
+                We'Ve received your application
               </p>
-              <p className="text-2xl" style={{color:'white'}}>
-                Our agent will contact you shortly
+              <p className="text-[20px] text-lg md:text-2xl" style={{color:'white'}}>
+                Thank you for contacting us. Our speialist will get back to you shortly
               </p>
-              
-              <div className="flex justify-center mt-[15px]">
-                <div className="flex justify-center items-center">
-                  <p className="px-[2px] py-[5px] text-white text-[1rem] raleway">
-                    Or contact us right now via
+        
+              <div className=" md:flex md:justify-center mt-6 md:mt-[15px]">
+                <p className="text-white text-sm md:text-base raleway">
+                  Or contact us right now via
+                </p>
+
+                <a
+                  className=" ml-1 flex justify-center   md:ml-2"
+                  href="https://wa.me/+971557969234"
+                  target="_blank"
+                >
+                  <img alt="none" src="/whatsappIcon.svg" />
+                  <p className="ml-2 md:ml-1 mt-1 md:mt-0 text-[#ECA33A] text-sm md:text-base raleway">
+                    WhatsApp
                   </p>
-                  <a
-                    className="flex"
-                    href="https://wa.me/+971557969234"
-                    target="_blank"
-                  >
-                    <div className="ml-4 flex cursor-pointer">
-                      <img alt="none" src="/whatsappIcon.svg" />
-                      <p className="mr-1 px-[2px] py-[5px] text-[#ECA33A] text-[1rem] raleway">
-                        WhatsApp
-                      </p>
-                    </div>
-                  </a>
-                </div>
+                </a>
               </div>
             </div>
           </div>

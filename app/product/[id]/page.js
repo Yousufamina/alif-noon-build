@@ -1,10 +1,14 @@
 'use client'
 
-import React , {useEffect, useState} from 'react'
 import Prod from '@/components/Prod';
 
 const PropertyDetail = () => {
  
+  // const response = await axios.post('https://alifnoon.ae/Api', dataObj ,{
+  //   headers: {'Content-Type': 'application/json'}
+  // });
+  // console.log("response")
+  // console.log(response)
 
   return (
     <>

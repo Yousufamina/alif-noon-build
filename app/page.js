@@ -23,8 +23,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState,useEffect } from "react";
 
-
-
 var apiCalled=false;
 export default function Home({ Component, pageProps }) {
 const [dataa, setDataa] = useState([]);
@@ -57,7 +55,6 @@ const fetchData = async () => {
 
   if(dataa.length==0){
     fetchData();
-    // localStorage.setItem('propData', JSON.stringify(dataa));
   }
 
   return (

@@ -4,7 +4,7 @@ import emailjs from 'emailjs-com'
 import PromptThanksConsultation from '@/components/PromptThanksConsultation'
 
 const FreeConsultation = () => {
-  const [userError, setUserError] = useState(false)
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,10 +30,11 @@ const FreeConsultation = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     if(formData.name == '' || formData.email == '' || formData.phoneNumber == ''){
-      setUserError(true)
+      
     }else{
-      setUserError(false)
+     
       // Send formData as a message using emailjs
       emailjs
       .sendForm(
@@ -77,6 +78,7 @@ const FreeConsultation = () => {
               <div className="FreeConseltationColumn rounded-l-[4px] text-[20px]">
                 <input
                   type="text"
+                  required
                   name="name"
                   placeholder="Your Name"
                   value={formData.name}
@@ -90,6 +92,7 @@ const FreeConsultation = () => {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
               <div className="FreeConseltationColumn text-[20px] leading-[35px]">
@@ -99,6 +102,7 @@ const FreeConsultation = () => {
                   placeholder="Phone Number"
                   value={formData.phoneNumber}
                   onChange={handleInputChange}
+                  required="required"
                 />
               </div>
               <button
@@ -110,9 +114,6 @@ const FreeConsultation = () => {
               </button>
               {showModal && <PromptThanksConsultation closeModal={closeModal} />}
             </form>
-            {userError && (
-                <p style={{ color: 'red' }}>Please fill out the form</p>
-              )}
           </div>
         </div>
         <div className="flex justify-center mt-[8px]">

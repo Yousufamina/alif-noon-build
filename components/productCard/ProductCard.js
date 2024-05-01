@@ -24,7 +24,7 @@ const ProductCard = ({ data }) => {
       <CardBottom />
       <div className="linkBox">
         {/* <a href={`/product/${data.name}`} className='flex mt-[10px] text-[20px] raleway font-bold text-black'>Get Now <img className='ml-[9px]' alt='image' src='/rightArrow.svg' /></a> */}
-        <Link legacyBehavior href={`/product/${encodeURIComponent(data.name)}`}>
+        <Link legacyBehavior href={`/product/${encodeURIComponent(data.id)}`}>
           <a className="flex mt-[10px] text-[20px] raleway font-bold text-black">
             Get Now{' '}
             <img className="ml-[9px]" alt="image" src="/rightArrow.svg" />

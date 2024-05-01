@@ -4,16 +4,16 @@ import React from 'react'
 import Link from "next"
 import ScrollTopButton from '@/components/ScrollTopButton';
 import SocialIconScroll from '@/components/SocialIconScroll';
-import Footer from "@/components/sections/Footer";
 import Header from "@/components/header/Index";
+import Footer from "@/components/sections/Footer";
 
 const AboutUsDetail = () => {
   return (
-    <>
-         <ScrollTopButton/>
+    <div className="BuymaxDiv">
+    <ScrollTopButton/>
     <SocialIconScroll/>
     <Header />
-    <div className='py-[10%]'>
+    <div className='py-[10%]' style={{autoscroll: 'true'}}>
     <div className='mainContainer max-[800px]:text-center max-[800px]:p-[20px]'>
         <h1 className='text-[#ECA33A] text-[45px] raleway'> About us </h1>
         <br/>
@@ -50,7 +50,7 @@ const AboutUsDetail = () => {
     </div>
     </div>
     <Footer />
-    </>
+    </div>
   )
 }
 export default AboutUsDetail;

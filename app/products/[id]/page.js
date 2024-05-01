@@ -55,7 +55,8 @@ const items = [
 ]
 
 const productListingPage = ({ url }) => {
-  const [dataa, setDataa] = useState([])
+  
+  const [propertiesData, setDataa] = useState([])
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -91,6 +92,7 @@ const productListingPage = ({ url }) => {
       <ScrollTopButton />
       <SocialIconScroll />
       <Header />
+      
       <main className="productListingPage">
         <div
           style={{ paddingBottom: '0px' }}
@@ -114,7 +116,7 @@ const productListingPage = ({ url }) => {
                 <main className="bg-gray-900">
                   <div className="py-4" style={{ backgroundColor: '#231F20' }}>
                     <div className="flex flex-wrap xl:flex-nowrap  ">
-                      {dataa?.map((dat, index) => (
+                      {propertiesData?.map((dat, index) => (
                         <div className="p-1 max-w-full" key={index}>
                           <ProductCard data={dat} />
                         </div>
@@ -137,6 +139,7 @@ const productListingPage = ({ url }) => {
         {/* <img style={{ marginTop:'35px',marginBottom:'35px',height:'80px', width:'100%'}} src='/VectorPng.png' alt='none' />  */}
         <About />
       </main>
+
       <Footer />
     </div>
   )

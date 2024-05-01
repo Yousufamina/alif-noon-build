@@ -1,10 +1,66 @@
 import React, { useState, useRef } from 'react'
 import emailjs from 'emailjs-com'
-import { Form } from 'antd'
-import Link from 'next/link'
+// import { Form } from 'antd'
+// import Link from 'next/link'
+// import PromptThanksConsultation from '@/components/PromptThanksConsultation'
 
 function PromptConsultation({ closeModal }) {
-  
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phoneNumber: '',
+  })
+  // const [showPromptModal, setShowPromptModal] = useState(false)
+
+
+  // const closePromptModal = () => {
+  //   setShowPromptModal(false)
+  // }
+
+  const form = useRef()
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(formData.name == '' || formData.email == '' || formData.phoneNumber == ''){
+      
+    }else{
+      // Send formData as a message using emailjs
+      emailjs
+      .sendForm(
+        'service_y7n5bh3',
+        'template_2dy764k',
+        form.current,
+        'DvNf_xZQEKCCfTPrU'
+      )
+      .then(
+        (result) => {
+          console.log('Email sent successfully:', result.text)   
+          closeModal()
+          // after email sucfess shows the prompt for thanks
+          // setShowPromptModal(true)
+          // Optionally, reset form fields after successful submission
+          setFormData({
+            name: '',
+            email: '',
+            phoneNumber: '',
+          })
+
+
+        },
+        (error) => {
+          console.error('Email sending failed:', error.text)
+        }
+      )
+    }   
+  }
+
+
   return (
     <div
       className="fixed p-6 md:p-0 left-0 top-0 z-[1055] h-full w-full flex items-center justify-center bg-black bg-opacity-50"
@@ -26,13 +82,20 @@ function PromptConsultation({ closeModal }) {
               <p className="text-lg md:text-2xl">
                 Fill form below and our agent will contact you shortly
               </p>
-              <Form>
+              <form 
+              ref={form}
+              onSubmit={handleSubmit}>
                 <div className="mt-6 md:mt-10 formFields flex flex-col md:flex-row md:justify-between">
                   <div className="ml-3">
                     <label>
                       <div class="relative h-11 w-full min-w-[200px]">
                         <input
+                          type="text"
+                          required
+                          name="name"
                           placeholder="Your Name"
+                          value={formData.name}
+                          onChange={handleInputChange}
                           className="h-11 w-full min-w-[200px] border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-white outline-none transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-none disabled:border-0 disabled:bg-blue-gray-50"
                         />
                       </div>
@@ -42,7 +105,12 @@ function PromptConsultation({ closeModal }) {
                     <label>
                       <div class="relative h-11 w-full min-w-[200px]">
                         <input
-                          placeholder="Your Phone"
+                          type="text"
+                          name="phoneNumber"
+                          placeholder="Phone Number"
+                          value={formData.phoneNumber}
+                          onChange={handleInputChange}
+                          required
                           className="h-11 w-full min-w-[200px] border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-white outline-none transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-none disabled:border-0 disabled:bg-blue-gray-50"
                         />
                       </div>
@@ -52,25 +120,31 @@ function PromptConsultation({ closeModal }) {
                     <label>
                       <div class="relative h-11 w-full min-w-[200px]">
                         <input
-                          placeholder="Your E-mail"
-                          className="h-11 w-full min-w-[200px] border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-white outline-none transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-none disabled:border-0 disabled:bg-blue-gray-50"
+                         type="email"
+                         name="email"
+                         placeholder="Your Email"
+                         value={formData.email}
+                         onChange={handleInputChange}
+                         required
+                         className="h-11 w-full min-w-[200px] border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-white outline-none transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-none disabled:border-0 disabled:bg-blue-gray-50"
                         />
                       </div>
                     </label>
                   </div>
                   <div className="ml-3 md:ml-0">
                     <button
-                      onClick={closeModal}
+                      type="submit"
+                      value="Send"
                       className="w-full mt-4 md:mt-0 md:w-auto px-5 py-1.5 border border-[#ECA33A] md:ml-3"
                     >
-                      <Link href="#" className="text-[#ECA33A]">
+                      {/* <Link href="#" className="text-[#ECA33A]"> */}
                         SEND
-                      </Link>
+                      {/* </Link> */}
                     </button>
+                   
                   </div>
                 </div>
-                
-              </Form>
+              </form>
               <div className=" md:flex md:justify-center mt-6 md:mt-[15px]">
                 <p className="text-white text-sm md:text-base raleway">
                   Or contact us right now via

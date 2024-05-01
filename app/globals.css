@@ -3062,7 +3062,7 @@ transition: all 0.5s;
 }
 .SellSection .ExpertiseContent::before {
   color: #eca33a;
-  content: 'Alif noon';
+  content: 'Alif noon properties';
   font-weight: 900;
 }
 .SellSection .readinessPhase:hover {
