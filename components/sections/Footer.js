@@ -201,7 +201,7 @@ function Footer() {
                 style={{ paddingLeft: '10%', paddingRight: '40px' }}
                 className="rightcolumn"
               >
-                <div className="flex max justify-end">
+                <div className="flex max justify-center md:justify-end">
                   <img
                     className="text-[white] h-[15px] mt-[4px] w-[12px] mx-2"
                     src="/pinVector.png"
@@ -213,12 +213,12 @@ function Footer() {
                   </h2>
                 </div>
 
-                <h3 className="text-[#cecece] raleway-light text-[18px] font-[300]">
+                <h3 className="text-[#cecece] raleway-light text-[18px] font-[300] text-center md:text-end ">
                   {' '}
                   YOU OFFICE LOCATION..UAE{' '}
                 </h3>
 
-                <div className="pl-[20px] pt-[12px] pb-[12px] flex justify-end">
+                <div className="pl-[20px] pt-[12px] pb-[12px] flex justify-center md:justify-end">
                   {/* <img
                     className="text-[white] h-[20px] w-[20px] mx-2"
                     src="/whiteMessage.svg"
