@@ -107,10 +107,7 @@ function page() {
                 <div className="p-3 max-w-sm">
                     <BlogCard date = "March 27,2024"  link ="/Social3Detail" heading='Arada completes first 920 homes' descriptions={'All eight Tiraz apartment blocks finished; handovers under way Over 7,500 homes now completed. Residents to benefit from direct access to world-class cultural assets, including performing arts space designed by Tadao Ando'} ImageSrc={'/socialNews3.jpg'} /> 
                 </div> */}
-
-                {/*  <div className="p-3 max-w-sm">
-                     <BlogCard heading='Sky-High Palaces' descriptions={'Dubai skyline is a testament to its architectural ambition. From the towering Burj Khalifa, the worlds tallest building, to gleaming residential towers that touch the clouds, luxury properties in Dubai are often nestled in the sky. These residences offer panoramic views of the city, the Arabian Gulf, and beyond, creating an unparalleled living experience.'} ImageSrc={'/OtherCard1.png'} /> 
-                 </div> */}
+                
 
                 {/* <div className="p-3 max-w-sm">
                     <BlogCard heading='Waterfront Retreats' descriptions={'Dubais coastline is studded with exclusive waterfront properties that redefine coastal living. Imagine waking up to the gentle lapping of waves and panoramic views of the sea. From sleek penthouses to sprawling villas, these waterfront retreats offer not just a home but a lifestyle marked by tranquility and indulgence.'} ImageSrc={'/OtherCard1.png'} /> 

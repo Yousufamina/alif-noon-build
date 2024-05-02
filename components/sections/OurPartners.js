@@ -1,6 +1,6 @@
 "use client"
 
-import React,{ useRef, useState }  from 'react'
+import React,{ useEffect, useState }  from 'react'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,6 +10,15 @@ import 'swiper/css/pagination';
 import { Pagination,Autoplay ,Navigation} from 'swiper/modules';
 
 function OurPartners() {
+     const [swipper,setSwipper] = useState(3);
+    useEffect(() => {
+      let mediaScreen = window.matchMedia("(max-width: 1080px)");
+      if (mediaScreen.matches) {
+        setSwipper(3)
+      } else {
+        setSwipper(5)
+      }
+  },[swipper]);
   return (
     <main className="OurPartnersSec bg-[#231F20]" >
       {/* <Image className="w-full h-[50px] mb-4" height={50} width={100} src="/vector.svg" /> */}
@@ -18,7 +27,7 @@ function OurPartners() {
                 Real estate leaders,our partners
             </h1>
             <Swiper
-        slidesPerView={5}
+        slidesPerView={swipper}
         centeredSlides={true}
         spaceBetween={0}
         initialSlide={5}

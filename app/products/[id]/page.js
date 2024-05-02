@@ -14,10 +14,6 @@ import CardPagination from '@/components/productCard/CardPagination'
 import SocialIconScroll from '@/components/SocialIconScroll'
 import { useState, useEffect } from 'react'
 
-// import { useRouter } from 'next/router';
-
-// const router = useRouter();
-// console.log('check',router.pathname)
 
 const items = [
   {
@@ -74,7 +70,7 @@ const productListingPage = ({ url }) => {
     fetchData()
   }, [])
   const onChange = (key) => {
-    console.log(key, 'My Key')
+    // console.log(key, 'My Key')
   }
 
   // let heading_attribute;

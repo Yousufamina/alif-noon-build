@@ -11,21 +11,22 @@ import RightCol from './RightCol';
 import SchoolsNearby from './SchoolsNearby';
 import Location from '../ProductDetails/Location';
 
-function PropertyContent() {
+function PropertyContent({propertyData}) {
+
   return (
       <Row gutter={5} className='max-[1024px]:justify-center'>
         <Col className='leftColumn' style={{paddingRight:"20px"}} lg={24} xl={17}>
             <ImageGallery />
             <Content
-              title={"Apartment with 2 bedrooms in Vida Residence 2, Dubai, UAE (alif-3965135)"}
-              price={"USD 70,200"}
-              location={"Vida Residence"}
-              propertyType={"Apartment"}
-              bedrooms={"2"}
-              baths={"1"}
-              sqrft={"1,382"}
+              title={propertyData?.name}
+              price={propertyData?.price}
+              location={propertyData?.location}
+              propertyType={propertyData?.propertyType}
+              bedrooms={propertyData?.bedrooms}
+              baths={propertyData?.bedrooms}
+              sqrft={propertyData?.area}
             />
-            <Features />
+            <Features propertyData = {propertyData}/>
             <Description />
             <ListingDetails />
             {/* <Location /> */}
