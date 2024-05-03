@@ -31,9 +31,9 @@ function OfficialsClients() {
             initialSlide={0}
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={"auto"}
+            slidesPerView={'auto'}
             coverflowEffect={{
-              rotate: 50, 
+              rotate: 50,
               stretch: 0,
               depth: 100,
               modifier: 1,
@@ -80,7 +80,7 @@ function OfficialsClients() {
                       src="/clientCall.svg"
                     />
                   </a>
-                  <a target="_blank" href="https://wa.me/+923040602781">
+                  <a target="_blank" href="https://wa.me/+971557969234">
                     <img
                       className="w-[45px] h-[40px] mr-[0px]"
                       alt="auto"
@@ -125,7 +125,7 @@ function OfficialsClients() {
                       src="/clientCall.svg"
                     />
                   </a>
-                  <a href="https://wa.me/+923040602781" target="_blank">
+                  <a href="https://wa.me/+971557969234" target="_blank">
                     <img
                       className="w-[45px] h-[40px] mr-[0px]"
                       alt="auto"
@@ -171,7 +171,7 @@ function OfficialsClients() {
                       src="/clientCall.svg"
                     />
                   </a>
-                  <a href="https://wa.me/+923040602781" target="_blank">
+                  <a href="https://wa.me/+971557969234" target="_blank">
                     <img
                       className="w-[45px] h-[40px] mr-[0px]"
                       alt="auto"
@@ -216,7 +216,7 @@ function OfficialsClients() {
                       src="/clientCall.svg"
                     />
                   </a>
-                  <a href="https://wa.me/+923040602781" target="_blank">
+                  <a href="https://wa.me/+971557969234" target="_blank">
                     <img
                       className="w-[45px] h-[40px] mr-[0px]"
                       alt="auto"
@@ -261,7 +261,7 @@ function OfficialsClients() {
                       src="/clientCall.svg"
                     />
                   </a>
-                  <a target="_blank" href="https://wa.me/+923040602781">
+                  <a target="_blank" href="https://wa.me/+971557969234">
                     <img
                       className="w-[45px] h-[40px] mr-[0px]"
                       alt="auto"

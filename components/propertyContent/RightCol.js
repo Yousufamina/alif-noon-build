@@ -54,7 +54,7 @@ const RightCol = () => {
           </div>
           <div className="flex items-center">
             <button className="detailPropertyBtn rightColBtn mr-2">
-              <Link className="text-[#ECA33A]" href="tel:+923040602781">
+              <Link className="text-[#ECA33A]" href="tel:+971557969234">
                 {' '}
                 CALL US{' '}
               </Link>
@@ -62,7 +62,7 @@ const RightCol = () => {
             <button className="detailPropertyBtn rightColBtn ">
               <Link
                 className="text-[#ECA33A]"
-                href="https://wa.me/+923040602781"
+                href="https://wa.me/+971557969234"
               >
                 {' '}
                 INQUIRY{' '}
@@ -71,19 +71,19 @@ const RightCol = () => {
           </div>
           <div className="flex justify-center mt-[8px]">
             <div className="flex justify-center items-center">
-              <Link href="https://wa.me/+923040602781">
-                <p className="px-[2px] py-[5px] text-[#cecece] text-[15px] raleway">
+              <Link href="https://wa.me/+971557969234">
+                <p className="px-[2px] py-[5px] text-[#cecece] text-[11px] sm:text-[15px] raleway">
                   {' '}
                   Or get availability via
                 </p>
               </Link>
               <img alt="none" src="/whatsappIcon.svg" />
-              <Link href="https://wa.me/+923040602781">
-                <p className="px-[2px] py-[5px] text-[#ECA33A] text-[15px] raleway">
+              <a href="https://wa.me/+971557969234" target="_blank">
+                <p className="px-[2px] py-[5px] text-[#ECA33A] text-[10px] sm:text-[15px] raleway">
                   {' '}
                   WhatsApp
                 </p>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -124,8 +124,7 @@ const RightCol = () => {
     </div> */}
       <div
         style={{
-          padding: '15px 15px 15px 15px',
-          minWidth: '300px',
+          // padding: '15px 15px 15px 15px',
           width: '100%',
         }}
         // className={`consultantBox mt-[240px] ${
@@ -136,31 +135,41 @@ const RightCol = () => {
         <div className="bg-[#231F20]">
           <div className="justify-between flex items-center">
             <h1 className="text-center text-2xl text-white raleway"> Share </h1>
-            <div className="flex">
+            <div className="md:flex block ">
               {/* <img className='socialIcon w-[20px] mx-[15px]' alt='none' src='/whatsappIcon.svg' /> */}
-              <Link
+              <a
                 style={{ color: '#cecece' }}
-                href="https://wa.me/+923040602781"
+                href="https://wa.me/+971557969234"
+                target="_blank"
               >
                 <FontAwesomeIcon
                   style={{ width: '24px', height: '24px', fontWeight: '900' }}
-                  className="socialIcon  mx-[15px]"
+                  className="socialIcon my-2 md:my-0  md:mx-[15px]"
                   icon={faWhatsapp}
                 />
-              </Link>
+              </a>
               {/* <img alt='none'  className=' socialIcon mx-[15px]' src='/whatsappIconCheck.svg'/> */}
-              <FontAwesomeIcon
-                className="socialIcon mx-[15px]"
-                icon={faPhone}
-              />
-              <FontAwesomeIcon
-                className="socialIcon mx-[15px]"
-                icon={faShareNodes}
-              />
-              <FontAwesomeIcon
-                className="socialIcon mx-[15px]"
-                icon={faEnvelope}
-              />
+              <a
+                href="tel:+971557969234"
+                className="flex md:block justify-center  "
+              >
+                <FontAwesomeIcon
+                  className="socialIcon my-2 md:my-0  md:mx-[15px]"
+                  icon={faPhone}
+                />
+              </a>
+              <a href="mailto:example@example.com">
+                <FontAwesomeIcon
+                  className="socialIcon my-3 md:my-0   md:mx-[15px]"
+                  icon={faShareNodes}
+                />
+              </a>
+              <a href="mailto:example@example.com">
+                <FontAwesomeIcon
+                  className="socialIcon my-3 md:my-0   md:mx-[15px]"
+                  icon={faEnvelope}
+                />
+              </a>
             </div>
           </div>
         </div>

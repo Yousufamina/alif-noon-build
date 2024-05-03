@@ -105,8 +105,11 @@ const productListingPage = ({ url }) => {
           {/* <Row style={{ marginBottom: '100px' }} gutter={2}> */}
           {/* <Col xs={24} lg={24} xl={18}> */}
           <div style={{ marginBottom: '100px' }} className="container m-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-11  m-auto">
-              <div className="col-span-1 lg:col-span-8">
+            <Row
+              gutter={10}
+              className="grid grid-cols-1 lg:grid-cols-11  m-auto"
+            >
+              <Col sm={24} md={14} lg={16} xl={18}>
                 <main className="bg-gray-900">
                   <div className="py-4" style={{ backgroundColor: '#231F20' }}>
                     <div className="flex flex-wrap xl:flex-nowrap  ">
@@ -119,11 +122,11 @@ const productListingPage = ({ url }) => {
                     <CardPagination />
                   </div>
                 </main>
-              </div>
-              <div className="col-span-1 lg:col-span-3">
+              </Col>
+              <Col sm={24} md={10} lg={8} xl={6}>
                 <RightCol />
-              </div>
-            </div>
+              </Col>
+            </Row>
           </div>
 
           {/* </Col> */}
