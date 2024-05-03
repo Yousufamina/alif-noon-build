@@ -28,7 +28,7 @@ const items = [
     label: 'Blogs',
     children: (
       <>
-        <Row className="flex justify-center md:block md:justify-normal ">
+        <Row className="flex justify-center sm:justify-start">
           <div className="p-3 max-w-sm">
             <BlogCard
               date="Jan 13,2024"
@@ -71,7 +71,7 @@ const items = [
     label: 'Social',
     children: (
       <>
-        <Row className="flex justify-center md:block md:justify-normal ">
+        <Row className="">
           <div className="p-3 max-w-sm">
             <BlogCard
               date="March 15,2024"
