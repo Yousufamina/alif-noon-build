@@ -31,18 +31,17 @@ function Prod () {
 
     let dataObj = {'_id': id}
     const fetchData = async () => {
-      console.log("id")
-      console.log(id)
-      const response = await axios.post('http://localhost:3000/GetFilteredData', dataObj ,{
-        headers: {'Content-Type': 'application/json'}
-      });
-      // const response = await axios.post('https://alifnoon.ae/GetFilteredData', dataObj ,{
+      
+      // const response = await axios.post('http://localhost:3000/GetFilteredData', dataObj ,{
       //   headers: {'Content-Type': 'application/json'}
       // });
-      console.log("response")
+      
+      const response = await axios.post('https://alifnoon.ae/GetFilteredData', dataObj ,{
+        headers: {'Content-Type': 'application/json'}
+      });
+
       let data = response.data
       setPropertyData(data.data)
-      console.log(propertyData)
     }
     fetchData()
   }, []);

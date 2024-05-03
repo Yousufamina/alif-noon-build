@@ -22,7 +22,8 @@ const items = [
       label: "Blogs",
       children:(
         <>
-          <div className="p-3 max-w-sm">
+        <Row>
+        <div className="p-3 max-w-sm">
             <BlogCard date = "Jan 13,2024"  link ="/Blog1Detail" heading='Investing  in Luxury Properties in Dubai' descriptions={'Dubai, a city renowned for its bold ambitions and modern wonders, stands as a global beacon of luxury living. The real estate landscape in Dubai is a testament to this, featuring a stunning array of luxury properties that redefine opulence.'} ImageSrc={'/OtherCard1.png'} /> 
           </div>
           <div className="p-3 max-w-sm">
@@ -31,6 +32,8 @@ const items = [
           <div className="p-3 max-w-sm">
               <BlogCard date = "April 13,2024"  link ="/Blog3Detail" heading='Unveiling the Epitome of Opulence' descriptions={'Dubai, with its iconic skyline and cosmopolitan allure, has become synonymous with luxury living. The citys real estate landscape is a canvas adorned with architectural marvels that redefine opulence.'} ImageSrc={'/OtherCard1.png'} /> 
           </div>
+        </Row>
+          
         </>
       )
     },
@@ -39,21 +42,34 @@ const items = [
       label: "Social",
       children:(
         <>
-         <div className="p-3 max-w-sm">
+         <Row>
+          <div className="p-3 max-w-sm">
             <BlogCard date = "March 15,2024"  link ="/Social1Detail" heading='Wellfit dominates top UAE fitness industry awards' descriptions={'Wellfit solidified its position as a leader in the UAE’s fitness industry by securing a staggering six awards at the prestigious 2024 REPs. Industry Awards Gala, held in partnership with the Dubai Sports Council.'} ImageSrc={'/socialNews1.jpg'} /> 
-        </div>
-        <div className="p-3 max-w-sm">
-            <BlogCard date = "March 6,2024"  link ="/Social2Detail" heading='Waterfront Project of the Year' descriptions={'Armani Beach Residences, a landmark collaboration between Arada, Japanese architect Tadao Ando and Armani/Casa, has won the coveted Waterfront Project of the Year award at the 2024 Pillars of Real Estate Awards.'} ImageSrc={'/socialNews2.jpg'} /> 
-        </div>
-        <div className="p-3 max-w-sm">
-            <BlogCard date = "March 27,2024"  link ="/Social3Detail" heading='Arada completes first 920 homes' descriptions={'All eight Tiraz apartment blocks finished; handovers under way Over 7,500 homes now completed. Residents to benefit from direct access to world-class cultural assets, including performing arts space designed by Tadao Ando'} ImageSrc={'/socialNews3.jpg'} /> 
-        </div>
+          </div>
+          <div className="p-3 max-w-sm">
+              <BlogCard date = "March 6,2024"  link ="/Social2Detail" heading='Waterfront Project of the Year' descriptions={'Armani Beach Residences, a landmark collaboration between Arada, Japanese architect Tadao Ando and Armani/Casa, has won the coveted Waterfront Project of the Year award at the 2024 Pillars of Real Estate Awards.'} ImageSrc={'/socialNews2.jpg'} /> 
+          </div>
+          <div className="p-3 max-w-sm">
+              <BlogCard date = "March 27,2024"  link ="/Social3Detail" heading='Arada completes first 920 homes' descriptions={'All eight Tiraz apartment blocks finished; handovers under way Over 7,500 homes now completed. Residents to benefit from direct access to world-class cultural assets, including performing arts space designed by Tadao Ando'} ImageSrc={'/socialNews3.jpg'} /> 
+          </div>
+         </Row>
         </>
       )
     },
     {
       key: "3",
       label: " Offers",
+      children :(
+        <>
+        <Row>
+        <div className="mainContainer">
+        <div className="productSectionHeader text-center" style={{marginTop: '50px' , fontSize:'50px'}}>
+          <h2 className="leading-[140px] uppercase raleway font-[900] text-[50px] text-white">Coming Soon</h2>
+        </div>
+        </div>
+        </Row>
+        </>
+      )
     }
   ];
 
