@@ -14,7 +14,6 @@ import CardPagination from '@/components/productCard/CardPagination'
 import SocialIconScroll from '@/components/SocialIconScroll'
 import { useState, useEffect } from 'react'
 
-
 const items = [
   {
     key: '1',
@@ -121,7 +120,7 @@ const productListingPage = ({ url }) => {
                   </div>
                 </main>
               </div>
-              <div className="col-span-1 md:col-span-3">
+              <div className="col-span-1 lg:col-span-3">
                 <RightCol />
               </div>
             </div>

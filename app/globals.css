@@ -3,7 +3,7 @@
 @tailwind utilities;
 /* styles/globals.css */
 /* @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap'); */
-@import url("https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
 
 :root {
   --bg: #231f20;
@@ -54,7 +54,7 @@
 }
 
 .raleway {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 .raleway-light {
   font-family: raleway !important;
@@ -220,7 +220,7 @@ header .mainMenu a:hover {
 }
 .searchheader span {
   color: white;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 .searchheader input {
   opacity: 0;
@@ -577,7 +577,7 @@ header .mainMenu a:hover {
       rgba(5, 0, 5, 0.762),
       rgba(0, 0, 0, 0.768)
     ),
-    url("/bg2.png");
+    url('/bg2.png');
   background-size: cover;
   background-repeat: no-repeat;
   padding-bottom: 2%;
@@ -685,7 +685,7 @@ header .mainMenu a:hover {
       rgb(155 144 144 / 11%),
       rgb(155 144 144 / 11%)
     ),
-    url("/bgSmMonochrome.png");
+    url('/bgSmMonochrome.png');
   border: 1px solid #eca33a;
   border-left: none;
   border-right: none;
@@ -701,7 +701,7 @@ header .mainMenu a:hover {
 /* FreeConseltation */
 .FreeConseltation {
   background-image: radial-gradient(circle, #eca23a2d, #eca23a1c, #eca23a00),
-    url("/OtherCard6.png");
+    url('/OtherCard6.png');
   background-attachment: fixed;
   background-position: center;
   padding-top: 50px;
@@ -770,7 +770,7 @@ header .mainMenu a:hover {
       rgba(5, 5, 5, 0.641),
       rgba(4, 3, 3, 0.659)
     ),
-    url("/testimonialbg.svg");
+    url('/testimonialbg.svg');
   background-attachment: fixed;
   width: 100%;
   height: 100%;
@@ -1113,7 +1113,7 @@ header .mainMenu a:hover {
 .Aboutinner::before {
   /* border-top:2px solid #ECA33A;
   border-bottom:2px solid #ECA33A; */
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -1132,7 +1132,7 @@ header .mainMenu a:hover {
 .Aboutinner::after {
   /* border-top:2px solid #ECA33A;
   border-bottom:2px solid #ECA33A; */
-  content: "";
+  content: '';
   position: absolute;
   bottom: 190px;
   left: 0;
@@ -1159,7 +1159,7 @@ header .mainMenu a:hover {
 /* OurDevelopmentSection Start */
 
 .OurDevelopmentSection {
-  background-image: url("/RecentDevelopmentBg.svg");
+  background-image: url('/RecentDevelopmentBg.svg');
   padding-top: 80px;
   padding-bottom: 50px;
 }
@@ -1196,7 +1196,7 @@ header .mainMenu a:hover {
 }
 
 .OurDevelopmentSection .Swiper-Slide:hover {
-  background-image: url("/DevelopmentCard.svg");
+  background-image: url('/DevelopmentCard.svg');
   background-size: cover;
   color: white;
   border: 1px solid #eca33a;
@@ -1224,7 +1224,7 @@ header .mainMenu a:hover {
 }
 
 .OurDevelopmentSection {
-  background-image: url("/RecentDevelopmentBg.jpg");
+  background-image: url('/RecentDevelopmentBg.jpg');
   background-size: cover;
   background-position: top;
 }
@@ -1260,7 +1260,7 @@ header .mainMenu a:hover {
   padding-right: 10px !important;
 }
 .footerInnerDiv::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -1277,7 +1277,7 @@ header .mainMenu a:hover {
   );
 }
 .footerInnerDiv::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 60px;
@@ -1505,7 +1505,7 @@ header .mainMenu a:hover {
 
 .productSection {
   padding-bottom: 150px;
-  background-image: url("/Coming-Soon-image.png");
+  background-image: url('/Coming-Soon-image.png');
   background-attachment: fixed;
   background-position: center;
   padding-top: 50px;
@@ -2378,8 +2378,8 @@ header .mainMenu a:hover {
   border: 2px solid white;
 }
 .productListingPage .scroll-hide {
-  min-width: 300px;
-  max-width: 380px;
+  /* max-width: 380px; */
+  /* min-width: 290px; */
   width: -webkit-fill-available;
   height: 220px;
   transition: opacity 0.3s ease-in-out;
@@ -2852,7 +2852,7 @@ transition: all 0.5s;
 .CatalogSection {
   padding-bottom: 100px;
   background: linear-gradient(to bottom, #231f20 55%, rgba(35, 31, 32, 0) 100%),
-    url("/CATALOG2.png");
+    url('/CATALOG2.png');
 
   /* background: linear-gradient(to bottom, #231F20 ,#231f2042 ); */
   background-position: right 0px bottom -227px;
@@ -3062,7 +3062,7 @@ transition: all 0.5s;
 }
 .SellSection .ExpertiseContent::before {
   color: #eca33a;
-  content: "Alif noon properties";
+  content: 'Alif noon properties';
   font-weight: 900;
 }
 .SellSection .readinessPhase:hover {
@@ -3074,7 +3074,7 @@ transition: all 0.5s;
   position: relative;
 }
 .SellSection .EngageServive::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -3091,7 +3091,7 @@ transition: all 0.5s;
   );
 }
 .SellSection .EngageServive::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -3264,7 +3264,7 @@ transition: all 0.5s;
   color: white !important;
   text-align: center !important;
   font-size: 16px !important;
-  font-family: "raleway" !important;
+  font-family: 'raleway' !important;
 }
 .AddProperty .ant-table a {
   color: #eca33a !important;
