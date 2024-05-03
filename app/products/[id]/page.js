@@ -14,7 +14,6 @@ import CardPagination from '@/components/productCard/CardPagination'
 import SocialIconScroll from '@/components/SocialIconScroll'
 import { useState, useEffect } from 'react'
 
-
 const items = [
   {
     key: '1',
@@ -55,8 +54,8 @@ const productListingPage = ({ url }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://alifnoon.ae/GetData')
-        // const response = await fetch('http://localhost:3000/GetData')
+        // const response = await fetch('https://alifnoon.ae/GetData')
+        const response = await fetch('http://localhost:3000/GetData')
         if (!response.ok) {
           throw new Error('Network response was not ok')
         }
@@ -106,8 +105,8 @@ const productListingPage = ({ url }) => {
           {/* <Row style={{ marginBottom: '100px' }} gutter={2}> */}
           {/* <Col xs={24} lg={24} xl={18}> */}
           <div style={{ marginBottom: '100px' }} className="container m-auto">
-            <div className="grid grid-cols-1 md:grid-cols-11  m-auto">
-              <div className="col-span-1 md:col-span-8">
+            <div className="grid grid-cols-1 lg:grid-cols-11  m-auto">
+              <div className="col-span-1 lg:col-span-8">
                 <main className="bg-gray-900">
                   <div className="py-4" style={{ backgroundColor: '#231F20' }}>
                     <div className="flex flex-wrap xl:flex-nowrap  ">
@@ -121,7 +120,7 @@ const productListingPage = ({ url }) => {
                   </div>
                 </main>
               </div>
-              <div className="col-span-1 md:col-span-3">
+              <div className="col-span-1 lg:col-span-3">
                 <RightCol />
               </div>
             </div>

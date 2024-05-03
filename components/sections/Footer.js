@@ -274,7 +274,10 @@ function Footer() {
                     />
                   </a> */}
                 </div>
-                <a href="tel:+1234567890">
+                <a
+                  href="tel:+1234567890"
+                  className="flex md:block justify-center  "
+                >
                   <button
                     type="button"
                     className="buttonColor text-white raleway-light font-light bg-[#231F20] text-[13px] px-[50px] py-[10px]"

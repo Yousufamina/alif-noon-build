@@ -34,7 +34,7 @@ const RightCol = () => {
         // className={` scroll-hide consultantBox ${
         //   isVisible ? 'onVisible' : 'onHidden'
         // }`}
-        className="scroll-hide consultantBox "
+        className="w-full md:min-w-[300px] scroll-hide consultantBox "
       >
         <div className="bg-[#231F20]">
           <div className="overflow-hidden flex items-center mb-[10px]">
@@ -123,7 +123,11 @@ const RightCol = () => {
     </div>
     </div> */}
       <div
-        style={{ padding: '15px 15px 15px 15px' }}
+        style={{
+          padding: '15px 15px 15px 15px',
+          minWidth: '300px',
+          width: '100%',
+        }}
         // className={`consultantBox mt-[240px] ${
         //   isVisible ? 'shareVisible' : 'shareHidden'
         // }`}
