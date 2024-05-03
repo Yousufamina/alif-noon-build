@@ -149,10 +149,10 @@ function PropertyExploreView() {
                               {' '}
                               Or get availability via
                             </p>
-                            <Link href="https://wa.me/+923040602781">
+                            <Link href="https://wa.me/+971557969234">
                               <img alt="none" src="/whatsappIcon.svg" />
                             </Link>
-                            <Link href="https://wa.me/+923040602781">
+                            <Link href="https://wa.me/+971557969234">
                               <p className="px-[2px] py-[5px] text-[#ECA33A] text-[15px] raleway">
                                 {' '}
                                 WhatsApp
