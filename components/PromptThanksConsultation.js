@@ -19,10 +19,10 @@ function PromptThanksConsultation({ closeModal }) {
           <div className="mainContainer">
             <div className="formBox">
               <p className="leading-[52px] mb-2 raleway uppercase drop-shadow-md  text-[20px] md:text-[35]" style={{color:'white'}}>
-                We'Ve received your application
+                We've received your application
               </p>
-              <p className="text-[20px] text-lg md:text-2xl" style={{color:'white'}}>
-                Thank you for contacting us. Our speialist will get back to you shortly
+              <p className="text-[20px]  text-lg md:text-2xl" style={{color:'white'}}>
+                Thank you for contacting us. Our specialist will get back to you shortly
               </p>
         
               <div className=" md:flex md:justify-center mt-6 md:mt-[15px]">
