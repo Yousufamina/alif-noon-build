@@ -44,7 +44,7 @@ const items = [
         <>
          <Row>
           <div className="p-3 max-w-sm">
-            <BlogCard date = "March 15,2024"  link ="/Social1Detail" heading='Wellfit dominates top UAE fitness industry awards' descriptions={'Wellfit solidified its position as a leader in the UAE’s fitness industry by securing a staggering six awards at the prestigious 2024 REPs. Industry Awards Gala, held in partnership with the Dubai Sports Council.'} ImageSrc={'/socialNews1.jpg'} /> 
+            <BlogCard date = "March 15,2024"  link ="/Social1Detail" heading='Top UAE fitness industry awards' descriptions={'Wellfit solidified its position as a leader in the UAE’s fitness industry by securing a staggering six awards at the prestigious 2024 REPs. Industry Awards Gala, held in partnership with the Dubai Sports Council.'} ImageSrc={'/socialNews1.jpg'} /> 
           </div>
           <div className="p-3 max-w-sm">
               <BlogCard date = "March 6,2024"  link ="/Social2Detail" heading='Waterfront Project of the Year' descriptions={'Armani Beach Residences, a landmark collaboration between Arada, Japanese architect Tadao Ando and Armani/Casa, has won the coveted Waterfront Project of the Year award at the 2024 Pillars of Real Estate Awards.'} ImageSrc={'/socialNews2.jpg'} /> 

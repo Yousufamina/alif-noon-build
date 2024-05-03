@@ -1563,7 +1563,7 @@ header .mainMenu a:hover {
 .productCard .detailHeader p {
   font-family: raleway !important;
   color: #524e4e;
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 10px;
   font-weight: 600;
 }
@@ -1610,7 +1610,7 @@ header .mainMenu a:hover {
   color: black;
   font-weight: 700;
   font-family: raleway !important;
-  font-size: 16px;
+  font-size: 13px;
   text-align: center;
   margin-top: 5px;
 }
