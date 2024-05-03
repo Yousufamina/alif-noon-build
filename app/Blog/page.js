@@ -63,8 +63,8 @@ const items = [
         <>
         <Row>
         <div className="mainContainer">
-        <div className="productSectionHeader text-center" style={{marginTop: '50px' , fontSize:'50px'}}>
-          <h2 className="leading-[140px] uppercase raleway font-[900] text-[50px] text-white">Coming Soon</h2>
+        <div className="productSectionHeader text-center" style={{marginTop: '50px'}}>
+          <h2 className="leading-[140px] uppercase raleway font-[900] text-[40px] text-white" style={{fontSize:'40px'}}>Coming Soon</h2>
         </div>
         </div>
         </Row>
