@@ -135,7 +135,7 @@ const RightCol = () => {
         <div className="bg-[#231F20]">
           <div className="justify-between flex items-center">
             <h1 className="text-center text-2xl text-white raleway"> Share </h1>
-            <div className="md:flex block ">
+            <div className="flex">
               {/* <img className='socialIcon w-[20px] mx-[15px]' alt='none' src='/whatsappIcon.svg' /> */}
               <Link
                 style={{ color: '#cecece' }}
@@ -150,6 +150,7 @@ const RightCol = () => {
               </Link>
               {/* <img alt='none'  className=' socialIcon mx-[15px]' src='/whatsappIconCheck.svg'/> */}
               <Link
+                style={{ color: '#cecece' }}
                 href="tel:+971557969234"
                 className="flex md:block justify-center  "
               >
@@ -158,13 +159,17 @@ const RightCol = () => {
                   icon={faPhone}
                 />
               </Link>
-              <Link href="mailto:example@example.com">
+              <Link 
+                 style={{ color: '#cecece' }}
+                 href="mailto:example@example.com">
                 <FontAwesomeIcon
                   className="socialIcon my-3 md:my-0   md:mx-[15px]"
                   icon={faShareNodes}
                 />
               </Link>
-              <Link href="mailto:example@example.com">
+              <Link 
+                 style={{ color: '#cecece' }}
+                 href="mailto:example@example.com">
                 <FontAwesomeIcon
                   className="socialIcon my-3 md:my-0   md:mx-[15px]"
                   icon={faEnvelope}

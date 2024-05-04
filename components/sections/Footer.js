@@ -1,11 +1,38 @@
 'use client'
 
-import React from 'react'
+import React , {useState, useRef} from 'react'
 import { Row, Col } from 'antd'
-// import Image from 'next/image'
+import axios from 'axios'
 import Link from 'next/link'
 
 function Footer() {
+  const [showMessage, setShowMessage] = useState(false)
+  const [formData, setFormData] = useState({
+    email: '',
+  })
+  const form = useRef()
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+     // save email to db
+     setFormData({
+      email: '',
+    })
+     setShowMessage(true)
+     const response = await axios.post('https://alifnoon.ae/SaveEmail', formData ,{
+          headers: {'Content-Type': 'application/json'}
+     });
+    
+      console.log("response")
+      console.log(response)
+  }
+  
   return (
     <>
       <main className="relative w-full align-center justify-center bg-[#101010] footerMain">
@@ -285,24 +312,36 @@ function Footer() {
                     CALL NOW
                   </button>
                 </a>
-                <div className="emailButton justify-around flex text-wrap text-white raleway-light bg-[#231F20] pl-[10px] pr-[10px] py-[10px]">
-                  <button type="button" className="mr-[60px]">
-                    {'YOUR EMAIL'}
-                  </button>
-                  <div className="bg-[#ECA33A] w-[2px] h-[20px]"></div>
+                <form
+                    ref={form}
+                    onSubmit={handleSubmit}>
+                  <div className="emailButton justify-around flex text-wrap text-white raleway-light bg-[#231F20] pl-[10px] pr-[10px] py-[10px]">
+                  <input type="email"
+                         name="email"
+                         placeholder="Your Email"
+                         value={formData.email}
+                         onChange={handleInputChange}
+                         required
+                         className="h-11 w-full min-w-[100px] border-blue-gray-200 bg-transparent text-sm font-normal text-white placeholder-shown:border-blue-gray-200 focus:border-gray-900 focus:outline-none disabled:border-0 disabled:bg-blue-gray-50">                   
+                  </input>
+                  <div className="bg-[#ECA33A] w-[2px] h-[40px]"></div>
                   <button
                     style={{ whiteSpace: 'nowrap' }}
-                    type="button"
+                    type="submit"
                     className="mr-[20px] ml-[30px]"
                   >
                     SUBSCRIBE NOW
-                  </button>
+                  </button>  
+                            
                   <img
                     className="subscribeBtn"
                     alt="none"
                     src="/subscribeBtn.svg"
                   />
-                </div>
+                  
+                </div>    
+                </form>
+                {showMessage && <p> Thanks for subscribing us</p>}    
               </div>
             </Col>
           </Row>
