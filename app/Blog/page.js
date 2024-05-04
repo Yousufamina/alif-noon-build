@@ -64,14 +64,14 @@ const items = [
           </div>
         </Row>
       </>
-    ),
+    )
   },
   {
     key: '2',
     label: 'Social',
     children: (
       <>
-        <Row className="">
+        <Row className="flex justify-center sm:justify-start">
           <div className="p-3 max-w-sm">
             <BlogCard
               date="March 15,2024"
@@ -107,27 +107,26 @@ const items = [
           </div>
         </Row>
       </>
-    ),
+    )
   },
   {
     key: '3',
     label: ' Offers',
     children: (
       <>
-        <Row className="flex justify-center md:block md:justify-normal ">
+        <Row className="flex justify-center sm:justify-start">
           <div className="mainContainer">
             <div
               className="productSectionHeader text-center"
-              style={{ marginTop: '50px', fontSize: '50px' }}
             >
-              <h2 className="leading-[140px] uppercase raleway font-[900] text-[50px] text-white">
+              <p className="leading-[140px] uppercase raleway font-[900] text-[50px] text-white">
                 Coming Soon
-              </h2>
+              </p>
             </div>
           </div>
         </Row>
       </>
-    ),
+    )
   },
 ]
 

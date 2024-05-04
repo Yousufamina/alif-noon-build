@@ -137,7 +137,7 @@ const RightCol = () => {
             <h1 className="text-center text-2xl text-white raleway"> Share </h1>
             <div className="md:flex block ">
               {/* <img className='socialIcon w-[20px] mx-[15px]' alt='none' src='/whatsappIcon.svg' /> */}
-              <a
+              <Link
                 style={{ color: '#cecece' }}
                 href="https://wa.me/+971557969234"
                 target="_blank"
@@ -147,9 +147,9 @@ const RightCol = () => {
                   className="socialIcon my-2 md:my-0  md:mx-[15px]"
                   icon={faWhatsapp}
                 />
-              </a>
+              </Link>
               {/* <img alt='none'  className=' socialIcon mx-[15px]' src='/whatsappIconCheck.svg'/> */}
-              <a
+              <Link
                 href="tel:+971557969234"
                 className="flex md:block justify-center  "
               >
@@ -157,19 +157,19 @@ const RightCol = () => {
                   className="socialIcon my-2 md:my-0  md:mx-[15px]"
                   icon={faPhone}
                 />
-              </a>
-              <a href="mailto:example@example.com">
+              </Link>
+              <Link href="mailto:example@example.com">
                 <FontAwesomeIcon
                   className="socialIcon my-3 md:my-0   md:mx-[15px]"
                   icon={faShareNodes}
                 />
-              </a>
-              <a href="mailto:example@example.com">
+              </Link>
+              <Link href="mailto:example@example.com">
                 <FontAwesomeIcon
                   className="socialIcon my-3 md:my-0   md:mx-[15px]"
                   icon={faEnvelope}
                 />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
