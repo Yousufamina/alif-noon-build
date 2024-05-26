@@ -27,7 +27,7 @@ function AddAgent() {
         setFormData(values);
         var dataObj=values;
         localStorage.setItem('dataObj', dataObj);
-        await axios.post('http://localhost:3000/AddAgentApi', dataObj ,{
+        await axios.post('https://alifnoon.ae/AddAgentApi', dataObj ,{
           headers: {'Content-Type': 'application/json'}
         }).then(response => {
           

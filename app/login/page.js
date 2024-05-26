@@ -51,7 +51,7 @@ function LoginPage() {
     // console.log(hashedPassword)
     let obj = { username: username, password: password }
     const userResData = await axios.post(
-      'http://localhost:3000/GetAdminUser',
+      'https://alifnoon.ae/GetAdminUser',
       obj
     )
     // http://localhost:3000/GetAdminUser
