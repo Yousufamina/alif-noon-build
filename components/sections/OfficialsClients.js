@@ -9,7 +9,7 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import { EffectCoverflow, Navigation } from 'swiper/modules'
 
-function OfficialsClients() {
+function OfficialsClients({agentData}) {
   return (
     <main className="bg-[#231F20]">
       <Image
@@ -28,7 +28,6 @@ function OfficialsClients() {
         <div className="margin-[0 auto] w-100">
           <Swiper
             effect={'coverflow'}
-            initialSlide={0}
             grabCursor={true}
             centeredSlides={true}
             slidesPerView={'auto'}
@@ -45,7 +44,57 @@ function OfficialsClients() {
             modules={[EffectCoverflow, Navigation]}
             className="mySwiper"
           >
-            <SwiperSlide className="SwiperSlide relative">
+            {agentData?.map((data) => {
+              return (
+                <SwiperSlide className="SwiperSlide relative">
+              <div className="clientImg">
+                <img
+                  className="w-[100%] h-[100%] object-cover"
+                  src= { data.fileUpload[0].preview ? data.fileUpload[0].preview : '' }
+                  alt="none"
+                />
+              </div>
+              <div className="absoluteLayer">
+                <h2 className="raleway uppercase text-[30px] leading-[35px] text-[#ECA33A]">
+                  {' '}
+                  {data.name ? data.name : ''}{' '}
+                </h2>
+
+                <h5 className="raleway text-[17px] leading-[19px] text-light text-[#231F20]">
+                  {data.field ? data.field : ''}
+                </h5>
+
+                <hr className="bg-[#BCBCBC] mt-2 w-[50%] h-[2px]" />
+
+                <p className="mt-2 raleway text-[13px] leading-[15px] text-light text-[#231F20]">
+                  {/* Experience: 2 years
+                  <br /> */}
+                  Specialization: {data.field ? data.field : ''}
+                  <br />
+                  Language: {data.language ? data.language : ''}
+                </p>
+                <div className="flex justify-end mt-[-20px]">
+                  <a href={`tel:${data.phone ? data.phone : ''}`}>
+                    <img
+                      className="w-[45px] h-[40px] mr-[7px]"
+                      alt="none"
+                      src="/clientCall.svg"
+                    />
+                  </a>
+                  <a target="_blank" href={`https://wa.me/${data.phone ? data.phone : ''}`}>
+                    <img
+                      className="w-[45px] h-[40px] mr-[0px]"
+                      alt="auto"
+                      src="/clientWhatsapp.svg"
+                    />
+                  </a>
+                </div>
+              </div>
+            </SwiperSlide>
+              )
+            })}
+
+            {/* <SwiperSlide className="SwiperSlide relative">
               <div className="clientImg">
                 <img
                   className="w-[100%] h-[100%] object-cover"
@@ -135,7 +184,6 @@ function OfficialsClients() {
                 </div>
               </div>
             </SwiperSlide>
-
             <SwiperSlide className="SwiperSlide">
               <div className="clientImg">
                 <img
@@ -270,7 +318,7 @@ function OfficialsClients() {
                   </a>
                 </div>
               </div>
-            </SwiperSlide>
+            </SwiperSlide> */}
           </Swiper>
         </div>
       </div>

@@ -26,6 +26,7 @@ import { useState,useEffect } from "react";
 var apiCalled=false;
 export default function Home({ Component, pageProps }) {
 const [dataa, setDataa] = useState([]);
+const [agentData, setAgentData] = useState([]);
 const [productSectionContent, setProductSectionContent] = useState(null);
 
 const fetchData = async () => {
@@ -33,8 +34,8 @@ const fetchData = async () => {
       // setDataa(await JSON.parse(localStorage.getItem('propData')));
     }
     else{
-      await fetch('https://alifnoon.ae/GetData')
-      // await fetch('http://localhost:3000/GetData')
+      // await fetch('https://alifnoon.ae/GetData')
+      await fetch('http://localhost:3000/GetData')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -49,12 +50,33 @@ const fetchData = async () => {
         console.error('There was a problem with the fetch operation:', error);
       });
 
-    }
-    
-  };
+    }    
+};
 
   if(dataa.length==0){
     fetchData();
+  }
+
+  const fetchAgentData = async () => {
+    // await fetch('https://alifnoon.ae/GetData')
+    await fetch('http://localhost:3000/GetAgentData')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      setAgentData(data.data);
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+  }
+  
+
+  if(agentData.length==0){
+    fetchAgentData();
   }
 
   return (
@@ -87,7 +109,9 @@ const fetchData = async () => {
     /> 
     <OurPartners />
     <ThirdSection />    
-    <OfficialsClients/>
+    <OfficialsClients
+     agentData={agentData}
+    />
     <EnquireSection />
     <LatestUpdate />
     <About />

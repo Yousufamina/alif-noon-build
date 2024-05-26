@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react';
+import React , {useState }from 'react';
 import { Space, Table, Tag } from 'antd';
 const columns = [
   {
@@ -10,14 +10,29 @@ const columns = [
     // render: (text) => <a>{text}</a>,
   },
   {
+    title: 'Field',
+    dataIndex: 'field',
+    key: 'field',
+  },
+  {
     title: 'Phone',
     dataIndex: 'phone',
     key: 'phone',
   },
   {
-    title: 'Field',
-    dataIndex: 'field',
-    key: 'field',
+    title: 'Email',
+    dataIndex: 'email',
+    key: 'email',
+  },
+  {
+    title: 'Description',
+    dataIndex: 'description',
+    key: 'description',
+  },
+  {
+    title: 'Location',
+    dataIndex: 'location',
+    key: 'location',
   },
   
   {
@@ -56,7 +71,28 @@ const data = [
 // const App = () => <Table columns={columns} dataSource={data} />;
 // export default App;
 
-function Blogs() {
+function Agents() {
+
+  const [agentData, setAgentData] = useState([])
+  const fetchData = async () => {
+    await fetch('http://localhost:3000/GetAgentData')
+    // await fetch('http://localhost:3000/GetAgentData')
+    // await fetch('https://alifnoon.ae/GetAgentData')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      setAgentData(data.data);
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+};
+  fetchData()
+
   return (
     <div className="AddProperty raleway">
       <div className="content py-[9px] px-[14px] bg-[#231F20] flex flex-wrap">
@@ -64,10 +100,10 @@ function Blogs() {
         <div style={{letterSpacing:'2px'}} class="text-[#ECA33A] font-bold text-2xl mb-[28px] text-left ">
             Agent Listing
           </div>
-    <Table style={{background:'transparent'}} columns={columns} dataSource={data} /> 
+    <Table style={{background:'transparent'}} columns={columns} dataSource={agentData} /> 
     </div>
     </div>
     </div>
   )
 }
-export default Blogs;
+export default Agents;

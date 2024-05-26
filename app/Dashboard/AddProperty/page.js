@@ -21,7 +21,6 @@ function AddProperty() {
   // const dispatch = useDispatch()
   const [formData, setFormData] = useState({});
 
- 
   const onFinish = async (values) => {
     try {
 
@@ -39,20 +38,18 @@ function AddProperty() {
         setFormData(values);
         var dataObj=values;
         localStorage.setItem('dataObj', dataObj);
-        const response = await axios.post('https://alifnoon.ae/Api', dataObj ,{
+        await axios.post('http://localhost:3000/Api', dataObj ,{
           headers: {'Content-Type': 'application/json'}
+        }).then(response => {
+          console.log("response")
+          console.log(response)
+          toast.success('Property Added Successfully!');
+       })
+        .catch(error => {
+          console.error('There was a problem with the fetch operation:', error);
         });
-        console.log("response")
-        console.log(response)
       //  const response = await axios.post('http://localhost:3000/Api', dataObj);
       //  const response = await axios.post('https://www.alifnoon.ae/Api', dataObj);
-
-
-
-     
-        setTimeout(() => {
-          toast.success('Property Added Successfully!');
-        }, 4000);
       }
       else{
         toast.error('Please add all fields!');
@@ -86,27 +83,25 @@ function AddProperty() {
             Add Property from here
           </div>
           <ToastContainer
-      position="top-right"
-      autoClose={3000}
-      hideProgressBar
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="light"
-    />
-        <Form
-        onFinish={onFinish}
-        >
+              position="top-right"
+              autoClose={3000}
+              hideProgressBar
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+          />
+        <Form onFinish={onFinish}>
           <div className="grid grid-cols-3 gap-y-0 gap-x-6 max-w-90 m-auto">
             <div className="col-span-2 lg:col-span-1">
               <label for="placeName" className="text-[16px] text-white">
                 Name
               </label>
               <Form.Item name='name'>
-              <input name="placeName"
+              <input name="name"  required
                 style={{borderRadius:'6px',
                 border:'1px solid #ECA33A'
               }}
@@ -122,7 +117,7 @@ function AddProperty() {
               </label>
               <Form.Item name='propertyType'>
               <Select
-              placeholder='Select Type'
+              placeholder='Select Type' required
                 mode="tags"
                 // defaultValue="Duplexes"
                 style={{
@@ -161,6 +156,7 @@ function AddProperty() {
                   height:'40px',
                   // padding:'10px'
                 }}
+                required
                 placeholder='Select Category'
                 className="TabSet mt-2 transition outline-none focus:border-[#cecece] ease-out bg-transparent text-white border-solid border-gray-400 py-2 text-[15px] w-full"
                 onChange={handleChange}
@@ -181,6 +177,7 @@ function AddProperty() {
               </label>
               <Form.Item name='price'>
               <input name="price"
+              required
                 type="number"
                 style={{borderRadius:'6px',
                 border:'1px solid #ECA33A',
@@ -197,7 +194,7 @@ function AddProperty() {
                 Bedrooms
               </label>
               <Form.Item name='bedrooms'>
-              <input name ="bedrooms"
+              <input name ="bedrooms" required
                 type="string"
                 style={{borderRadius:'6px',
                 border:'1px solid #ECA33A'
@@ -213,7 +210,7 @@ function AddProperty() {
                 Area
               </label>
               <Form.Item name='area'>
-              <input name ="area"
+              <input name ="area" required
                 type="string"
                 style={{borderRadius:'6px',
                 border:'1px solid #ECA33A'
@@ -232,6 +229,7 @@ function AddProperty() {
               <Select
               placeholder='Select Feature & Aminities'
                 mode="tags"
+                required
                 // defaultValue="Kitchen Appliences"
                 style={{
                   width: "100%",
@@ -258,6 +256,7 @@ function AddProperty() {
               <Form.Item name='cities'>
               <Select
                 placeholder='Select cities'
+                required
                 // mode="tags"
                 // defaultValue="Dubai"
                 style={{
@@ -285,6 +284,7 @@ function AddProperty() {
               <Form.Item name='location'>
               <input name="location"
                 type="text"
+                required
                 style={{borderRadius:'6px',
                 border:'1px solid #ECA33A'
               }}
@@ -302,6 +302,7 @@ function AddProperty() {
               <textarea 
                 name="description" 
                 type="string"
+                required
                   style={{borderRadius:'6px',
                   border:'1px solid #ECA33A'
                 }}
@@ -310,11 +311,8 @@ function AddProperty() {
                 cols="20" rows="3">
               </textarea> 
               </Form.Item>
-            </div>
-
-            
+            </div>      
           </div>
-        
           <Row gutter={15} className="flex mt-[0px] lg:col-span-1">
           <Col lg={12} className="flex-col">
               <label for="type" className="text-[16px] mb-6 text-white">
@@ -347,6 +345,7 @@ function AddProperty() {
                 Reset
               </button>
           </div>
+
         </Form> 
         </div>
       </div>

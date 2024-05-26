@@ -14,6 +14,7 @@ import { faCalendarDays } from '@fortawesome/free-regular-svg-icons'
 import CardPagination from '@/components/productCard/CardPagination';
 import SocialIconScroll from '@/components/SocialIconScroll';
 import ScrollTopButton from "@/components/ScrollTopButton";
+import { useState } from "react";
 
 const Specialization = [
   
@@ -47,6 +48,28 @@ const Languages = [
 ]
 
 function page() {
+  
+  const [agentData, setAgentData] = useState([]);
+  const fetchAgentData = async () => {
+    // await fetch('https://alifnoon.ae/GetData')
+    await fetch('http://localhost:3000/GetAgentData')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      setAgentData(data.data);
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+  }
+  if(agentData.length==0){
+    fetchAgentData();
+  }
+
   return (
     <div className='OFFICIALSectionMax'>
     <Header />
@@ -61,36 +84,42 @@ function page() {
                 <h3> Discover the Profound Expertise of Our Official Team </h3>
             </div>
             <img style={{ marginBottom:'40px',height:'80px', width:'100%'}} src='/VectorPng.png' alt='none' /> 
-        <div className='searchFilter raleway'>
+                <div className='searchFilter raleway'>
                 <div className='filterInputsContaner'>
                 <div className='InputBox'>
                 <p className='mt-[-3px] leading-[27px] text-[21px] text-white font-light '> Locate Your Agent and Uncover Your
                   Ideal Home </p>
                 </div>
                   <div className='InputBox '>
-                  <SelectInput options={Specialization} placeholder="Specialization" />
+                     <SelectInput options={Specialization} placeholder="Specialization" />
                   </div>
                   <div className='InputBox'>
-                  <SelectInput options={Languages} placeholder="Languages" />
+                     <SelectInput options={Languages} placeholder="Languages" />
                   </div>
                 </div>
         </div>
         <Row className='mt-10' gutter={10} >
           <Col sm={24} lg={12} xl={15}>
           <div className={`justify-center flex flex-wrap detailCardRow secondSectionRow`}>
-                <div className=" p-4 max-w-sm">
-                    <OfficialCard heading='Gabriela Brunariova' ImageSrc={'/OFFCIAL1.png'} /> 
+                
+                {agentData?.map((data) => {
+                    return (
+                      <div className=" p-4 max-w-sm">
+                        <OfficialCard data={data}   /> 
+                      </div>
+                    )
+                })}
+                
+                
+                {/* <div className="p-4 max-w-sm">
+                    <OfficialCard name='Hisham El Assaad' ImageSrc={'/OFFCIAL2.png'} /> 
                 </div>
                 <div className="p-4 max-w-sm">
-                <OfficialCard heading='Hisham El Assaad' ImageSrc={'/OFFCIAL2.png'} /> 
+                    <OfficialCard heading='Dmitri Zolotco' ImageSrc={'/OFFICIAL3.png'} />  
                 </div>
                 <div className="p-4 max-w-sm">
-                <OfficialCard heading='Dmitri Zolotco' ImageSrc={'/OFFICIAL3.png'} />  
-                </div>
-                <div className="p-4 max-w-sm">
-                <OfficialCard heading='Rona Rahim' ImageSrc={'/OFFCIALS4.png'} /> 
-                </div>
-               
+                    <OfficialCard heading='Rona Rahim' ImageSrc={'/OFFCIALS4.png'} /> 
+                </div> */}
                 <CardPagination/>
             </div>
           </Col>

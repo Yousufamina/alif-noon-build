@@ -51,13 +51,14 @@ function LoginPage() {
     // console.log(hashedPassword)
     let obj = { username: username, password: password }
     const userResData = await axios.post(
-      'https://alifnoon.ae/GetAdminUser',
+      'http://localhost:3000/GetAdminUser',
       obj,
       {
         headers: { 'Content-Type': 'application/json' },
       }
     )
     // http://localhost:3000/GetAdminUser
+    // https://alifnoon.ae/GetAdminUser
     let userData = userResData.data.data
     if (userData) {
       const isValid = bcrypt.compareSync(password, userData.password)
