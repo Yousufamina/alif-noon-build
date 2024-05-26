@@ -52,10 +52,7 @@ function LoginPage() {
     let obj = { username: username, password: password }
     const userResData = await axios.post(
       'http://localhost:3000/GetAdminUser',
-      obj,
-      {
-        headers: { 'Content-Type': 'application/json' },
-      }
+      obj
     )
     // http://localhost:3000/GetAdminUser
     // https://alifnoon.ae/GetAdminUser
