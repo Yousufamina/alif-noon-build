@@ -51,11 +51,10 @@ function LoginPage() {
     // console.log(hashedPassword)
     let obj = { username: username, password: password }
     const userResData = await axios.post(
-      'https://localhost:3000/GetAdminUser',
+      'http://localhost:3000/GetAdminUser',
       obj,
       {
-        headers: { 'Content-Type': 'application/json',
-        "Access-Control-Allow-Origin": "*", }
+        headers: { 'Content-Type': 'application/json' }
       }
     )
     // http://localhost:3000/GetAdminUser
