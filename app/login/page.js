@@ -54,7 +54,7 @@ function LoginPage() {
       'http://localhost:3000/GetAdminUser',
       obj,
       {
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       }
     )
     // http://localhost:3000/GetAdminUser
