@@ -51,7 +51,7 @@ function page() {
   
   const [agentData, setAgentData] = useState([]);
   const fetchAgentData = async () => {
-    await fetch('https://alifnoon.ae/GetData')
+    await fetch('https://alifnoon.ae/GetAgentData')
     // await fetch('http://localhost:3000/GetAgentData')
     .then(response => {
       if (!response.ok) {
