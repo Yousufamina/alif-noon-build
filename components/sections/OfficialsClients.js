@@ -54,6 +54,7 @@ function OfficialsClients({agentData}) {
                   alt="none"
                 />
               </div>
+              
               <div className="absoluteLayer">
                 <h2 className="raleway uppercase text-[30px] leading-[35px] text-[#ECA33A]">
                   {' '}

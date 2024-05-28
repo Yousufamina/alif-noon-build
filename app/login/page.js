@@ -54,7 +54,13 @@ function LoginPage() {
       'http://localhost:3000/GetAdminUser',
       obj,
       {
-        headers: { 'Content-Type': 'application/json' }
+        headers: {
+          'Access-Control-Allow-Credentials' : 'true',
+          'Access-Control-Allow-Origin' : '*',
+          'Access-Control-Allow-Methods' : 'GET,OPTIONS,DELETE,POST,PUT',
+          'Access-Control-Allow-Headers' :
+          'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',  
+         'Content-Type': 'application/json' }
       }
     )
     // http://localhost:3000/GetAdminUser

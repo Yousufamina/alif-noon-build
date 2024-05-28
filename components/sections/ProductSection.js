@@ -49,7 +49,7 @@ function ProductSection({
   const [proType, setProType] = useState('0')
 
   const onChange = (key) => {
-    console.log(key, 'My Key')
+    // console.log(key, 'My Key')
   }
 
   return (
