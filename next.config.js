@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    async headers ()  {
+    distDir: 'dist',
+    headers  : async() => {
         return [
             {
                 // matching all API routes

@@ -70,36 +70,6 @@ const columns = [
   },
 ];
 
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    phone: 32,
-    room: 32,
-    typesNCatagory: 'Duplexes Penthouse',
-    featuresNAmenities: 'Shared gym kitchen',
-    location:'Dubai'
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    phone: 32,
-    room: 32,
-    typesNCatagory: 'Vila Duplexes',
-    featuresNAmenities: 'Shared gym kitchen',
-    location:'Abu dhabi'
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    phone: 32,
-    room: 32,
-    typesNCatagory: 'Duplexes Penthouse',
-    featuresNAmenities: 'Shared gym kitchen',
-    location:'Sharja'
-  },
-];
-
 // const App = () => <Table columns={columns} dataSource={data} />;
 // export default App;
 

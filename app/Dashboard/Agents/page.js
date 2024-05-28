@@ -1,13 +1,12 @@
 "use client"
 
-import React , {useState }from 'react';
+import {useState }from 'react';
 import { Space, Table, Tag } from 'antd';
 const columns = [
   {
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    // render: (text) => <a>{text}</a>,
   },
   {
     title: 'Field',
@@ -30,9 +29,9 @@ const columns = [
     key: 'description',
   },
   {
-    title: 'Location',
-    dataIndex: 'location',
-    key: 'location',
+    title: 'Language',
+    dataIndex: 'language',
+    key: 'language',
   },
   
   {
@@ -68,16 +67,14 @@ const data = [
     field: 'Developer',
   },
 ];
-// const App = () => <Table columns={columns} dataSource={data} />;
-// export default App;
 
 function Agents() {
 
   const [agentData, setAgentData] = useState([])
   const fetchData = async () => {
-    await fetch('http://localhost:3000/GetAgentData')
     // await fetch('http://localhost:3000/GetAgentData')
-    // await fetch('https://alifnoon.ae/GetAgentData')
+    // await fetch('http://localhost:3000/GetAgentData')
+    await fetch('https://alifnoon.ae/GetAgentData')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');

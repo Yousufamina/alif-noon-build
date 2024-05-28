@@ -34,8 +34,8 @@ const fetchData = async () => {
       // setDataa(await JSON.parse(localStorage.getItem('propData')));
     }
     else{
-      // await fetch('https://alifnoon.ae/GetData')
-      await fetch('http://localhost:3000/GetData')
+      await fetch('https://alifnoon.ae/GetData')
+      // await fetch('http://localhost:3000/GetData')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -58,8 +58,8 @@ const fetchData = async () => {
   }
 
   const fetchAgentData = async () => {
-    // await fetch('https://alifnoon.ae/GetData')
-    await fetch('http://localhost:3000/GetAgentData')
+    await fetch('https://alifnoon.ae/GetData')
+    // await fetch('http://localhost:3000/GetAgentData')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
