@@ -15,7 +15,10 @@ const CardBottom = () => {
           borderLeft: '1px solid #ECA33A',
         }}
       >
-        <img src="/phoneIcon.svg" />
+        <a className="flex" href="tel:+971557969234" target="_blank">
+          <img src="/phoneIcon.svg" />
+        </a>
+      
       </div>
       <div className="innerDiv" style={{ borderRight: '1px solid #ECA33A' }}>
         <img src="/shareIcon.svg" />

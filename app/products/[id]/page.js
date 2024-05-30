@@ -104,29 +104,34 @@ const productListingPage = ({ url }) => {
           </div>
           {/* <Row style={{ marginBottom: '100px' }} gutter={2}> */}
           {/* <Col xs={24} lg={24} xl={18}> */}
-          <div style={{ marginBottom: '100px' }} className="container m-auto">
-            <Row
+          <div style={{ marginBottom: '100px' }} className="mainContainer m-auto">
+            {/* <Row
               gutter={10}
-              className="grid grid-cols-1 lg:grid-cols-11  m-auto"
-            >
-              <Col sm={24} md={14} lg={16} xl={18}>
-                <main className="bg-gray-900">
-                  <div className="py-4" style={{ backgroundColor: '#231F20' }}>
-                    <div className="flex flex-wrap xl:flex-nowrap  ">
+              className="grid grid-cols-1 md:grid-cols-8  m-auto"
+            > */}
+            {/* <div className="grid grid-cols-1 md:grid-cols-11  m-auto">
+              <div className="col-span-1 md:col-span-8"> */}
+                {/* <main> */}
+                  <div className="py-4">
+                    <div className="justify-center flex flex-wrap mt-10 secondSectionRow">
                       {propertiesData?.map((dat, index) => (
-                        <div className="p-1 max-w-full" key={index}>
+                        <div className="p-4 max-w-sm" key={index}>
                           <ProductCard data={dat} />
                         </div>
                       ))}
                     </div>
                     <CardPagination />
                   </div>
-                </main>
-              </Col>
-              <Col sm={24} md={10} lg={8} xl={6}>
-                <RightCol />
-              </Col>
-            </Row>
+                {/* </main> */}
+              {/* </div> */}
+            {/* </div> */}
+              {/* <Col sm={24} md={14} lg={16} xl={16}> */}
+        
+              {/* </Col> */}
+              {/* <Col sm={24} md={10} lg={8} xl={6}>
+                 <RightCol />
+              </Col> */}
+            {/* </Row> */}
           </div>
 
           {/* </Col> */}

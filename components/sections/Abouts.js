@@ -14,7 +14,7 @@ function About() {
                 Alif Noon Properties
               </h1>
               <h2 className="leading-[50px] raleway-light font-normal mb-5 text-[35px] text-white">
-                A Real Estate Agency in Dubai{' '}
+                A Real Estate Solution in Dubai{' '}
               </h2>
               <p className="max-[1024px]:text-[12px] text-left w-[80%] mr-[30%] text-[#ECA33A] raleway-light font-light text-[16px] mb-[20px]">
                 Welcome to Alif Noon Properties, your premier destination for

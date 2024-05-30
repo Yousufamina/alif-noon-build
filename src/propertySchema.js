@@ -2,44 +2,6 @@
 
 const mongoose = require('mongoose');
 
-// Define your schema
-// const propertyListSchema = new mongoose.Schema({
-//     "type": "object",
-//     "properties": {
-//       "name": {
-//         "type": "string"
-//       },
-//       "propertyType": {
-//         "type": "array",
-//         "items": {
-//           "type": "string"
-//         }
-//       },
-//       "category": {
-//         "type": "string"
-//       },
-//       "bedrooms": {
-//         "type": "string"
-//       },
-//       "feature&Aminities": {
-//         "type": "array",
-//         "items": {
-//           "type": "string"
-//         }
-//       },
-//       "cities": {
-//         "type": "string"
-//       },
-//       "location": {
-//         "type": "string"
-//       },
-//       "fileUpload": {
-//         "type": "string"
-//       },
-
-//     },
-//   }
-//   );
 const propertyListSchema = new mongoose.Schema({
     name: String,
     propertyType: [String],
@@ -55,7 +17,9 @@ const propertyListSchema = new mongoose.Schema({
       name: String,
       preview: String,
       thumbUrl: String
-  }]
+    }]
+    },{
+    timestamps: true,
   });
   
 

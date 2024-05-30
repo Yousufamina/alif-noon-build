@@ -45,7 +45,7 @@ function page() {
                 <Col className='firstTextResponsiveCol' sm={24} md={12}>
                     <div className='textSection pl-[70px] pr-[0px] pb-[40px] pt-[40px]'>
                         <h4 className='leading-[50px] raleway text-[#ECA33A] text-[45px] font-bold'> Alif Noon Properties</h4>
-                        <h5 className='leading-[50px] raleway text-white text-[40px] font-light'>A Real Estate Agency in Dubai </h5>
+                        <h5 className='leading-[50px] raleway text-white text-[40px] font-light'>A Real Estate Solution in Dubai </h5>
                         <p style={{letterSpacing:'2px'}} className='mt-[20px] raleway leading-[26px] text-[#cecece] text-[16px] font-light'>
                             Welcome to Alif Noon Properties, your premier destination for
                             all your real estate needs in the vibrant city of Dubai. With

@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const employeeSchema = new mongoose.Schema({
     name: String,
     language: String,
-    phone: Number,
+    phone: String,
     description:String,
     email:String,
     field:String,
@@ -14,6 +14,8 @@ const employeeSchema = new mongoose.Schema({
       preview: String,
       thumbUrl: String
   }]
+  }, {
+    timestamps: true,
   });
   
 

@@ -53,6 +53,7 @@ function page() {
   const fetchAgentData = async () => {
     await fetch('https://alifnoon.ae/GetAgentData')
     // await fetch('http://localhost:3000/GetAgentData')
+    // await fetch('https://alifnoon.ae/GetAgentData')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -70,6 +71,28 @@ function page() {
     fetchAgentData();
   }
 
+  const [latestPropertyData, setLatestPropertyData] = useState([]);
+  const fetchLatestPropertyData = async () => {
+    await fetch('https://alifnoon.ae/GetLatestData')
+    // await fetch('http://localhost:3000/GetLatestData')
+    // await fetch('https://alifnoon.ae/GetLatestData')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      setLatestPropertyData(data.data);
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+  }
+  if(latestPropertyData.length==0){
+    fetchLatestPropertyData();
+  }
+
   return (
     <div className='OFFICIALSectionMax'>
     <Header />
@@ -84,7 +107,7 @@ function page() {
                 <h3> Discover the Profound Expertise of Our Official Team </h3>
             </div>
             <img style={{ marginBottom:'40px',height:'80px', width:'100%'}} src='/VectorPng.png' alt='none' /> 
-                <div className='searchFilter raleway'>
+                <div cla m ssName='searchFilter raleway'>
                 <div className='filterInputsContaner'>
                 <div className='InputBox'>
                 <p className='mt-[-3px] leading-[27px] text-[21px] text-white font-light '> Locate Your Agent and Uncover Your
@@ -126,42 +149,24 @@ function page() {
           <Col style={{paddingTop:'1rem', paddingRight:'20px'}} className='rightColMain' sm={24} lg={12} xl={9}>
             <div style={{borderRadius:'5px',marginRight:'90px'}} className='rightColDiv p-[20px] bg-[#FFFFFF2E]'>
               <h6 className='text-white text-[25px] mb-[16px] font-bold raleway'>Latest Listing</h6>
-              <div className='flex'>
-                <div style={{borderRadius:'10px',border:'1px solid #ECA33A'}} className='overflow-hidden w-[176px] h-[80px] mr-6'>
-                  <img style={{borderRadius:'10px'}} src='/OtherCard4.png' alt='none' />
-                </div>
-                <div>
-                <p className='text-white text-[17px] font-bold raleway leading-[23px]' > Luxury 6 bed mansion
-                    in palmjumera</p> 
-                <p className='text-[#ECA33A] text-[20px] font-bold raleway leading-[23px]'>
-                AED 5,500,000
-                </p>
-                </div>
-              </div>
-              <div className='flex mt-3'>
-                <div style={{borderRadius:'10px',border:'1px solid #ECA33A'}} className='overflow-hidden w-[176px] h-[80px] mr-6'>
-                  <img style={{borderRadius:'10px'}} src='/OtherCard5.png' alt='none' />
-                </div>
-                <div>
-                <p className='text-white text-[17px] font-bold raleway leading-[23px]' > Luxury 6 bed mansion
-                    in palmjumera</p> 
-                <p className='text-[#ECA33A] text-[20px] font-bold raleway leading-[23px]'>
-                AED 5,500,000
-                </p>
-                </div>
-              </div>
-              <div className='flex mt-3'>
-                <div style={{borderRadius:'10px',border:'1px solid #ECA33A'}} className='overflow-hidden w-[176px] h-[80px] mr-6'>
-                  <img style={{borderRadius:'10px'}} src='/OtherCard6.png' alt='none' />
-                </div>
-                <div>
-                <p className='text-white text-[17px] font-bold raleway leading-[23px]' > Luxury 6 bed mansion
-                    in palmjumera</p> 
-                <p className='text-[#ECA33A] text-[20px] font-bold raleway leading-[23px]'>
-                AED 5,500,000
-                </p>
-                </div>
-              </div>
+              
+              {latestPropertyData?.map((data) => {
+                return (
+                  <div className='flex mt-3'>
+                    <div style={{borderRadius:'10px',border:'1px solid #ECA33A'}} className='overflow-hidden w-[103px] h-[80px] mr-6'>
+                      <img style={{borderRadius:'10px' ,  maxWidth: '100%' , height: 'auto'}} src={data.fileUpload[0].preview ? data.fileUpload[0].preview : '' } alt='none' />
+                    </div>
+                    <div>
+                    <p className='text-white text-[17px] font-bold raleway leading-[23px]'> {data.name} </p> 
+                    
+                    <p className='text-[#ECA33A] text-[20px] font-bold raleway leading-[23px]'>
+                      AED {data.price}
+                    </p>
+                    </div>
+                  </div>
+                )
+              })}
+              
 
             </div>
             <div style={{borderRadius:'5px',marginRight:'90px'}} className='rightColDiv mt-[20px] p-[20px] bg-[#FFFFFF2E]'>

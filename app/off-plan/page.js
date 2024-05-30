@@ -183,20 +183,20 @@ function page() {
               {/* <CardPagination/> */}
           </div>
       </div>
-      <div style={{ paddingBottom: '0px' , paddingTop:'0px' }}className="productListingContainer productSection mainContainer">
+      <div style={{ paddingBottom: '0px' , paddingTop:'10px' }}className="productListingContainer productSection mainContainer">
               <div className="productsTabs">
                 {true && (
                   <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
                 )}
               </div>
               <div style={{ marginBottom: '100px' }} className="container m-auto">
-                <div className="grid grid-cols-1 md:grid-cols-11  m-auto">
-                  <div className="col-span-1 md:col-span-8">
-                    <main className="bg-gray-900">
-                      <div className="py-4" style={{ backgroundColor: '#231F20' }}>
-                        <div className="flex flex-wrap xl:flex-nowrap  ">
+                {/* <div className="grid grid-cols-1 md:grid-cols-11  m-auto"> */}
+                  {/* <div className="col-span-1 md:col-span-8"> */}
+                    <main className="">
+                      <div className="py-4">
+                        <div className="justify-center flex flex-wrap mt-10 secondSectionRow">
                           {propertiesData?.map((dat, index) => (
-                            <div className="p-1 max-w-full" key={index}>
+                            <div className="p-4 max-w-full" key={index}>
                               <ProductCard data={dat} />
                             </div>
                           ))}
@@ -204,11 +204,11 @@ function page() {
                         <CardPagination/>
                       </div>
                     </main>
-                  </div>
-                  <div className="col-span-1 md:col-span-3">
+                  {/* </div> */}
+                  {/* <div className="col-span-1 md:col-span-3">
                     <RightCol />
-                  </div>
-                </div>
+                  </div> */}
+                {/* </div> */}
               </div>
             </div>
     {/* </main> */}

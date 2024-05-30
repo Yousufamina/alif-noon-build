@@ -242,7 +242,9 @@ function Footer() {
 
                 <h3 className="text-[#cecece] raleway-light text-[18px] font-[300] text-center md:text-end ">
                   {' '}
-                  YOU OFFICE LOCATION..UAE{' '}
+                  Office No. 1, Ground Floor, Emerald Vision Tower, District 1,
+                    Jumeirah Village Triangle, Dubai, UAE
+                    {' '}
                 </h3>
 
                 <div className="pl-[20px] pt-[12px] pb-[12px] flex justify-center md:justify-end">

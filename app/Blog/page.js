@@ -37,7 +37,7 @@ const items = [
               descriptions={
                 'Dubai, a city renowned for its bold ambitions and modern wonders, stands as a global beacon of luxury living. The real estate landscape in Dubai is a testament to this, featuring a stunning array of luxury properties that redefine opulence.'
               }
-              ImageSrc={'/OtherCard1.png'}
+              ImageSrc={'/investingInluxuryproperties.PNG'}
             />
           </div>
           <div className="p-3 max-w-sm">
@@ -48,7 +48,7 @@ const items = [
               descriptions={
                 'In the dynamic landscape of global investments, Dubai has emerged as a shining star, enticing investors with promises of high returns and a cosmopolitan lifestyle. However, the question that echoes in the minds of prospective investors'
               }
-              ImageSrc={'/OtherCard1.png'}
+              ImageSrc={'/saveToInvestInDubai.jpg'}
             />
           </div>
           <div className="p-3 max-w-sm">
@@ -59,7 +59,7 @@ const items = [
               descriptions={
                 'Dubai, with its iconic skyline and cosmopolitan allure, has become synonymous with luxury living. The citys real estate landscape is a canvas adorned with architectural marvels that redefine opulence.'
               }
-              ImageSrc={'/OtherCard1.png'}
+              ImageSrc={'/UnveilingTheEpitomeofOpulence.jpg'}
             />
           </div>
         </Row>
@@ -131,6 +131,29 @@ const items = [
 ]
 
 function page() {
+
+  const [latestPropertyData, setLatestPropertyData] = useState([]);
+  const fetchLatestPropertyData = async () => {
+    await fetch('https://alifnoon.ae/GetLatestData')
+    // await fetch('http://localhost:3000/GetLatestData')
+    // await fetch('https://alifnoon.ae/GetLatestData')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      setLatestPropertyData(data.data);
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+  }
+  if(latestPropertyData.length==0){
+    fetchLatestPropertyData();
+  }
+
   const onChange = (key) => {
     // console.log(key, "My Key");
   }
@@ -220,31 +243,24 @@ function page() {
                 <h6 className="text-white text-[25px] mb-[16px] font-bold raleway">
                   Latest Listing
                 </h6>
-                <div className="flex">
-                  <div
-                    style={{
-                      borderRadius: '10px',
-                      border: '1px solid #ECA33A',
-                    }}
-                    className="overflow-hidden w-[176px] h-[80px] mr-6"
-                  >
-                    <img
-                      style={{ borderRadius: '10px' }}
-                      src="/OtherCard4.png"
-                      alt="none"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-white text-[17px] font-bold raleway leading-[23px]">
-                      {' '}
-                      Luxury 6 bed mansion in palmjumera
+              
+                {latestPropertyData?.map((data) => {
+                return (
+                  <div className='flex mt-3'>
+                    <div style={{borderRadius:'10px',border:'1px solid #ECA33A'}} className='overflow-hidden w-[103px] h-[80px] mr-6'>
+                      <img style={{borderRadius:'10px' ,  maxWidth: '100%' , height: 'auto'}} src={data.fileUpload[0].preview ? data.fileUpload[0].preview : '' } alt='none' />
+                    </div>
+                    <div>
+                    <p className='text-white text-[17px] font-bold raleway leading-[23px]'> {data.name} </p> 
+                    <p className='text-[#ECA33A] text-[20px] font-bold raleway leading-[23px]'>
+                      AED  {data.price}
                     </p>
-                    <p className="text-[#ECA33A] text-[20px] font-bold raleway leading-[23px]">
-                      AED 5,500,000
-                    </p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex mt-3">
+                )
+              })}
+              
+                {/* <div className="flex mt-3">
                   <div
                     style={{
                       borderRadius: '10px',
@@ -291,7 +307,7 @@ function page() {
                       AED 5,500,000
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
               <div
                 style={{ borderRadius: '5px', marginRight: '90px' }}

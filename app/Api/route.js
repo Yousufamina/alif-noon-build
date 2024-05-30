@@ -32,15 +32,11 @@ export async function POST(request) {
         console.log("inside post func after")
         console.log('Data saved successfully');
         return new NextResponse() 
-        
     } catch (error) {
         console.error('Error saving data:', error);
         console.log(error)
-        return new NextResponse(JSON.stringify({message: 'Error'})) 
-       
-    
+        return new NextResponse(JSON.stringify({message: 'Error'}))        
     }
-    
   }
 
 

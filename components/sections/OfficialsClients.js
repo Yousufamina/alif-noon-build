@@ -29,8 +29,9 @@ function OfficialsClients({agentData}) {
           <Swiper
             effect={'coverflow'}
             grabCursor={true}
-            centeredSlides={true}
+            initialSlide={1}
             slidesPerView={'auto'}
+            centeredSlides={true}
             coverflowEffect={{
               rotate: 50,
               stretch: 0,
