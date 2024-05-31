@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { useState } from 'react'
+import { useState ,useEffect} from 'react'
 import Footer from '@/components/sections/Footer'
 import FreeConsultation from '@/components/sections/FreeConsultation'
 import Header from '@/components/header/Index'
