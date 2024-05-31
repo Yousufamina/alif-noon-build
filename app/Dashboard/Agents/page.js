@@ -2,6 +2,8 @@
 
 import {useState }from 'react';
 import { Space, Table, Tag } from 'antd';
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
+
 const columns = [
   {
     title: 'Name',
@@ -72,9 +74,7 @@ function Agents() {
 
   const [agentData, setAgentData] = useState([])
   const fetchData = async () => {
-    // await fetch('http://localhost:3000/GetAgentData')
-    // await fetch('http://localhost:3000/GetAgentData')
-    await fetch('https://alifnoon.ae/GetAgentData')
+    await fetch(`${SERVER_URL}GetAgentData`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');

@@ -13,6 +13,8 @@ import FreeConsultation from '@/components/sections/FreeConsultation'
 import CardPagination from '@/components/productCard/CardPagination'
 import SocialIconScroll from '@/components/SocialIconScroll'
 import { useState, useEffect } from 'react'
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
+import { useSearchParams } from 'next/navigation'
 
 const items = [
   {
@@ -51,16 +53,30 @@ const items = [
 
 const productListingPage = ({ url }) => {
   const [propertiesData, setDataa] = useState([])
+  const searchParams = useSearchParams()
+  const search = searchParams.get('search')
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://alifnoon.ae/GetData')
-        // const response = await fetch('http://localhost:3000/GetData')
-        if (!response.ok) {
-          throw new Error('Network response was not ok')
+
+    const fetchData = async () => { 
+      try {  
+        if(search && search !== ''){
+          console.log("called search params")
+          const response = await fetch(`${SERVER_URL}GetData?name=${search}`)
+          if (!response.ok) {
+            throw new Error('Network response was not ok')
+          }
+          const data = await response.json()
+          setDataa(data.data)
+        }else{
+          const response = await fetch(`${SERVER_URL}GetData`)
+          if (!response.ok) {
+            throw new Error('Network response was not ok')
+          }
+          const data = await response.json()
+          setDataa(data.data)
         }
-        const data = await response.json()
-        setDataa(data.data)
+       
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error)
       }
@@ -114,13 +130,18 @@ const productListingPage = ({ url }) => {
                 {/* <main> */}
                   <div className="py-4">
                     <div className="justify-center flex flex-wrap mt-10 secondSectionRow">
-                      {propertiesData?.map((dat, index) => (
-                        <div className="p-4 max-w-sm" key={index}>
-                          <ProductCard data={dat} />
-                        </div>
-                      ))}
+                        
+                        {propertiesData?.map((dat, index) => (
+                          <div className="p-4 max-w-sm" key={index}>
+                            <ProductCard data={dat} />
+                          </div>
+                        ))}
+                    
                     </div>
-                    <CardPagination />
+                    { propertiesData.length ? <CardPagination /> : ''}
+                  </div>
+                  <div>
+
                   </div>
                 {/* </main> */}
               {/* </div> */}

@@ -6,6 +6,8 @@ import FileUpload from "@/components/FileUpload";
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
+
 function AddAgent() {
   
   const [formData, setFormData] = useState({});
@@ -27,7 +29,7 @@ function AddAgent() {
         setFormData(values);
         var dataObj=values;
         localStorage.setItem('dataObj', dataObj);
-        await axios.post('https://alifnoon.ae/AddAgentApi', dataObj ,{
+        await axios.post(`${SERVER_URL}AddAgentApi`, dataObj ,{
           headers: {'Content-Type': 'application/json'}
         }).then(response => {
           
@@ -38,13 +40,6 @@ function AddAgent() {
         .catch(error => {
           console.error('There was a problem with the fetch operation:', error);
         });
-      
-      //  const response = await axios.post('http://localhost:3000/AddAgentApi', dataObj);
-      //  const response = await axios.post('https://alifnoon.ae/AddAgentApi', dataObj);
-
-        // setTimeout(() => {
-        //   toast.success('Property Added Successfully!');
-        // }, 4000);
       }
       else{
         toast.error('Please add all fields!');

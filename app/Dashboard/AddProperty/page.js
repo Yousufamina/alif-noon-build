@@ -8,11 +8,12 @@ import { Col, Form, Input, Row, Select } from "antd";
 import FileUpload from "@/components/FileUpload";
 import TextArea from "antd/es/input/TextArea";
 // import { useDispatch } from "react-redux";
-import { addProperty } from "../../globalStore/features/propertiesSlice"
+import { addProperty } from "../../globalStore/fe atures/propertiesSlice"
 import { dbConnect } from "@/src/dbConnect";
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
 
 // import { useDispatch } from "react-redux";
 const { Option } = Select;
@@ -38,7 +39,7 @@ function AddProperty() {
         setFormData(values);
         var dataObj=values;
         localStorage.setItem('dataObj', dataObj);
-        await axios.post('https://www.alifnoon.ae/Api', dataObj ,{
+        await axios.post(`${SERVER_URL}Api`, dataObj ,{
           headers: {'Content-Type': 'application/json'}
         }).then(response => {
           console.log("response")
@@ -48,9 +49,7 @@ function AddProperty() {
         .catch(error => {
           console.error('There was a problem with the fetch operation:', error);
         });
-      //  const response = await axios.post('http://localhost:3000/Api', dataObj);
-      //  const response = await axios.post('https://www.alifnoon.ae/Api', dataObj);
-      }
+        }
       else{
         toast.error('Please add all fields!');
       }

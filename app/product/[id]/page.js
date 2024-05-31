@@ -3,7 +3,6 @@
 import React  from 'react'
 import Prod from '@/components/Prod';
 
-
 const PropertyDetail = () => {
   // const [propertyData, setPropertyData] = useState([]);
   // const {id} = useParams ()

@@ -3,7 +3,7 @@
 // import React from 'react';
 import { useState,useEffect } from "react";
 import { Space, Table, Tag } from 'antd';
-// import { useSelector } from 'react-redux'
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
 
 const columns = [
   {
@@ -76,8 +76,7 @@ const columns = [
  function Properties() {
   const [propData, setPropData] = useState([])
   const fetchData = async () => {
-    await fetch('https://alifnoon.ae/GetData')
-    // await fetch('http://localhost:3000/GetData')
+    await fetch(`${SERVER_URL}GetData`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');

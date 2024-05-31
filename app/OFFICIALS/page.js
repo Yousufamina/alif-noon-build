@@ -14,7 +14,8 @@ import { faCalendarDays } from '@fortawesome/free-regular-svg-icons'
 import CardPagination from '@/components/productCard/CardPagination';
 import SocialIconScroll from '@/components/SocialIconScroll';
 import ScrollTopButton from "@/components/ScrollTopButton";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
 
 const Specialization = [
   
@@ -48,12 +49,12 @@ const Languages = [
 ]
 
 function page() {
-  
   const [agentData, setAgentData] = useState([]);
-  const fetchAgentData = async () => {
-    await fetch('https://alifnoon.ae/GetAgentData')
-    // await fetch('http://localhost:3000/GetAgentData')
-    // await fetch('https://alifnoon.ae/GetAgentData')
+  const [latestPropertyData, setLatestPropertyData] = useState([]);
+
+  useEffect(() => {
+    const fetchAgentData = async () => {
+    await fetch(`${SERVER_URL}GetAgentData`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -66,32 +67,25 @@ function page() {
     .catch(error => {
       console.error('There was a problem with the fetch operation:', error);
     });
-  }
-  if(agentData.length==0){
+    }
+    const fetchLatestPropertyData = async () => {
+      await fetch(`${SERVER_URL}GetLatestData`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setLatestPropertyData(data.data);
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+    }
     fetchAgentData();
-  }
-
-  const [latestPropertyData, setLatestPropertyData] = useState([]);
-  const fetchLatestPropertyData = async () => {
-    await fetch('https://alifnoon.ae/GetLatestData')
-    // await fetch('http://localhost:3000/GetLatestData')
-    // await fetch('https://alifnoon.ae/GetLatestData')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      setLatestPropertyData(data.data);
-    })
-    .catch(error => {
-      console.error('There was a problem with the fetch operation:', error);
-    });
-  }
-  if(latestPropertyData.length==0){
     fetchLatestPropertyData();
-  }
+ }, [])
 
   return (
     <div className='OFFICIALSectionMax'>
@@ -125,9 +119,9 @@ function page() {
           <Col sm={24} lg={12} xl={15}>
           <div className={`justify-center flex flex-wrap detailCardRow secondSectionRow`}>
                 
-                {agentData?.map((data) => {
+                {agentData?.map((data,key) => {
                     return (
-                      <div className=" p-4 max-w-sm">
+                      <div className=" p-4 max-w-sm" id={key}>
                         <OfficialCard data={data}   /> 
                       </div>
                     )

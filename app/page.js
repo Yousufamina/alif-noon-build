@@ -22,63 +22,52 @@ import SocialIconScroll from "@/components/SocialIconScroll";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState,useEffect } from "react";
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
 
-var apiCalled=false;
 export default function Home({ Component, pageProps }) {
 const [dataa, setDataa] = useState([]);
 const [agentData, setAgentData] = useState([]);
 const [productSectionContent, setProductSectionContent] = useState(null);
 
-const fetchData = async () => {
-    if(apiCalled){
-      // setDataa(await JSON.parse(localStorage.getItem('propData')));
+useEffect(() => {
+    
+    const fetchData = async () => {
+
+          await fetch(`${SERVER_URL}GetData`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then(data => {
+            setDataa(data.data);
+          })
+          .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+          });   
+    };
+
+    const fetchAgentData = async () => {
+        await fetch(`${SERVER_URL}GetAgentData`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          setAgentData(data.data);
+        })
+        .catch(error => {
+          console.error('There was a problem with the fetch operation:', error);
+        });
     }
-    else{
-      await fetch('https://alifnoon.ae/GetData')
-      // await fetch('http://localhost:3000/GetData')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        setDataa(data.data);
-        apiCalled=true;
-      })
-      .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-      });
 
-    }    
-};
-
-  if(dataa.length==0){
+    fetchAgentData(); 
     fetchData();
-  }
+}, [])
 
-  const fetchAgentData = async () => {
-    await fetch('https://alifnoon.ae/GetAgentData')
-    // await fetch('http://localhost:3000/GetAgentData')
-    // await fetch('https://alifnoon.ae/GetAgentData')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      setAgentData(data.data);
-    })
-    .catch(error => {
-      console.error('There was a problem with the fetch operation:', error);
-    });
-  }
-  
-
-  if(agentData.length==0){
-    fetchAgentData();
-  }
 
   return (
     <>

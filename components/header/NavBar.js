@@ -25,6 +25,8 @@ const NavBar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState();
+  const [value, setValue] = useState("");
+
   const showDefaultDrawer = () => {
     setSize("small");
     setOpen(true);
@@ -48,6 +50,15 @@ const NavBar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const searchProperty = (e) => {
+    setValue(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.location.href = `/products/buy?search=${value}`
+};
+
   const router = useRouter();
   return (
     <>
@@ -168,11 +179,14 @@ const NavBar = () => {
           <div className="drawer flex flex-1 justify-end items-center">
             <button className="searchheader relative">
               <span> SEARCH </span>
-              <input
-                className="absolute"
-                type="text"
-                placeholder="Search....."
-              />
+              <form onSubmit={handleSubmit}>
+                <input
+                  className="absolute"
+                  type="text"
+                  placeholder="Search....."
+                  onChange={searchProperty}
+                />
+              </form>
             </button>
             <Space>
               <Button

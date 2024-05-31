@@ -21,6 +21,7 @@ import { faCalendarDays } from '@fortawesome/free-regular-svg-icons'
 import CardPagination from '@/components/productCard/CardPagination'
 import SocialIconScroll from '@/components/SocialIconScroll'
 import ScrollTopButton from '@/components/ScrollTopButton'
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
 
 const items = [
   {
@@ -133,27 +134,24 @@ const items = [
 function page() {
 
   const [latestPropertyData, setLatestPropertyData] = useState([]);
-  const fetchLatestPropertyData = async () => {
-    await fetch('https://alifnoon.ae/GetLatestData')
-    // await fetch('http://localhost:3000/GetLatestData')
-    // await fetch('https://alifnoon.ae/GetLatestData')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
+  useEffect(() => {
+      const fetchLatestPropertyData = async () => {
+        await fetch(`${SERVER_URL}GetLatestData`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          setLatestPropertyData(data.data);
+        })
+        .catch(error => {
+          console.error('There was a problem with the fetch operation:', error);
+        });
       }
-      return response.json();
-    })
-    .then(data => {
-      setLatestPropertyData(data.data);
-    })
-    .catch(error => {
-      console.error('There was a problem with the fetch operation:', error);
-    });
-  }
-  if(latestPropertyData.length==0){
-    fetchLatestPropertyData();
-  }
-
+      fetchLatestPropertyData()
+  }, [])
   const onChange = (key) => {
     // console.log(key, "My Key");
   }

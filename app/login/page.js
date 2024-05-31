@@ -12,6 +12,7 @@ function LoginPage() {
   const [userError, setUserError] = useState(false)
   const [passwordError, setPasswordError] = useState(false)
   const [buttonDisabled, setButtonDisabled] = useState(false)
+  const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
 
   // const handleUserName = async (e) => {
 
@@ -51,7 +52,7 @@ function LoginPage() {
     // console.log(hashedPassword)
     let obj = { username: username, password: password }
     const userResData = await axios.post(
-      'https://alifnoon.ae/GetAdminUser',
+      `${SERVER_URL}GetAdminUser`,
       obj,
       {
         headers: {
@@ -63,8 +64,7 @@ function LoginPage() {
          'Content-Type': 'application/json' }
       }
     )
-    // http://localhost:3000/GetAdminUser
-    // https://alifnoon.ae/GetAdminUser
+
     let userData = userResData.data.data
     if (userData) {
       const isValid = bcrypt.compareSync(password, userData.password)

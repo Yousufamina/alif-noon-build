@@ -11,6 +11,7 @@ import About from '@/components/sections/Abouts'
 import FreeConsultation from '@/components/sections/FreeConsultation'
 import CardPagination from '@/components/productCard/CardPagination'
 import SocialIconScroll from '@/components/SocialIconScroll'
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
 
 const items = [
   {
@@ -30,8 +31,7 @@ function RentProperties() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://alifnoon.ae/GetData')
-        // const response = await fetch('http://localhost:3000/GetData')
+        const response = await fetch(`${SERVER_URL}GetData`)
         if (!response.ok) {
           throw new Error('Network response was not ok')
         }
