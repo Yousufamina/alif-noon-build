@@ -118,7 +118,6 @@ function page() {
         <Row className='mt-10' gutter={10} >
           <Col sm={24} lg={12} xl={15}>
           <div className={`justify-center flex flex-wrap detailCardRow secondSectionRow`}>
-                
                 {agentData?.map((data,key) => {
                     return (
                       <div className=" p-4 max-w-sm" id={key}>
@@ -126,8 +125,7 @@ function page() {
                       </div>
                     )
                 })}
-                
-                
+                                
                 {/* <div className="p-4 max-w-sm">
                     <OfficialCard name='Hisham El Assaad' ImageSrc={'/OFFCIAL2.png'} /> 
                 </div>
@@ -144,9 +142,9 @@ function page() {
             <div style={{borderRadius:'5px',marginRight:'90px'}} className='rightColDiv p-[20px] bg-[#FFFFFF2E]'>
               <h6 className='text-white text-[25px] mb-[16px] font-bold raleway'>Latest Listing</h6>
               
-              {latestPropertyData?.map((data) => {
+              {latestPropertyData?.map((data,index) => {
                 return (
-                  <div className='flex mt-3'>
+                  <div className='flex mt-3'  key={index}>
                     <div style={{borderRadius:'10px',border:'1px solid #ECA33A'}} className='overflow-hidden w-[103px] h-[80px] mr-6'>
                       <img style={{borderRadius:'10px' ,  maxWidth: '100%' , height: 'auto'}} src={data.fileUpload[0].preview ? data.fileUpload[0].preview : '' } alt='none' />
                     </div>

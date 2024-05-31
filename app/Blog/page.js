@@ -242,9 +242,9 @@ function page() {
                   Latest Listing
                 </h6>
               
-                {latestPropertyData?.map((data) => {
+                {latestPropertyData?.map((data,index) => {
                 return (
-                  <div className='flex mt-3'>
+                  <div className='flex mt-3'  key={index}>
                     <div style={{borderRadius:'10px',border:'1px solid #ECA33A'}} className='overflow-hidden w-[103px] h-[80px] mr-6'>
                       <img style={{borderRadius:'10px' ,  maxWidth: '100%' , height: 'auto'}} src={data.fileUpload[0].preview ? data.fileUpload[0].preview : '' } alt='none' />
                     </div>

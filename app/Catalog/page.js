@@ -1,6 +1,6 @@
 "use client"
 
-import React ,{useState }from 'react'
+import React ,{useState,useEffect }from 'react'
 import Footer from '@/components/sections/Footer'
 import FreeConsultation from '@/components/sections/FreeConsultation'
 import Header from '@/components/header/Index'
@@ -75,9 +75,9 @@ function page() {
             <div style={{borderRadius:'5px',marginRight:'90px'}} className='rightColDiv p-[20px] bg-[#FFFFFF2E]'>
               <h6 className='text-white text-[25px] mb-[16px] font-bold raleway'>Latest Listing</h6>
              
-              {latestPropertyData?.map((data) => {
+              {latestPropertyData?.map((data,index) => {
                 return (
-                  <div className='flex mt-3'>
+                  <div className='flex mt-3' key={index}>
                     <div style={{borderRadius:'10px',border:'1px solid #ECA33A'}} className='overflow-hidden w-[103px] h-[80px] mr-6'>
                       <img style={{borderRadius:'10px' ,  maxWidth: '100%' , height: 'auto'}} src={data.fileUpload[0].preview ? data.fileUpload[0].preview : '' } alt='none' />
                     </div>
