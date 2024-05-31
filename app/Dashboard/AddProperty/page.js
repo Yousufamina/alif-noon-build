@@ -8,7 +8,7 @@ import { Col, Form, Input, Row, Select } from "antd";
 import FileUpload from "@/components/FileUpload";
 import TextArea from "antd/es/input/TextArea";
 // import { useDispatch } from "react-redux";
-import { addProperty } from "../../globalStore/fe atures/propertiesSlice"
+import { addProperty } from "../../globalStore/features/propertiesSlice"
 import { dbConnect } from "@/src/dbConnect";
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
