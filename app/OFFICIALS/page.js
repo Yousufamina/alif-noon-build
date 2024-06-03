@@ -146,7 +146,7 @@ function page() {
                 return (
                   <div className='flex mt-3'  key={index}>
                     <div style={{borderRadius:'10px',border:'1px solid #ECA33A'}} className='overflow-hidden w-[103px] h-[80px] mr-6'>
-                      <img style={{borderRadius:'10px' ,  maxWidth: '100%' , height: 'auto'}} src={data.fileUpload[0].preview ? data.fileUpload[0].preview : '' } alt='none' />
+                      <img style={{borderRadius:'10px' ,  width: '100%' , height: '100%'}} src={data.fileUpload[0].preview ? data.fileUpload[0].preview : '' } alt='none' />
                     </div>
                     <div>
                     <p className='text-white text-[17px] font-bold raleway leading-[23px]'> {data.name} </p> 
