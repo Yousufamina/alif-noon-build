@@ -24,7 +24,9 @@ const CardBottom = () => {
         <img src="/shareIcon.svg" />
       </div>
       <div className="innerDiv">
-        <img src="/emailIcon.svg" />
+      <a href="mailto:farooqnasir247@gmail.com">
+        <img src="/emailIcon.svg" alt="Email Icon" />
+      </a>
       </div>
     </div>
   )
