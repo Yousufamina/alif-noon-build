@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const CardBottom = () => {
+const CardBottom = () => {  
   return (
     <div className="cardBottom flex justify-center">
       <div className="innerDiv">
@@ -18,10 +18,10 @@ const CardBottom = () => {
         <a className="flex" href="tel:+971557969234" target="_blank">
           <img src="/phoneIcon.svg" />
         </a>
-      
+       
       </div>
       <div className="innerDiv" style={{ borderRight: '1px solid #ECA33A' }}>
-        <img src="/shareIcon.svg" />
+            <img src="/shareIcon.svg" alt="Email Icon" />
       </div>
       <div className="innerDiv">
       <a href="mailto:farooqnasir247@gmail.com">
