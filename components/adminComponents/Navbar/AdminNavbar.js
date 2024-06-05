@@ -1,9 +1,16 @@
+"use client"
 import Link from "next/link";
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 function AdminNavbar() {
+  const logout = (e) =>{
+    e.preventDefault()
+    localStorage.clear();
+    console.log("hiii")
+    window.location.href = '/login'
+  }
   return (
     <div className="adminNavbar raleway font-bold flex justify-between">
       <div className="leftPanel">
@@ -36,12 +43,12 @@ function AdminNavbar() {
             <div className="justify-center flex items-center py-2">
             
             {/* <FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" /> */}
-              <Link
-                href="/login"
+              <a
+                 href='javascript:void(0)' onClick={logout}
                 className="z-10 abolute block mr-1 px-1 py-1 text-sm text-[gray] hover:text-[#ECA33A] dark:hover:bg-gray-600 raleway dark:text-gray-200 dark:hover:text-white"
               >
                 Logout
-              </Link>
+              </a>
               <FontAwesomeIcon className="icon" style={{width:'15px',height:'15px',color:'gray'}} icon={faRightFromBracket} />
             </div>
           </div>
