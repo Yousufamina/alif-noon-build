@@ -9,7 +9,7 @@ export function middleware() {
     ];
     // add the CORS headers to the response
     res.headers.append('Access-Control-Allow-Credentials', 'true')
-    res.headers.append('Access-Control-Allow-Origin', 'https://alifnoon.ae') // replace this your actual origin
+    res.headers.append('Access-Control-Allow-Origin', 'https://wwww.alifnoon.ae') // replace this your actual origin
     res.headers.append('Access-Control-Allow-Methods', 'GET,OPTIONS,DELETE,POST,PUT')
     res.headers.append(
         'Access-Control-Allow-Headers',
