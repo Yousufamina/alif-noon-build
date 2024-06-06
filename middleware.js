@@ -3,10 +3,13 @@ import { NextResponse } from "next/server";
 export function middleware() {
     // retrieve the current response
     const res = NextResponse.next()
-
+    const allowedOrigins = [
+         'https://alifnoon.ae' ,
+         'https://www.alifnoon.ae', 
+    ];
     // add the CORS headers to the response
     res.headers.append('Access-Control-Allow-Credentials', 'true')
-    res.headers.append('Access-Control-Allow-Origin', '*') // replace this your actual origin
+    res.headers.append('Access-Control-Allow-Origin', allowedOrigins) // replace this your actual origin
     res.headers.append('Access-Control-Allow-Methods', 'GET,OPTIONS,DELETE,POST,PUT')
     res.headers.append(
         'Access-Control-Allow-Headers',
