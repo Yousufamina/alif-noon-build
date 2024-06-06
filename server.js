@@ -12,18 +12,24 @@ const port = process.env.PORT || 3000
 const app = next({ dev, hostname, port })
 // const handle = app.getRequestHandler()
 
+app.options('/*', (_, res) => {
+  res.sendStatus(200);
+});
+
 app.prepare().then(() => {
   createServer(async (req, res) => {
     try {
       const parsedUrl = parse(req.url, true)
       const { pathname, query } = parsedUrl
- 
+      app.options('/*', (_, res) => {
+        res.sendStatus(200);
+      });
       if (pathname === '/a') {
         await app.render(req, res, '/a', query)
       } else if (pathname === '/b') {
         await app.render(req, res, '/b', query)
       } else {
-        await handle(req, res, parsedUrl)
+        res.sendStatus(200)
       }
     } catch (err) {
       console.error('Error occurred handling', req.url, err)
