@@ -68,8 +68,12 @@ function LoginPage() {
     let userData = userResData.data.data
     if (userData) {
       const isValid = bcrypt.compareSync(password, userData.password)
-
       if (isValid) {
+        const payload = {
+          userInfo: userData
+        };
+        localStorage.setItem('loginUserDetails', JSON.stringify(payload));
+        console.log(localStorage.getItem('loginUserDetails'))
         window.location.href = '/Dashboard/properties'
       } else {
         setPasswordError(true)

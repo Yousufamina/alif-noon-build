@@ -55,21 +55,26 @@ function page() {
         <Row className='mt-10 max-[1080px]:mt-2' gutter={10} >
           <Col sm={24} lg={12} xl={15}>
           <div className={`justify-center flex flex-wrap detailCardRow secondSectionRow`}>
-                <div className="p-4 max-w-sm">
-                    <CatalogCard heading='The prefect area in Dubai' ImageSrc={'/catalog1.png'} /> 
+                {/* <div className="p-4 max-w-sm">
+                    <CatalogCard heading='Arabian Hills Estate' ImageSrc={'/AHE_BROCHURE.png'} /> 
                 </div>
                 <div className="p-4 max-w-sm">
-                <CatalogCard heading='The prefect area in Dubai' ImageSrc={'/catalog3.png'} /> 
-                </div>
+                <CatalogCard heading='The prefect area in Dubai' ImageSrc={'/AHE_FACTSHEET.png'} /> 
+                </div> */}
                 <div className="p-4 max-w-sm">
-                <CatalogCard heading='The prefect area in Dubai' ImageSrc={'/catalog4.png'} />  
+                <CatalogCard heading='Arabian Hills Estate (R3) v1' date = {'May 13,2023'} pdfUrl={'/Arabian Hills (R3)-v1 (1).pdf'} ImageSrc={'/Arabian-Hills-(R3)-v1-(1).png'} desc={'Poised to be the most coveted community in the UAE, Arabian Hills Estate is where you’ll build your perfect home and craft your ideal lifestyle in a vibrant community setting.'}/>  
                 </div>
+                
                 <div className="p-4 max-w-sm">
-                <CatalogCard heading='The prefect area in Dubai' ImageSrc={'/catalog5.png'} /> 
+                <CatalogCard heading='Riverside Community' date = {'Aug 24,2023'} ImageSrc={'/riverside-damac.png'} pdfUrl = {'/Riverside Presentation community.pdf'} desc={'It offers green vein and water vein'}/> 
+                </div>    
+
+                <div className="p-4 max-w-sm">
+                <CatalogCard heading='Azizi Venice' date={'Oct 12,2023'} ImageSrc={'/azizi-venice.png'} pdfUrl={'/Azizi Venice Main Brochure.pdf'} desc={'Where you can leave behind the chaos of the city and experience an atmosphere that leaves you feeling rejuvenated, excited and alive.'}/> 
                 </div>
-               
-                <CardPagination/>
+                  
             </div>
+            <CardPagination/>
           </Col>
           <Col style={{paddingTop:'1rem', paddingRight:'20px'}} className='rightColMain' sm={24} lg={12} xl={9}>
             <div style={{borderRadius:'5px',marginRight:'90px'}} className='rightColDiv p-[20px] bg-[#FFFFFF2E]'>
@@ -79,7 +84,7 @@ function page() {
                 return (
                   <div className='flex mt-3' key={index}>
                     <div style={{borderRadius:'10px',border:'1px solid #ECA33A'}} className='overflow-hidden w-[103px] h-[80px] mr-6'>
-                      <img style={{borderRadius:'10px' ,  maxWidth: '100%' , height: 'auto'}} src={data.fileUpload[0].preview ? data.fileUpload[0].preview : '' } alt='none' />
+                      <img style={{borderRadius:'10px' ,  width: '100%' , height: '100%'}} src={data.fileUpload[0].preview ? data.fileUpload[0].preview : '' } alt='none' />
                     </div>
                     <div>
                     <p className='text-white text-[17px] font-bold raleway leading-[23px]'> {data.name} </p> 

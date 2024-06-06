@@ -61,7 +61,6 @@ const productListingPage = ({ url }) => {
     const fetchData = async () => { 
       try {  
         if(search && search !== ''){
-          console.log("called search params")
           const response = await fetch(`${SERVER_URL}GetData?name=${search}`)
           if (!response.ok) {
             throw new Error('Network response was not ok')
