@@ -1,30 +1,16 @@
 const { createServer } = require('https')
 const { parse } = require('url')
+const cors = require('cors')
 const next = require('next')
 
-import { dbConnect } from "@/src/dbConnect";
-
+// import { dbConnect } from "@/src/dbConnect";
 
 const dev = process.env.NODE_ENV !== 'production'
 const hostname = 'localhost'
 const port = process.env.PORT || 3000
 
 const app = next({ dev, hostname, port })
-const handle = app.getRequestHandler()
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-if (req.method == "OPTIONS") {
-  res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
-  return res.status(200).json({});
-}
-
-next();
-});
+// const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
   createServer(async (req, res) => {
@@ -47,6 +33,6 @@ app.prepare().then(() => {
   }).listen(port, (err) => {
     if (err) throw err
     console.log(`> Ready on http://${hostname}:${port}`)
-    const con=dbConnect();
+    // const con=dbConnect();
   })
 })
