@@ -21,15 +21,19 @@ app.prepare().then(() => {
     try {
       const parsedUrl = parse(req.url, true)
       const { pathname, query } = parsedUrl
-      app.options('/*', (_, res) => {
-        res.sendStatus(200);
-      });
+ app.options('/*', (_, res) => {
+  res.sendStatus(200);
+});
+if (req.method === 'OPTIONS') {
+  res.status(200).end();
+  return;
+}
       if (pathname === '/a') {
         await app.render(req, res, '/a', query)
       } else if (pathname === '/b') {
         await app.render(req, res, '/b', query)
       } else {
-        res.sendStatus(200)
+        await handle(req, res, parsedUrl)
       }
     } catch (err) {
       console.error('Error occurred handling', req.url, err)
