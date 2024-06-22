@@ -236,12 +236,12 @@ const NavBar = () => {
                 mode="vertical"
                 defaultSelectedKeys={["0"]}
               >
-                {menuItems.map((item) => {
+                {menuItems.map((item,index) => {
                   if (item.subItems) {
                     // If there are subItems, construct a submenu with nested items
                     return (
                       <Link href={item.href}>
-                      <Menu.SubMenu Link={item.href} onClick={() => router.push(item.href)} key={item.key} title={item.label}>
+                      <Menu.SubMenu Link={item.href} onClick={() => router.push(item.href)} key={item.key} title={item.label} id={index}>
                         
                         {item.subItems.map((subItem) => (
                           <Menu.Item key={subItem.key}>

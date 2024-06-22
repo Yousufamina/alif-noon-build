@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function CatalogCard({ ImageSrc, heading, desc, pdfUrl}) {
+function CatalogCard({ ImageSrc, heading, desc, pdfUrl,date}) {
   // const [showPreview, setShowPreview] = useState();
   // setShowPreview(false)
   // function showPdfPreiew(){
