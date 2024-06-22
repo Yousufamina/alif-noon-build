@@ -15,9 +15,19 @@ const nextConfig = {
             }
         ]
     },
-    experimental: {
-        cors: true,
-      },
+    middleware: [
+        [
+          nextCors({
+            origin: ['(link unavailable)', '(link unavailable)'],
+            methods: ['GET', 'POST', 'PUT'],
+            headers: ['Content-Type', 'Authorization'],
+            credentials: true,
+            maxAge: 86400,
+            preflightContinue: true,
+            optionsSuccessStatus: 204,
+          }),
+        ],
+      ],
 }
 
 module.exports = nextConfig
