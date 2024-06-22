@@ -22,28 +22,30 @@ const imagesData = [
 
 ]
 
-const ImageGallery = () => (
-    <div className='imageGallery'>
-        <Image.PreviewGroup
-            preview={{
-            onChange: (current, prev) => console.log(`current index: ${current}, prev index: ${prev}`),
-            }}
-        > 
-            <Row gutter={22} className='flex max-[1024px]:flex-col'>
-                <Col md={15}> <Image width="100%" src={'/galleryImage1.jpg'} /></Col>
-                <Col md={8}>
-                    <div className='imageGalleryRowResponsive flex flex-col'>
-                    <Image className='mobileImage mb-[29px]' width="100%" src={'/galleryImage2.jpg'} />
-                    <Image className="mobileImage" width="100%" src={'/gallerImage3.jpg'} />
-                    </div>
-                    <Image width="100%" src={'/galleryImage1.jpg'} className='hidden' />
-                    <Image width="100%" src={'/galleryImage1.jpg'} className='hidden' />
-                    <Image width="100%" src={'/gallerImage3.jpg'} className='hidden' />
-                    <Image width="100%" src={'/gallerImage3.jpg'} className='hidden' />
-                    <Image width="100%" src={'/gallerImage3.jpg'} className='hidden' />
-                </Col>
-            </Row>
-        </Image.PreviewGroup>
-    </div>
-);
+const ImageGallery = ({images}) => {
+    images?.map((img, index) => (console.log(img)))
+   
+    return(
+        <div className='imageGallery'>        
+            <Image.PreviewGroup
+                preview={{
+                onChange: (current, prev) => console.log(`current index: ${current}, prev index: ${prev}`),
+                }}
+            > 
+                    <Row gutter={19} className='flex max-[1024px]:flex-col'>
+                    {   images?.map((img, index) => (
+                        index === 0 ? (
+                        <Col md={8}> <Image  className='mobileImage mb-[29px]' width="100%" src={img.preview} /></Col> 
+                        ) : (
+                        <Col md={8}>
+                        {/* <div className='imageGalleryRowResponsive flex flex-col'> */}
+                             <Image className='mobileImage mb-[29px]' width="100%" id={index}  src={img.preview} /> 
+                        {/* </div> */}
+                       </Col>)))
+                    }
+                    </Row>
+            </Image.PreviewGroup>
+        </div>
+    )
+};
 export default ImageGallery;

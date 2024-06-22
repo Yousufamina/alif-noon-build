@@ -1,4 +1,5 @@
 import React , {useState,useEffect} from 'react'
+import { FeaturesAndAminities } from "@/app/utills/enums";
 
 const Features = ({featureData}) => {
     // const [data, setData] = useState([])
@@ -6,24 +7,26 @@ const Features = ({featureData}) => {
     // useEffect(() => {
     //     setData(featureData)
     // }, [])
-   
+    console.log(featureData)
+    // console.log(Array.isArray(featureData))
     return (
         <div className='featuresContainer'>
             <h1>Features & Amenities</h1>
-            <div className='grid features'>
-            {/* <h3>  {featureData}  </h3>  */}
-                {featureData?.map( (item,index) =>{
-                    <div className='box flex' key={index}>
-                    <img src='/goldenFridgeIcon.svg' />
-                    <h3>{item}</h3> 
+            <div className='grid features'>            
+          
+            {featureData?.map((item, index) => (
+                <div className='box flex' key={index}>
+
+                {FeaturesAndAminities.find(obj => obj.value === item) && (
+                    <img src = {FeaturesAndAminities.find(obj => obj.value === item).img } />
+                 )}
+
+                <h3>{item}</h3> 
                 </div>
-                })}
-            
-                <div className='box flex'>
-                    <img src='/goldenFridgeIcon.svg' />
-                    <h3>Built-in Kitchen Appliances</h3> 
-                </div>
-                <div className='box flex'>
+            ))}
+
+        
+                {/*<div className='box flex'>
                     <img src='/Central-air-conditioning.png' />
                     <h3>Central Air Condition</h3> 
                 </div>
@@ -74,7 +77,7 @@ const Features = ({featureData}) => {
                 <div className='box flex'>
                     <img src='/buitinWardrop.svg' />
                     <h3>Covered Parking</h3> 
-                </div>
+                </div> */}
             </div>
         </div>
     )

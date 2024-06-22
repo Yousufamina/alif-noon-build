@@ -45,10 +45,10 @@ function OfficialsClients({agentData}) {
             modules={[EffectCoverflow, Navigation]}
             className="mySwiper"
           >
-            {agentData?.map((data) => {
+            {agentData?.map((data,index) => {
               return (
                 <SwiperSlide className="SwiperSlide relative">
-              <div className="clientImg">
+              <div className="clientImg" key={index}>
                 <img
                   className="w-[100%] h-[100%] object-cover"
                   src= { data.fileUpload[0].preview ? data.fileUpload[0].preview : '' }

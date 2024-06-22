@@ -47,12 +47,9 @@ function CatalogCard({ ImageSrc, heading, desc, pdfUrl}) {
               Preview
             </h6>  */}
 
-             {/* <object data={pdfUrl} type="application/pdf" width="100%" height="100%">
-                <p>Alternative text - include a link <a href={pdfUrl} >to the PDF!</a></p>
-              </object> */}
           </div>
           <div className="iconDiv flex ml-3">
-            <h6 className="text-[#000000] font-bold raleway">May 13,2023</h6>
+            <h6 className="text-[#000000] font-bold raleway">{date}</h6>
           </div>
         </div>
 

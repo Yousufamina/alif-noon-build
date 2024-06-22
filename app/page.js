@@ -32,7 +32,7 @@ const [productSectionContent, setProductSectionContent] = useState(null);
 useEffect(() => {
     
     const fetchData = async () => {
-
+          
           await fetch(`${SERVER_URL}GetData`)
           .then(response => {
             if (!response.ok) {
@@ -41,6 +41,8 @@ useEffect(() => {
             return response.json();
           })
           .then(data => {
+            console.log("data.data prop")
+            console.log(data.data)   
             setDataa(data.data);
           })
           .catch(error => {
@@ -57,6 +59,8 @@ useEffect(() => {
           return response.json();
         })
         .then(data => {
+          console.log("data.data")
+          console.log(data.data)
           setAgentData(data.data);
         })
         .catch(error => {
@@ -67,7 +71,6 @@ useEffect(() => {
     fetchAgentData(); 
     fetchData();
 }, [])
-
 
   return (
     <>
@@ -95,8 +98,9 @@ useEffect(() => {
       categoryTabs={true} 
       alignJustify="justify-center"
       bgColor="bg-[#101010]"
-      dataa={dataa}
+      propertyData={dataa}
     /> 
+
     <OurPartners />
     <ThirdSection />    
     <OfficialsClients

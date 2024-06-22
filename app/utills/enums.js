@@ -145,10 +145,12 @@ export const FeaturesAndAminities = [
   {
     value: 'airCondition',
     label: 'Air Condition',
+    img:   '/Central-air-conditioning.png'
   },
   {
     value: 'security',
     label: 'Security',
+    img:   '/Security.png'
   },
   {
     value: 'kitchenAppliences',
@@ -157,113 +159,142 @@ export const FeaturesAndAminities = [
   {
     value: 'sharedSwimmingPool',
     label: 'Shared Swimming Pool',
+    img:   '/SharedSwim.svg'
   },
   {
     value: 'sharedGym',
     label: 'Shared Gym',
+    img :  '/Sharedgym.svg'
   },
   {
     value: 'balocony',
     label: 'Balocony',
+    img:   '/balcony.svg'
   },
   {
     value: 'privateGym',
     label: 'Private Gym',
+    img: '/Sharedgym.svg'
   },
   {
     value: 'conciergeService',
     label: 'Concierge Service',
+    img:   '/Concierge-service.svg'
   },
   {
     value: 'viewOfLandmark',
     label: 'View Of Landmark',
+    img:    '/Viewoflandmark.svg' 
   },
   {
     value: 'petAllowed',
     label: 'Pet Allowed',
+    img:   '/Petsallowed.svg'
   },
   {
     value: 'maidsRoom',
     label: "Maid's room",
+    img:   '/Maidservice.svg'
   },
   {
     value: 'study',
     label: 'Study',
+    img:   '/Study.svg'
   },
   {
     value: 'builtinWaredrop',
     label: 'Built-in wardrop',
+    img:   '/buitinWardrop.svg'
   },
   {
     value: 'Infinity Pool',
     label: 'Infinity Pool',
+    img:   '/SharedSwim.svg'
   },
   {
     value: 'Daycare Center',
     label: 'Daycare Center',
+    img:   ''
   },
   {
     value: 'BBQ Area',
     label: 'BBQ Area',
+    img:   ''
   },
   {
     value: 'Sunset Deck',
     label: 'Sunset Deck',
+    img:   ''
   },
   {
     value: 'Kids Play Area',
     label: 'Kids Play Area',
+    img:   ''
   },
   {
     value: 'Smart Mart',
     label: 'Smart Mart',
+    img:   ''
   },
   {
     value: 'Floating Cinema',
     label: 'Floating Cinema',
+    img:   ''
   },
   {
     value: 'Cabana Seating',
     label: 'Cabana Seating',
+    img:   ''
   },
   {
     value: 'Gym',
     label: 'Gym',
+    img: '/Sharedgym.svg'
   },
   {
     value: 'Swimming Pool',
     label: 'Swimming Pool',
+    img:   '/SharedSwim.svg'
   },
   {
     value: 'Kids Swimming Pool',
     label: 'Kids Swimming Pool',
+    img:   '/SharedSwim.svg'
   },
   {
     value: 'Lazy Lounge',
     label: 'Lazy Lounge',
+    img:   ''
   },
   {  value: 'Open Air Yoga',
-     lable: 'Open Air Yoga'
+     lable: 'Open Air Yoga',
+     img: '/Sharedgym.svg'
   },
   {
     value: 'Health Club',
-     lable: 'Health Club'
+     lable: 'Health Club',
+     img: '/Sharedgym.svg'
   },
   {
     value: 'Relaxation Zone',
-     lable: 'Relaxation Zone'
+     lable: 'Relaxation Zone',
+     img: '/Sharedgym.svg'
   },
   {
     value: 'Lawn or Garden',
-     lable: 'Lawn or Garden'
+     lable: 'Lawn or Garden',
+     img:   ''
   },
   {
     value: 'Parking Spaces',
-     lable: 'Parking Spaces'
+     lable: 'Parking Spaces',
+     img:   ''
+     
   },
   {
     value: 'Security Staff',
-     lable: 'Security Staff'
+     lable: 'Security Staff',
+     img:   '/Security.png'
   }
 ]
 export const currency = [

@@ -14,7 +14,10 @@ const nextConfig = {
                 ]
             }
         ]
-    }
+    },
+    experimental: {
+        cors: true,
+      },
 }
 
 module.exports = nextConfig

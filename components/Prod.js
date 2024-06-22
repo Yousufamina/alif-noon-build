@@ -13,11 +13,13 @@ import SimilerProperties from '../components/ProductDetails/SimilerProperties';
 import AreaNeaby from '@/components/ProductDetails/AreaNearby'
 import ScrollTopButton from '@/components/ScrollTopButton';
 import { useParams } from 'next/navigation'
+const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
 import axios from 'axios';
 
 function Prod () {
 
   const [propertyData, setPropertyData] = useState([]);
+  const [propertiesData, setDataa] = useState([])
   const {id} = useParams ()
   // console.log("id is ")
   // console.log(id)
@@ -28,22 +30,27 @@ function Prod () {
   // const productName  = lastPart.replace(/%20/g, ' ');
 
   useEffect(() => {
-
     let dataObj = {'_id': id}
-    const fetchData = async () => {
-      
-      // const response = await axios.post('http://localhost:3000/GetFilteredData', dataObj ,{
-      //   headers: {'Content-Type': 'application/json'}
-      // });
-      
-      const response = await axios.post('https://alifnoon.ae/GetFilteredData', dataObj ,{
+    const fetchFilteredData = async () => {
+      const response = await axios.post('http://localhost:3000/GetFilteredData', dataObj ,{
         headers: {'Content-Type': 'application/json'}
       });
-
       let data = response.data
       setPropertyData(data.data)
     }
+
+    const fetchData = async () => {
+      const response = await fetch(`${SERVER_URL}GetData`)
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
+      const data = await response.json()
+      setDataa(data.data)
+    }
+
+    fetchFilteredData()
     fetchData()
+
   }, []);
 
   // useEffect(() => {
@@ -64,11 +71,11 @@ function Prod () {
             </div>
         </main>
         <img class="bg-[#231F20] w-[100%] goldLine" src="/vector.svg" alt="image" />
-        <ProductSection heading="Similar Properties" subHeadingTop="" subHeadingBottom="" categoryTabs={false} />
+        <ProductSection heading="Similar Properties" subHeadingTop="" subHeadingBottom="" categoryTabs={false} propertyData={propertiesData} />
         <PropertyExploreView/>
         <img class="bg-[#231F20] w-[100%] goldLine" src="/vector.svg" alt="image" />
         <AveragePrices />
-        <SimilerProperties />
+        <SimilerProperties  propertyData={propertiesData}/>
         {/* <img class="opacity-0 bg-[#231F20] w-[100%] goldLine" src="/vector.svg" alt="image" /> */}
         <AreaNeaby />
         <Footer /> 

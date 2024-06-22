@@ -44,10 +44,12 @@ function ProductSection({
   bgColor,
   categoryTabs,
   alignJustify,
-  dataa,
+  propertyData,
 }) {
-  const [proType, setProType] = useState('0')
 
+  // console.log("propertyData")
+  // console.log(propertyData)
+  const [proType, setProType] = useState('0')
   const onChange = (key) => {
     // console.log(key, 'My Key')
   }
@@ -78,7 +80,7 @@ function ProductSection({
           <div
             className={`${alignJustify} flex flex-wrap mt-10 secondSectionRow`}
           >
-            {dataa?.map((dat) => {
+            {propertyData?.map((dat) => {
               return (
                 <div className="p-4 max-w-sm">
                   <ProductCard data={dat} />

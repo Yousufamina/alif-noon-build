@@ -13,9 +13,11 @@ import Location from '../ProductDetails/Location';
 
 function PropertyContent({propertyData}) {
   return (
+    
       <Row gutter={5} className='max-[1024px]:justify-center'>
         <Col className='leftColumn' style={{paddingRight:"20px"}} lg={24} xl={17}>
             <ImageGallery images = {propertyData?.fileUpload}/>
+            {console.log(propertyData?.fileUpload)}
             <Content
               title={propertyData?.name}
               price={propertyData?.price}
@@ -25,15 +27,15 @@ function PropertyContent({propertyData}) {
               baths={propertyData?.bedrooms}
               sqrft={propertyData?.area}
             />
-            <Features featureData = {[propertyData?.featureAndAminities]} />
+            <Features featureData = {propertyData?.featureAndAminities} />
             <Description />
             <ListingDetails />
             {/* <Location /> */}
             <SchoolsNearby />
         </Col>
-        <Col className='RightColumn' lg={0} xl={7}>
+        {/* <Col className='RightColumn' lg={0} xl={7}>
           <RightCol />
-        </Col>
+        </Col> */}
       </Row>
   )
 }
