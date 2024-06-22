@@ -32,7 +32,6 @@ function AddProperty() {
       }));
 
       values.fileUpload=modifiedFileUpload;
-      console.log(values)
 
       if(values.name && values.category  && values.cities && values.bedrooms && values.fileUpload && values.propertyType && values.featureAndAminities){
         toast.info('Adding Your Data..');
@@ -42,8 +41,6 @@ function AddProperty() {
         await axios.post(`${SERVER_URL}Api`, dataObj ,{
           headers: {'Content-Type': 'application/json'}
         }).then(response => {
-          console.log("response")
-          console.log(response)
           toast.success('Property Added Successfully!');
        })
         .catch(error => {
