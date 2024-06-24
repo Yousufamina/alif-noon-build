@@ -1,16 +1,47 @@
-import { NextResponse } from "next/server"
+import { NextRequest , NextResponse } from "next/server"
 
-export function middleware(request){
-    const allowedOrigins = ['https://alifnoon.ae','https://www.alifnoon.ae','https://www.google.com','http://localhost:3000']
-    const origin = request.headers.get('origin')
-    if (allowedOrigins.includes(origin)) {
-        return NextResponse.next();
-      } else {
-        console.log("called 403")
-        // return new NextResponse('Forbidden', 403);
-      }
+const allowedOrigins = ['https://alifnoon.ae','https://www.alifnoon.ae','https://www.google.com','http://localhost:3000']
+const corsOptions = {
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+};
   
-}
+// export function middleware(request){
+//     try{
+//         const origin = request.headers.get('origin') ?? '';
+//         const isAllowedOrigin = allowedOrigins.includes(origin);
+      
+//         // const isPreflight = request.method === 'OPTIONS';
+//         // if (isPreflight) {
+//         //   const preflightHeaders = {
+//         //     ...(isAllowedOrigin && { 'Access-Control-Allow-Origin': origin }),
+//         //     ...corsOptions,
+//         //   };
+//         //   return NextResponse.json({}, { headers: preflightHeaders });
+//         // }
+      
+//         const response = NextResponse.next();
+//         // if (isAllowedOrigin) {
+    
+//           response.headers.set('Access-Control-Allow-Origin', '*');
+//         // }
+//         // Object.entries(corsOptions).forEach(([key, value]) => {
+//         //   response.headers.set(key, value);
+//         // });
+//         return response;
+//     } catch (error) {
+//         console.error('Error Getting data:', error);
+//     }
+       
+// }
+
+export function middleware(request) {
+    const response = NextResponse.next();
+    response.headers.set('Access-Control-Allow-Origin', '*');
+    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    return response;
+  }
 
 export const config = {
     matcher : '/:path*'

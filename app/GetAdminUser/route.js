@@ -31,12 +31,7 @@ export async function POST(request, res) {
         await dbConnect(); // Connect to the database
         const data = await AdminDataModel.findOne({username:'alifnoon123'});
         console.log("called after")   
-        return NextResponse.json(data, {
-            headers : {
-                 'Access-Control-Allow-Origin' : "*" , 
-                 'Content-Type' : 'application/json' , 
-            }
-        });
+        return NextResponse.json(data);
     
     } catch (error) {
         console.error('Error Getting data:', error);
