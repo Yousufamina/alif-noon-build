@@ -23,14 +23,14 @@ import corsMiddleware from "@/cors";
 //     })
 // }
 
-export async function POST(request) {
+export async function POST(request, res) {
 
     // const formData = await request.json();
     try {
-        const origin  = request.headers.get('origin')
+        console.log("called before")   
         await dbConnect(); // Connect to the database
         const data = await AdminDataModel.findOne({username:'alifnoon123'});
-
+        console.log("called after")   
         return NextResponse.json(data, {
             headers : {
                  'Access-Control-Allow-Origin' : "*" , 
@@ -39,7 +39,7 @@ export async function POST(request) {
         });
     
     } catch (error) {
-        console.error('Error saving data:', error);
+        console.error('Error Getting data:', error);
         return new NextResponse(JSON.stringify({message: 'Error'})) 
     }
   }
