@@ -9,16 +9,16 @@ export function middleware(request){
     const origin = request.headers.get('origin')
     console.log("origin")
     console.log(origin)
-    if(origin && !allowedOrigins.includes(origin) ){
-        console.log("Called")
-        return new NextResponse(null , {
-            status : 400 , 
-            statusText: "Bad Request",
-            headers :{
-                'Content-Type' : 'text/plain'
-            }
-        } )
-    }
+    // if(origin && !allowedOrigins.includes(origin) ){
+    //     console.log("Called")
+    //     return new NextResponse(null , {
+    //         status : 400 , 
+    //         statusText: "Bad Request",
+    //         headers :{
+    //             'Content-Type' : 'text/plain'
+    //         }
+    //     } )
+    // }
     return NextResponse.next()
   
    

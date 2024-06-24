@@ -25,15 +25,15 @@ import corsMiddleware from "@/cors";
 
 export async function POST(request) {
 
-    const formData = await request.json();
+    // const formData = await request.json();
     try {
         const origin  = request.headers.get('origin')
         await dbConnect(); // Connect to the database
-        const data = await AdminDataModel.findOne({username:formData.username});
+        const data = await AdminDataModel.findOne({username:'alifnoon123'});
 
         return NextResponse.json(data, {
             headers : {
-                 'Access-Control-Allow-Origin' : origin || "*" , 
+                 'Access-Control-Allow-Origin' : "*" , 
                  'Content-Type' : 'application/json' , 
             }
         });
@@ -42,5 +42,4 @@ export async function POST(request) {
         console.error('Error saving data:', error);
         return new NextResponse(JSON.stringify({message: 'Error'})) 
     }
-
   }
