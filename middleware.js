@@ -7,7 +7,7 @@ export function middleware(request){
         return NextResponse.next();
       } else {
         console.log("called 403")
-        return NextResponse.status(403);
+        // return new NextResponse('Forbidden', 403);
       }
   
 }
