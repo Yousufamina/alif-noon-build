@@ -55,8 +55,9 @@ function LoginPage() {
       `${SERVER_URL}GetAdminUser`,
       obj
     )
-
-    let userData = userResData.data.data
+    console.log("userResData")
+    console.log(userResData)
+    let userData = userResData.data;
     if (userData) {
       const isValid = bcrypt.compareSync(password, userData.password)
       if (isValid) {
@@ -64,7 +65,6 @@ function LoginPage() {
           userInfo: userData
         };
         localStorage.setItem('loginUserDetails', JSON.stringify(payload));
-        console.log(localStorage.getItem('loginUserDetails'))
         window.location.href = '/Dashboard/properties'
       } else {
         setPasswordError(true)

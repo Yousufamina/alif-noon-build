@@ -23,18 +23,21 @@ import corsMiddleware from "@/cors";
 //     })
 // }
 
-export async function POST(request,res) {
+export async function POST(request) {
 
     const formData = await request.json();
-    await dbConnect(); // Connect to the database
-
     try {
-        // corsMiddleware(request, res, async () => {
-            const data = await AdminDataModel.findOne({username:formData.username});
-            // return new NextResponse({data});
-            return Response.json({ data });
-        // })
-        
+        const origin  = request.headers.get('origin')
+        await dbConnect(); // Connect to the database
+        const data = await AdminDataModel.findOne({username:formData.username});
+
+        return NextResponse.json(data, {
+            headers : {
+                 'Access-Control-Allow-Origin' : origin || "*" , 
+                 'Content-Type' : 'application/json' , 
+            }
+        });
+    
     } catch (error) {
         console.error('Error saving data:', error);
         return new NextResponse(JSON.stringify({message: 'Error'})) 
