@@ -47,8 +47,6 @@ function ProductSection({
   propertyData,
 }) {
 
-  // console.log("propertyData")
-  // console.log(propertyData)
   const [proType, setProType] = useState('0')
   const onChange = (key) => {
     // console.log(key, 'My Key')

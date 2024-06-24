@@ -13,11 +13,9 @@ import Location from '../ProductDetails/Location';
 
 function PropertyContent({propertyData}) {
   return (
-    
       <Row gutter={5} className='max-[1024px]:justify-center'>
         <Col className='leftColumn' style={{paddingRight:"20px"}} lg={24} xl={17}>
             <ImageGallery images = {propertyData?.fileUpload}/>
-            {console.log(propertyData?.fileUpload)}
             <Content
               title={propertyData?.name}
               price={propertyData?.price}
@@ -28,7 +26,7 @@ function PropertyContent({propertyData}) {
               sqrft={propertyData?.area}
             />
             <Features featureData = {propertyData?.featureAndAminities} />
-            <Description />
+            <Description description = {propertyData?.description}/>
             <ListingDetails />
             {/* <Location /> */}
             <SchoolsNearby />

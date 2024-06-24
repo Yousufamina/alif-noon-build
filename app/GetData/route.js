@@ -3,7 +3,6 @@ import FormDataModel from "@/src/propertySchema";
 import { dbConnect } from "@/src/dbConnect";
 
 export async function GET(request) {
-    console.log("request")
     let name = request.nextUrl.searchParams.get("name");
     await dbConnect(); // Connect to the database
     if(name){

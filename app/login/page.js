@@ -14,35 +14,6 @@ function LoginPage() {
   const [buttonDisabled, setButtonDisabled] = useState(false)
   const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
 
-  // const handleUserName = async (e) => {
-
-  //   const usernmame = e.target.value
-  //   // const response = await fetch('http://localhost:3000/GetAdminUser?username='+username)
-  //   // const data = await response.json()
-  //   // console.log("adminUSEr")
-  //   // console.log(data)
-  //   // setUsername(usernmame)
-  //   console.log(username)
-
-  //   if (usernmame === 'alifnoon123') {
-  //     setUserError(false)
-  //   } else {
-  //     setUserError(true)
-  //   }
-  //   loginValidation();
-  // }
-
-  // const handlePassword = (e) => {
-  //   const password = e.target.value
-  //   setPassword(password)
-  //   if (password === 'sXdHmS8ZOn#Y') {
-  //     setPasswordError(false)
-  //   } else {
-  //     setPasswordError(true)
-  //   }
-  //   loginValidation();
-  // }
-
   const loginValidation = async (e) => {
     e.preventDefault()
     setPasswordError(false)
@@ -55,8 +26,6 @@ function LoginPage() {
       `${SERVER_URL}GetAdminUser`,
       obj
     )
-    console.log("userResData")
-    console.log(userResData)
     let userData = userResData.data;
     if (userData) {
       const isValid = bcrypt.compareSync(password, userData.password)
@@ -72,12 +41,7 @@ function LoginPage() {
     } else {
       setUserError(true)
     }
-    // const data = await response.json()
-    // if (userError && passwordError) {
-    //   setButtonDisabled(false)
-    // } else {
-    //   setButtonDisabled(true)
-    // }
+
   }
 
   return (

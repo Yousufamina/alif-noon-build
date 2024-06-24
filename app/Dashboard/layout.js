@@ -9,10 +9,8 @@ function layout({children}) {
   useEffect(()=>{
     let user = null;
     user = localStorage.getItem('loginUserDetails');
-    console.log("user")
-    console.log(user)
     if (user) {
-        console.log("called user")
+        // console.log("called user")
     }
     else{
       window.location.href = '/login'

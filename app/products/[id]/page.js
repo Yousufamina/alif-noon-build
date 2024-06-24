@@ -57,7 +57,6 @@ const productListingPage = ({ url }) => {
   const search = searchParams.get('search')
 
   useEffect(() => {
-
     const fetchData = async () => { 
       try {  
         if(search && search !== ''){
@@ -74,8 +73,7 @@ const productListingPage = ({ url }) => {
           }
           const data = await response.json()
           setDataa(data.data)
-        }
-       
+        }       
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error)
       }

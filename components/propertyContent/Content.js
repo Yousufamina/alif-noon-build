@@ -18,7 +18,7 @@ const items = [
   },
 ];
 const handleChange = (value) => {
-    console.log(`selected ${value}`);
+    // console.log(`selected ${value}`);
   };
 
 const Content = ({

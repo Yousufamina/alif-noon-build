@@ -21,18 +21,11 @@ function Prod () {
   const [propertyData, setPropertyData] = useState([]);
   const [propertiesData, setDataa] = useState([])
   const {id} = useParams ()
-  // console.log("id is ")
-  // console.log(id)
-
-  // const [filteredData, setFilteredData] = useState({});
-  // const url = window.location.pathname;
-  // const lastPart = url.substring(url.lastIndexOf('/') + 1);
-  // const productName  = lastPart.replace(/%20/g, ' ');
 
   useEffect(() => {
     let dataObj = {'_id': id}
     const fetchFilteredData = async () => {
-      const response = await axios.post('http://localhost:3000/GetFilteredData', dataObj ,{
+      const response = await axios.post(`${SERVER_URL}GetFilteredData`, dataObj ,{
         headers: {'Content-Type': 'application/json'}
       });
       let data = response.data
@@ -52,14 +45,6 @@ function Prod () {
     fetchData()
 
   }, []);
-
-  // useEffect(() => {
-  //   const filtered = dataa.find(item => item.name === productName);
-  //   if (filtered) {
-  //     setFilteredData(filtered);
-  //     console.log(filtered);
-  //   }
-  // }, [dataa, productName]);
 
   return (
     <>

@@ -108,7 +108,6 @@ function page() {
     fetchData()
   }, [])
   const onChange = (key) => {
-    // console.log(key, 'My Key')
   }
   
   return (

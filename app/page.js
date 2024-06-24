@@ -31,23 +31,20 @@ const [productSectionContent, setProductSectionContent] = useState(null);
  
 useEffect(() => {
     
-    const fetchData = async () => {
-          
-          await fetch(`${SERVER_URL}GetData`)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.json();
-          })
-          .then(data => {
-            console.log("data.data prop")
-            console.log(data.data)   
-            setDataa(data.data);
-          })
-          .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-          });   
+    const fetchData = async () => {        
+      await fetch(`${SERVER_URL}GetData`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {  
+        setDataa(data.data);
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });   
     };
 
     const fetchAgentData = async () => {
@@ -59,8 +56,6 @@ useEffect(() => {
           return response.json();
         })
         .then(data => {
-          console.log("data.data")
-          console.log(data.data)
           setAgentData(data.data);
         })
         .catch(error => {

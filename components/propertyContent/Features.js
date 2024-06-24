@@ -2,13 +2,7 @@ import React , {useState,useEffect} from 'react'
 import { FeaturesAndAminities } from "@/app/utills/enums";
 
 const Features = ({featureData}) => {
-    // const [data, setData] = useState([])
    
-    // useEffect(() => {
-    //     setData(featureData)
-    // }, [])
-    console.log(featureData)
-    // console.log(Array.isArray(featureData))
     return (
         <div className='featuresContainer'>
             <h1>Features & Amenities</h1>

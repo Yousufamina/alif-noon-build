@@ -25,12 +25,10 @@ import corsMiddleware from "@/cors";
 
 export async function POST(request, res) {
 
-    // const formData = await request.json();
+    const formData = await request.json();
     try {
-        console.log("called before")   
         await dbConnect(); // Connect to the database
-        const data = await AdminDataModel.findOne({username:'alifnoon123'});
-        console.log("called after")   
+        const data = await AdminDataModel.findOne({username:formData.username});
         return NextResponse.json(data);
     
     } catch (error) {

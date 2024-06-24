@@ -159,7 +159,7 @@ export const FeaturesAndAminities = [
   {
     value: 'sharedSwimmingPool',
     label: 'Shared Swimming Pool',
-    img:   '/SharedSwim.svg'
+    img:   '/SharedSwim.SVG'
   },
   {
     value: 'sharedGym',
