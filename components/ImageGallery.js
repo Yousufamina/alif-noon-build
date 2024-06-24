@@ -23,7 +23,6 @@ const imagesData = [
 ]
 
 const ImageGallery = ({images}) => {
-    images?.map((img, index) => (console.log(img)))
    
     return(
         <div className='imageGallery'>        
