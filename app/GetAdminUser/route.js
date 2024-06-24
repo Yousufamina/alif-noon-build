@@ -29,11 +29,11 @@ export async function POST(request,res) {
     await dbConnect(); // Connect to the database
 
     try {
-        corsMiddleware(request, res, async () => {
+        // corsMiddleware(request, res, async () => {
             const data = await AdminDataModel.findOne({username:formData.username});
             // return new NextResponse({data});
             return Response.json({ data });
-        })
+        // })
         
     } catch (error) {
         console.error('Error saving data:', error);
