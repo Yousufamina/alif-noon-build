@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
+// const corsMiddleware = require('cors');
+// import corsMiddleware from "@/cors";
+const cors = require('cors');
+const corsMiddleware = require('./cors');
 
-const nextConfig = {
+
+ const nextConfig = {
     distDir: 'dist',
     headers  : async() => {
         return [
@@ -16,6 +21,8 @@ const nextConfig = {
             }
         ]
     },
+    middleware: [corsMiddleware],
+   
 }
 
 module.exports = nextConfig
