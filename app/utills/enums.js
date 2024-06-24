@@ -209,7 +209,7 @@ export const FeaturesAndAminities = [
   {
     value: 'Infinity Pool',
     label: 'Infinity Pool',
-    img:   '/SharedSwim.svg'
+    img:   '/SharedSwim.SVG'
   },
   {
     value: 'Daycare Center',
@@ -254,12 +254,12 @@ export const FeaturesAndAminities = [
   {
     value: 'Swimming Pool',
     label: 'Swimming Pool',
-    img:   '/SharedSwim.svg'
+    img:   '/SharedSwim.SVG'
   },
   {
     value: 'Kids Swimming Pool',
     label: 'Kids Swimming Pool',
-    img:   '/SharedSwim.svg'
+    img:   '/SharedSwim.SVG'
   },
   {
     value: 'Lazy Lounge',
