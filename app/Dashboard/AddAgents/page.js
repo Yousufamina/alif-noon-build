@@ -22,7 +22,6 @@ function AddAgent() {
       }));
 
       values.fileUpload = modifiedFileUpload;
-      console.log(values)
 
       if(values.name && values.description  && values.field && values.phone && values.email && values.language){
         toast.info('Adding Your Data..');
@@ -32,9 +31,6 @@ function AddAgent() {
         await axios.post(`${SERVER_URL}AddAgentApi`, dataObj ,{
           headers: {'Content-Type': 'application/json'}
         }).then(response => {
-          
-              console.log("response")
-              console.log(response)
               toast.success('Agent Added Successfully!');
         })
         .catch(error => {

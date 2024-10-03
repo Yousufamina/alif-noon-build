@@ -22,6 +22,7 @@ import SocialIconScroll from "@/components/SocialIconScroll";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState,useEffect } from "react";
+
 const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL;
 
 export default function Home({ Component, pageProps }) {

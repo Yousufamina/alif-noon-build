@@ -4,8 +4,29 @@ import React , {useState, useRef} from 'react'
 import { Row, Col } from 'antd'
 import axios from 'axios'
 import Link from 'next/link'
+import PromptContactUs from '@/components/PromptContactUs'
+import PromptCarrers from '@/components/PromptCarrers'
+
 
 function Footer() {
+
+  const [showContactUsModal, setShowContactUsModal] = useState(false)
+  const [showCarrersModal, setShowCarrersModal] = useState(false)
+ 
+  const openContactUsModal = () => {
+    setShowContactUsModal(true)
+  }
+  const closeContactUsModal = () => {
+    setShowContactUsModal(false)
+  }
+
+  const openCarrersModal = () => {
+    setShowCarrersModal(true)
+  }
+  const closeCarrersModal = () => {
+    setShowCarrersModal(false)
+  }
+ 
   const [showMessage, setShowMessage] = useState(false)
   const [formData, setFormData] = useState({
     email: '',
@@ -28,9 +49,7 @@ function Footer() {
      const response = await axios.post('https://alifnoon.ae/SaveEmail', formData ,{
           headers: {'Content-Type': 'application/json'}
      });
-    
-      console.log("response")
-      console.log(response)
+
   }
   
   return (
@@ -200,14 +219,23 @@ function Footer() {
                     {' '}
                     CONTACTS{' '}
                   </h1>
-                  <p className="max-[1024px]:text-center text-left text-white">
+                  <a  style={{ textDecoration: 'none', color: 'white' , display: 'block' , lineHeight:'26px'}}
+                      onMouseEnter={(e) => (e.target.style.color = '#eca33a')}
+                      onMouseLeave={(e) => (e.target.style.color = 'white')}
+                      className="max-[1024px]:text-center text-left text-white"
+                      onClick={openContactUsModal}>
                     {' '}
-                    Contact us
-                  </p>
-                  <p className="max-[1024px]:text-center text-left text-white">
+                    Contact Us
+                  </a>         
+                  <a  style={{ textDecoration: 'none', color: 'white' , display: 'block' , lineHeight:'26px'}}
+                      onMouseEnter={(e) => (e.target.style.color = '#eca33a')}
+                      onMouseLeave={(e) => (e.target.style.color = 'white')}
+                      className="max-[1024px]:text-center text-left text-white"
+                      onClick={openCarrersModal}>
                     {' '}
                     Careers{' '}
-                  </p>
+                  </a>
+
                   <p className="max-[1024px]:text-center text-left text-white">
                     {' '}
                     Reviews{' '}
@@ -216,10 +244,13 @@ function Footer() {
                     {' '}
                     Privacy Policy{' '}
                   </p>
-                  <p className="max-[1024px]:text-center text-left text-white">
+                  {/* <p className="max-[1024px]:text-center text-left text-white">
                     {' '}
                     Sitemap{' '}
-                  </p>
+                  </p> */}
+                {showContactUsModal && <PromptContactUs closeContactUsModal={closeContactUsModal} />}
+                {showCarrersModal && <PromptCarrers closeCarrersModal={closeCarrersModal} />}
+
                 </div>
               </div>
             </Col>

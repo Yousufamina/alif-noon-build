@@ -8,7 +8,6 @@ function AdminNavbar() {
   const logout = (e) =>{
     e.preventDefault()
     localStorage.clear();
-    console.log("hiii")
     window.location.href = '/login'
   }
   return (

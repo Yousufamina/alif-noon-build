@@ -49,7 +49,6 @@ function FilterTabs() {
   }
 
   useEffect(() => {
-    console.log(selectedData)
     localStorage.setItem('filterInfo', JSON.stringify(selectedData))
   }, [selectedData])
 
