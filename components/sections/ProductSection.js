@@ -93,7 +93,7 @@ function ProductSection({
               alt="none"
             />
             <p className="raleway font-bold text-[20px] text-[#ECA33A] text-center">
-              <a href="#">VIEW ALL</a>
+              <a href="products/buy">VIEW ALL</a>
             </p>
             <img
               className="mt-[6px] ml-3 h-[21px] w-[38px]"
