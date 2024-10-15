@@ -156,6 +156,7 @@ export const FeaturesAndAminities = [
     value: 'kitchenAppliences',
     label: 'Kitchen Appliences',
   },
+
   {
     value: 'sharedSwimmingPool',
     label: 'Shared Swimming Pool',
@@ -252,6 +253,11 @@ export const FeaturesAndAminities = [
     img: '/Sharedgym.svg'
   },
   {
+    value: 'RoofTop Gym',
+    label: 'RoofTop Gym',
+    img :  '/Sharedgym.svg'
+  },
+  {
     value: 'Swimming Pool',
     label: 'Swimming Pool',
     img:   '/SharedSwim.SVG'
@@ -262,9 +268,14 @@ export const FeaturesAndAminities = [
     img:   '/SharedSwim.SVG'
   },
   {
+    value: 'Rooftop Swiming Pool',
+    label: 'Rooftop Swiming Pool',
+    img:   '/SharedSwim.SVG'
+  },
+  {
     value: 'Lazy Lounge',
     label: 'Lazy Lounge',
-    img:   ''
+    img:   '/Sharedgym.svg'
   },
   {  value: 'Open Air Yoga',
      lable: 'Open Air Yoga',
@@ -283,7 +294,8 @@ export const FeaturesAndAminities = [
   {
     value: 'Lawn or Garden',
      lable: 'Lawn or Garden',
-     img:   ''
+    img:   '/balcony.svg'
+
   },
   {
     value: 'Parking Spaces',
@@ -295,7 +307,109 @@ export const FeaturesAndAminities = [
     value: 'Security Staff',
      lable: 'Security Staff',
      img:   '/Security.png'
-  }
+  },
+  {
+    value: 'Rock Climbing Wall',
+     lable: 'Rock Climbing Wall',
+     img:   ''
+  },
+  {
+    value: 'Mens / Womens Changing Rooms',
+     lable: 'Mens / Womens Changing Rooms',
+     img:   '/buitinWardrop.svg'
+  },
+  {
+    value: 'RoofTop BBQ & Lounge Area',
+     lable: 'RoofTop BBQ & Lounge Area',
+     img:   '/balcony.svg'
+  },
+  {
+    value: 'Outdoor Cinema',
+     lable: 'Outdoor Cinema',
+     img:   ''
+  },
+  {
+    value: '2X OutDoor Lounges With Water Features',
+     lable: '2X OutDoor Lounges With Water Features',
+     img:   ''
+  },
+  {
+    value: 'Grand Lobby / Entrance With Water Features',
+     lable: 'Grand Lobby / Entrance With Water Features',
+     img:   ''
+  },
+  {
+    value: 'Electric Car Parking/Charging',
+     lable: 'Electric Car Parking/Charging',
+     img:   ''
+  },
+  {
+    value: 'Grand Double-Height Lobby',
+     lable: 'Grand Double-Height Lobby',
+     img:   ''
+  },
+  {
+    value: 'SPA Pools',
+     lable: 'SPA Pools',
+     img:   '/SharedSwim.SVG'
+  },
+  
+  {
+    value: 'Kids Pool & Fountains',
+     lable: 'Kids Pool & Fountains',
+     img:   '/SharedSwim.SVG'
+  },
+  {
+    value: 'Mini Putt Golf',
+     lable: 'Mini Putt Golf',
+     img:   ''
+  },
+  {
+    value: 'GYM & Changing Rooms',
+     lable: 'GYM & Changing Rooms',
+     img:   '/Sharedgym.svg'
+  },
+  {
+    value: 'OutDoor Cinema & Lawn',
+     lable: 'OutDoor Cinema & Lawn',
+     img:   '/balcony.svg'
+  },
+  {
+    value: 'Outdoor Theatre / Cinema Area',
+     lable: 'Outdoor Theatre / Cinema Area',
+     img:   ''
+  },
+  {
+    value: 'Indoor Kids Play Area',
+    lable: 'Indoor Kids Play Area',
+    img:   '/balcony.svg'
+  },
+  {
+    value: 'Landscaped Running Track',
+     lable: 'Landscaped Running Track',
+     img:   ''
+  },
+  {
+    value: 'Multi-Sport Court',
+     lable: 'Multi-Sport Court',
+     img:   ''
+  },
+  {
+    value: 'Rooftop Outdoor Recreation Area',
+     lable: 'Rooftop Outdoor Recreation Area',
+    img:   '/balcony.svg'
+    
+  },
+  {
+    value: 'Pool Bar',
+     lable: 'Pool Bar',
+     img:   ''
+  },
+  {
+    value: 'Mini Golf',
+     lable: 'Mini Golf',
+     img:   ''
+  },
 ]
 export const currency = [
   {
