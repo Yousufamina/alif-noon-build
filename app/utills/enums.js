@@ -396,17 +396,17 @@ export const FeaturesAndAminities = [
   },
   {
     value: 'Rooftop Outdoor Recreation Area',
-     lable: 'Rooftop Outdoor Recreation Area',
+    lable: 'Rooftop Outdoor Recreation Area',
     img:   '/balcony.svg'
     
   },
   {
-    value: 'Pool Bar',
+     value: 'Pool Bar',
      lable: 'Pool Bar',
      img:   ''
   },
   {
-    value: 'Mini Golf',
+     value: 'Mini Golf',
      lable: 'Mini Golf',
      img:   ''
   },
