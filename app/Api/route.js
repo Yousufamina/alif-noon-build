@@ -9,12 +9,6 @@ const upload = multer({
   }
 });
 
-export const config = {
-  api: {
-    bodyParser: false, // Disable default body parser
-  },
-};
-
 const handler = upload.array('image'); // Specify the field name for the image
 
 export async function POST(request,res) {
@@ -41,5 +35,11 @@ export async function POST(request,res) {
         return new NextResponse(JSON.stringify({message: 'Error'}))        
     }
   }
+
+  POST.config = {
+    api: {
+      bodyParser: false, // Disable default body parser
+    },
+  };
 
 

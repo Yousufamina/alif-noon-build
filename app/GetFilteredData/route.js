@@ -1,4 +1,3 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import FormDataModel from "@/src/propertySchema";
 import { dbConnect } from "@/src/dbConnect";
 

@@ -1,7 +1,5 @@
 "use client";
 
-import React from 'react'
-import Link from "next"
 import ScrollTopButton from '@/components/ScrollTopButton';
 import SocialIconScroll from '@/components/SocialIconScroll';
 import Header from "@/components/header/Index";
