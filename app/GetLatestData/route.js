@@ -4,6 +4,6 @@ import { dbConnect } from "@/src/dbConnect";
 
 export async function GET() {
     await dbConnect(); // Connect to the database
-    const data=await FormDataModel.find().sort({'createdAt': -1}).limit(3);
+    const data= await FormDataModel.find().limit(3);
     return Response.json({ data });
 }
