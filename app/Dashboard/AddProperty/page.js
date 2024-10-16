@@ -32,7 +32,7 @@ function AddProperty() {
       }));
 
       values.fileUpload=modifiedFileUpload;
-
+console.log(modifiedFileUpload)
       if(values.name && values.category  && values.cities && values.bedrooms && values.fileUpload && values.propertyType && values.featureAndAminities){
         toast.info('Adding Your Data..');
         setFormData(values);

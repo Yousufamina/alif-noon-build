@@ -205,7 +205,7 @@ export const FeaturesAndAminities = [
   {
     value: 'builtinWaredrop',
     label: 'Built-in wardrop',
-    img:   '/buitinWardrop.svg'
+    img:   '/buitinWardrop.SVG'
   },
   {
     value: 'Infinity Pool',
@@ -316,7 +316,7 @@ export const FeaturesAndAminities = [
   {
     value: 'Mens / Womens Changing Rooms',
      lable: 'Mens / Womens Changing Rooms',
-     img:   '/buitinWardrop.svg'
+     img:   '/buitinWardrop.SVG'
   },
   {
     value: 'RoofTop BBQ & Lounge Area',
@@ -385,12 +385,12 @@ export const FeaturesAndAminities = [
     img:   '/balcony.svg'
   },
   {
-    value: 'Landscaped Running Track',
+     value: 'Landscaped Running Track',
      lable: 'Landscaped Running Track',
      img:   ''
   },
   {
-    value: 'Multi-Sport Court',
+     value: 'Multi-Sport Court',
      lable: 'Multi-Sport Court',
      img:   ''
   },
@@ -412,13 +412,14 @@ export const FeaturesAndAminities = [
   },
 ]
 export const currency = [
-  {
-    value: 'usd',
-    label: 'USD',
-  },
+
   {
     value: 'aed',
     label: 'AED',
+  },
+  {
+    value: 'usd',
+    label: 'USD',
   },
   {
     value: 'pkr',
